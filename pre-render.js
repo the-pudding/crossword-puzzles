@@ -1,19 +1,22 @@
 const fs = require("fs");
 const path = require("path");
-const rimraf = require("rimraf");
 const minifier = require("html-minifier");
+const shell = require('shelljs');
+const rimraf = require('rimraf');
 
 const CWD = process.cwd();
-const templatePath = path.resolve(CWD, "src/template.html");
-const ssrPath = path.resolve(CWD, "public/.tmp/ssr.js");
-const indexPath = path.resolve(CWD, "public/index.html");
-const tempPath = path.resolve(CWD, "public/.tmp");
+const templatePath = path.resolve(CWD, "public/index.html");
+const ssrPath = path.resolve(CWD, "docs/.tmp/ssr.js");
+const indexPath = path.resolve(CWD, "docs/index.html");
 
 const template = fs.readFileSync(templatePath, "utf8");
 const app = require(ssrPath);
 
 const version = Date.now();
 const { html, head } = app.render();
+
+shell.cp('-R', 'public/assets', 'docs');
+shell.cp('-R', 'public/build', 'docs');
 
 const result = template
   .replace("<!-- HTML -->", html)
@@ -27,5 +30,5 @@ const minified = minifier.minify(result, {
 });
 
 fs.writeFileSync(indexPath, minified);
-rimraf.sync(tempPath);
+rimraf.sync('docs/.tmp');
 process.exit();
