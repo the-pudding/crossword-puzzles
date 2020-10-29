@@ -1,2 +1,8685 @@
-var app=function(){"use strict";function e(){}const i=e=>e;function n(e){return e()}function t(){return Object.create(null)}function r(e){e.forEach(n)}function a(e){return"function"==typeof e}function o(e,i){return e!=e?i==i:e!==i||e&&"object"==typeof e||"function"==typeof e}function s(e,i,n,t){if(e){const r=c(e,i,n,t);return e[0](r)}}function c(e,i,n,t){return e[1]&&t?function(e,i){for(const n in i)e[n]=i[n];return e}(n.ctx.slice(),e[1](t(i))):n.ctx}function l(e,i,n,t,r,a,o){const s=function(e,i,n,t){if(e[2]&&t){const r=e[2](t(n));if(void 0===i.dirty)return r;if("object"==typeof r){const e=[],n=Math.max(i.dirty.length,r.length);for(let t=0;t<n;t+=1)e[t]=i.dirty[t]|r[t];return e}return i.dirty|r}return i.dirty}(i,t,r,a);if(s){const r=c(i,n,t,o);e.p(r,s)}}function d(e){return null==e?"":e}const u="undefined"!=typeof window;let h=u?()=>window.performance.now():()=>Date.now(),w=u?e=>requestAnimationFrame(e):e;const p=new Set;function m(e){p.forEach(i=>{i.c(e)||(p.delete(i),i.f())}),0!==p.size&&w(m)}function g(e,i){e.appendChild(i)}function f(e,i,n){e.insertBefore(i,n||null)}function y(e){e.parentNode.removeChild(e)}function k(e,i){for(let n=0;n<e.length;n+=1)e[n]&&e[n].d(i)}function A(e){return document.createElement(e)}function v(e){return document.createElementNS("http://www.w3.org/2000/svg",e)}function b(e){return document.createTextNode(e)}function E(){return b(" ")}function x(){return b("")}function _(e,i,n,t){return e.addEventListener(i,n,t),()=>e.removeEventListener(i,n,t)}function $(e,i,n){null==n?e.removeAttribute(i):e.getAttribute(i)!==n&&e.setAttribute(i,n)}function R(e,i){i=""+i,e.wholeText!==i&&(e.data=i)}function L(e,i,n,t){e.style.setProperty(i,n,t?"important":"")}function S(e,i){for(let n=0;n<e.options.length;n+=1){const t=e.options[n];if(t.__value===i)return void(t.selected=!0)}}let F;function C(){if(void 0===F){F=!1;try{"undefined"!=typeof window&&window.parent&&window.parent.document}catch(e){F=!0}}return F}function D(e,i,n){e.classList[n?"add":"remove"](i)}function M(e,i){const n=document.createEvent("CustomEvent");return n.initCustomEvent(e,!1,!1,i),n}class N{constructor(e=null){this.a=e,this.e=this.n=null}m(e,i,n=null){this.e||(this.e=A(i.nodeName),this.t=i,this.h(e)),this.i(n)}h(e){this.e.innerHTML=e,this.n=Array.from(this.e.childNodes)}i(e){for(let i=0;i<this.n.length;i+=1)f(this.t,this.n[i],e)}p(e){this.d(),this.h(e),this.i(this.a)}d(){this.n.forEach(y)}}const I=new Set;let T,z=0;function P(e,i,n,t,r,a,o,s=0){const c=16.666/t;let l="{\n";for(let e=0;e<=1;e+=c){const t=i+(n-i)*a(e);l+=100*e+`%{${o(t,1-t)}}\n`}const d=l+`100% {${o(n,1-n)}}\n}`,u=`__svelte_${function(e){let i=5381,n=e.length;for(;n--;)i=(i<<5)-i^e.charCodeAt(n);return i>>>0}(d)}_${s}`,h=e.ownerDocument;I.add(h);const w=h.__svelte_stylesheet||(h.__svelte_stylesheet=h.head.appendChild(A("style")).sheet),p=h.__svelte_rules||(h.__svelte_rules={});p[u]||(p[u]=!0,w.insertRule(`@keyframes ${u} ${d}`,w.cssRules.length));const m=e.style.animation||"";return e.style.animation=`${m?m+", ":""}${u} ${t}ms linear ${r}ms 1 both`,z+=1,u}function B(e,i){const n=(e.style.animation||"").split(", "),t=n.filter(i?e=>e.indexOf(i)<0:e=>-1===e.indexOf("__svelte")),r=n.length-t.length;r&&(e.style.animation=t.join(", "),z-=r,z||w(()=>{z||(I.forEach(e=>{const i=e.__svelte_stylesheet;let n=i.cssRules.length;for(;n--;)i.deleteRule(n);e.__svelte_rules={}}),I.clear())}))}function H(e){T=e}function O(){if(!T)throw new Error("Function called outside component initialization");return T}function G(){const e=O();return(i,n)=>{const t=e.$$.callbacks[i];if(t){const r=M(i,n);t.slice().forEach(i=>{i.call(e,r)})}}}const W=[],K=[],J=[],U=[],V=Promise.resolve();let j=!1;function q(e){J.push(e)}function Y(e){U.push(e)}let Q=!1;const Z=new Set;function X(){if(!Q){Q=!0;do{for(let e=0;e<W.length;e+=1){const i=W[e];H(i),ee(i.$$)}for(H(null),W.length=0;K.length;)K.pop()();for(let e=0;e<J.length;e+=1){const i=J[e];Z.has(i)||(Z.add(i),i())}J.length=0}while(W.length);for(;U.length;)U.pop()();j=!1,Q=!1,Z.clear()}}function ee(e){if(null!==e.fragment){e.update(),r(e.before_update);const i=e.dirty;e.dirty=[-1],e.fragment&&e.fragment.p(e.ctx,i),e.after_update.forEach(q)}}let ie;function ne(e,i,n){e.dispatchEvent(M(`${i?"intro":"outro"}${n}`))}const te=new Set;let re;function ae(){re={r:0,c:[],p:re}}function oe(){re.r||r(re.c),re=re.p}function se(e,i){e&&e.i&&(te.delete(e),e.i(i))}function ce(e,i,n,t){if(e&&e.o){if(te.has(e))return;te.add(e),re.c.push(()=>{te.delete(e),t&&(n&&e.d(1),t())}),e.o(i)}}const le={duration:0};function de(n,t,o,s){let c=t(n,o),l=s?0:1,d=null,u=null,g=null;function f(){g&&B(n,g)}function y(e,i){const n=e.b-l;return i*=Math.abs(n),{a:l,b:e.b,d:n,duration:i,start:e.start,end:e.start+i,group:e.group}}function k(t){const{delay:a=0,duration:o=300,easing:s=i,tick:k=e,css:A}=c||le,v={start:h()+a,b:t};t||(v.group=re,re.r+=1),d||u?u=v:(A&&(f(),g=P(n,l,t,o,a,s,A)),t&&k(0,1),d=y(v,o),q(()=>ne(n,t,"start")),function(e){let i;0===p.size&&w(m),new Promise(n=>{p.add(i={c:e,f:n})})}(e=>{if(u&&e>u.start&&(d=y(u,o),u=null,ne(n,d.b,"start"),A&&(f(),g=P(n,l,d.b,d.duration,0,s,c.css))),d)if(e>=d.end)k(l=d.b,1-l),ne(n,d.b,"end"),u||(d.b?f():--d.group.r||r(d.group.c)),d=null;else if(e>=d.start){const i=e-d.start;l=d.a+d.d*s(i/d.duration),k(l,1-l)}return!(!d&&!u)}))}return{run(e){a(c)?(ie||(ie=Promise.resolve(),ie.then(()=>{ie=null})),ie).then(()=>{c=c(),k(e)}):k(e)},end(){f(),d=u=null}}}function ue(e,i,n){const t=e.$$.props[i];void 0!==t&&(e.$$.bound[t]=n,n(e.$$.ctx[t]))}function he(e){e&&e.c()}function we(e,i,t){const{fragment:o,on_mount:s,on_destroy:c,after_update:l}=e.$$;o&&o.m(i,t),q(()=>{const i=s.map(n).filter(a);c?c.push(...i):r(i),e.$$.on_mount=[]}),l.forEach(q)}function pe(e,i){const n=e.$$;null!==n.fragment&&(r(n.on_destroy),n.fragment&&n.fragment.d(i),n.on_destroy=n.fragment=null,n.ctx=[])}function me(e,i){-1===e.$$.dirty[0]&&(W.push(e),j||(j=!0,V.then(X)),e.$$.dirty.fill(0)),e.$$.dirty[i/31|0]|=1<<i%31}function ge(i,n,a,o,s,c,l=[-1]){const d=T;H(i);const u=n.props||{},h=i.$$={fragment:null,ctx:null,props:c,update:e,not_equal:s,bound:t(),on_mount:[],on_destroy:[],before_update:[],after_update:[],context:new Map(d?d.$$.context:[]),callbacks:t(),dirty:l,skip_bound:!1};let w=!1;if(h.ctx=a?a(i,u,(e,n,...t)=>{const r=t.length?t[0]:n;return h.ctx&&s(h.ctx[e],h.ctx[e]=r)&&(!h.skip_bound&&h.bound[e]&&h.bound[e](r),w&&me(i,e)),n}):[],h.update(),w=!0,r(h.before_update),h.fragment=!!o&&o(h.ctx),n.target){if(n.hydrate){const e=function(e){return Array.from(e.childNodes)}(n.target);h.fragment&&h.fragment.l(e),e.forEach(y)}else h.fragment&&h.fragment.c();n.intro&&se(i.$$.fragment),we(i,n.target,n.anchor),X()}H(d)}class fe{$destroy(){pe(this,1),this.$destroy=e}$on(e,i){const n=this.$$.callbacks[e]||(this.$$.callbacks[e]=[]);return n.push(i),()=>{const e=n.indexOf(i);-1!==e&&n.splice(e,1)}}$set(e){var i;this.$$set&&(i=e,0!==Object.keys(i).length)&&(this.$$.skip_bound=!0,this.$$set(e),this.$$.skip_bound=!1)}}function ye(i){let n,t,r,a,o,s,c,l,d,u,h,w,p,m,k,v;return{c(){n=A("nav"),t=A("div"),r=A("a"),a=E(),o=A("section"),s=A("h1"),s.textContent="Crossword Puzzles",c=E(),l=A("p"),l.innerHTML='Below you will find playable mini-puzzles generated from the data behind\n    <a href="https://pudding.cool/20202/11/crossword">our story</a>\n    about inclusivity in crosswords. The ratio of the people referenced in the\n    clues or answers reflect the findings of our analysis about racial and\n    gender representation.',d=E(),u=A("div"),h=A("p"),w=A("button"),w.textContent="How were these made?",p=E(),m=A("div"),m.innerHTML='<p class="svelte-13rlgju">TODO explain brief method, link to article. Explain that some of the\n        clue wording was altered to fit outside of its original context.</p>',$(r,"href","https://pudding.cool"),$(t,"class","wordmark svelte-13rlgju"),$(s,"class","svelte-13rlgju"),$(l,"class","svelte-13rlgju"),$(h,"class","svelte-13rlgju"),$(m,"class","method svelte-13rlgju"),D(m,"visible",i[0]),$(u,"class","how svelte-13rlgju"),$(o,"id","intro"),$(o,"class","svelte-13rlgju")},m(e,y){f(e,n,y),g(n,t),g(t,r),r.innerHTML='<?xml version="1.0" encoding="utf-8"?>\n\x3c!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --\x3e\n<svg version="1.1" id="wordmark" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"\n\t viewBox="0 0 192.6 50" style="enable-background:new 0 0 192.6 50;" xml:space="preserve">\n<g>\n\t<path class="st0" d="M150.1,9.5c1.5,0,2.8,1.3,2.8,2.8s-1.3,2.8-2.8,2.8s-2.8-1.3-2.8-2.8S148.6,9.5,150.1,9.5z"/>\n\t<path class="st0" d="M147.2,17.3h5.6v18.2h-5.6V17.3z"/>\n\t<path class="st0" d="M77.1,9.5h-1.9h-7v19.3v6.7h5.6v-6.7v-1.4h1.4h1.9c4.9,0,8.9-4,8.9-8.9S82.1,9.5,77.1,9.5z M77.1,21.8h-1.9\n\t\th-1.4v-1.4v-3.8v-1.4h1.4h1.9c1.8,0,3.3,1.5,3.3,3.3S79,21.8,77.1,21.8z"/>\n\t<path class="st0" d="M105.7,17.6h-5.6v8.9c0,1.8-1.5,3.3-3.3,3.3s-3.3-1.5-3.3-3.3v-8.9h-5.6v8.9c0,4.9,4,8.9,8.9,8.9\n\t\ts8.9-4,8.9-8.9V17.6z"/>\n\t<path class="st0" d="M164.1,17.6c-4.9,0-8.9,4-8.9,8.9v8.9h5.6v-8.9c0-1.8,1.5-3.3,3.3-3.3s3.3,1.5,3.3,3.3v8.9h5.6v-8.9\n\t\tC173,21.6,169,17.6,164.1,17.6z"/>\n\t<path class="st0" d="M119.7,16.2v1.4h-1.4h-1.9c-4.9,0-8.9,4-8.9,8.9s4,8.9,8.9,8.9h1.9h7V16.2V9.5l-5.6,3.3\n\t\tC119.7,12.8,119.7,16.2,119.7,16.2z M119.8,24.6v3.8v1.4h-1.4h-1.9c-1.8,0-3.3-1.5-3.3-3.3s1.5-3.3,3.3-3.3h1.9h1.4V24.6z"/>\n\t<path class="st0" d="M139.3,16.2v1.4h-1.4H136c-4.9,0-8.9,4-8.9,8.9s4,8.9,8.9,8.9h1.9h7V16.2V9.5l-5.6,3.3V16.2z M139.4,24.6v3.8\n\t\tv1.4h-1.5H136c-1.8,0-3.3-1.5-3.3-3.3s1.5-3.3,3.3-3.3h1.9h1.4v1.4H139.4z"/>\n\t<path class="st0" d="M183.7,17.6c-4.9,0-8.9,4-8.9,8.9s4,8.9,8.9,8.9h1.9h1.4v1.4v0.9v1.4v1.4c0,1.8-1.5,3.3-3.3,3.3\n\t\ts-3.3-1.5-3.3-3.3V38l-5.6,3.3c0.4,4.5,4.2,8.1,8.9,8.1c4.9,0,8.9-4,8.9-8.9v-1.4v-2.3V17.6h-7H183.7z M187,23.4v1.4v3.8V30h-1.4\n\t\th-1.9c-1.8,0-3.3-1.5-3.3-3.3s1.5-3.3,3.3-3.3h1.9C185.6,23.4,187,23.4,187,23.4z"/>\n\t<path class="st0" d="M28.6,17.6c-1.2,0-2.3,0.2-3.3,0.6V9.5l-5.6,3.3v13.7v2v6.9h5.6v-6.9l0,0v-2c0-1.8,1.5-3.3,3.3-3.3\n\t\ts3.3,1.5,3.3,3.3v8.9h5.6v-8.9C37.5,21.6,33.5,17.6,28.6,17.6z"/>\n\t<path class="st0" d="M17.8,9.5H0v5.6h6.1v20.3h5.6V15.1h6.1V9.5z"/>\n\t<path class="st0" d="M48.3,30.2c-0.4,0-1.2-0.1-1.8-0.4l5.2-2.1l5.6-2.3l-1-2.3l-0.1-0.2c-0.1-0.3-0.3-0.6-0.5-1\n\t\tc-0.1-0.1-0.1-0.2-0.2-0.3c0,0,0-0.1-0.1-0.1l-0.1-0.1l-0.1-0.1c-1.6-2.2-4-3.5-6.7-3.7l0,0h-0.6c-4.9,0-8.9,4-8.9,8.9\n\t\tc0,0.4,0,0.9,0.1,1.4l0,0V28c0,0,0,0,0,0.1c0,0,0,0,0,0.1c0,0.3,0.1,0.5,0.2,0.8v0.1v0.1c0.1,0.3,0.2,0.7,0.4,1v0.1v0.1\n\t\tc0.1,0.3,0.3,0.5,0.4,0.8c0,0.1,0.1,0.1,0.1,0.2l0,0c0.1,0.2,0.3,0.4,0.4,0.6c0,0,0,0,0,0.1c0,0,0,0.1,0.1,0.1l0.1,0.1\n\t\tc1.7,2.1,4.4,3.4,7.2,3.4h6.1v-5.2C54.5,30.2,50.6,30.2,48.3,30.2L48.3,30.2z M56.2,22.9L56.2,22.9L56.2,22.9z M44.6,25.7\n\t\tL44.6,25.7l-0.2,0.1c0.2-1.9,1.8-3.5,3.7-3.5c0.9,0,1.8,0.4,2.4,0.9L46.2,25L44.6,25.7L44.6,25.7z"/>\n</g>\n</svg>',f(e,a,y),f(e,o,y),g(o,s),g(o,c),g(o,l),g(o,d),g(o,u),g(u,h),g(h,w),g(u,p),g(u,m),k||(v=_(w,"click",i[1]),k=!0)},p(e,[i]){1&i&&D(m,"visible",e[0])},i:e,o:e,d(e){e&&y(n),e&&y(a),e&&y(o),k=!1,v()}}}function ke(e,i,n){let t=!1;return[t,()=>n(0,t=!t)]}class Ae extends fe{constructor(e){super(),ge(this,e,ke,ye,o,{})}}function ve(e,i,n){const t=e.slice();return t[4]=i[n],t}function be(i){let n,t,r;return{c(){n=A("button"),n.textContent="Reveal",$(n,"class","svelte-1d4ytnk")},m(e,a){f(e,n,a),t||(r=_(n,"click",i[3]),t=!0)},p:e,d(e){e&&y(n),t=!1,r()}}}function Ee(i){let n,t,r;return{c(){n=A("button"),n.textContent="Clear",$(n,"class","svelte-1d4ytnk")},m(e,a){f(e,n,a),t||(r=_(n,"click",i[2]),t=!0)},p:e,d(e){e&&y(n),t=!1,r()}}}function xe(e){let i;function n(e,i){return"clear"==e[4]?Ee:"reveal"==e[4]?be:void 0}let t=n(e),r=t&&t(e);return{c(){r&&r.c(),i=x()},m(e,n){r&&r.m(e,n),f(e,i,n)},p(e,a){t===(t=n(e))&&r?r.p(e,a):(r&&r.d(1),r=t&&t(e),r&&(r.c(),r.m(i.parentNode,i)))},d(e){r&&r.d(e),e&&y(i)}}}function _e(i){let n,t=i[0],r=[];for(let e=0;e<t.length;e+=1)r[e]=xe(ve(i,t,e));return{c(){n=A("div");for(let e=0;e<r.length;e+=1)r[e].c();$(n,"class","toolbar svelte-1d4ytnk")},m(e,i){f(e,n,i);for(let e=0;e<r.length;e+=1)r[e].m(n,null)},p(e,[i]){if(3&i){let a;for(t=e[0],a=0;a<t.length;a+=1){const o=ve(e,t,a);r[a]?r[a].p(o,i):(r[a]=xe(o),r[a].c(),r[a].m(n,null))}for(;a<r.length;a+=1)r[a].d(1);r.length=t.length}},i:e,o:e,d(e){e&&y(n),k(r,e)}}}function $e(e,i,n){const t=G();let{actions:r=["clear","reveal"]}=i;return e.$$set=e=>{"actions"in e&&n(0,r=e.actions)},[r,t,()=>t("event","clear"),()=>t("event","reveal")]}class Re extends fe{constructor(e){super(),ge(this,e,$e,_e,o,{actions:0})}}var Le=[{row:0,value:"Q"},{row:0,value:"W"},{row:0,value:"E"},{row:0,value:"R"},{row:0,value:"T"},{row:0,value:"Y"},{row:0,value:"U"},{row:0,value:"I"},{row:0,value:"O"},{row:0,value:"P"},{row:1,value:"A"},{row:1,value:"S"},{row:1,value:"D"},{row:1,value:"F"},{row:1,value:"G"},{row:1,value:"H"},{row:1,value:"J"},{row:1,value:"K"},{row:1,value:"L"},{row:2,value:"123"},{row:2,value:"Z"},{row:2,value:"X"},{row:2,value:"C"},{row:2,value:"V"},{row:2,value:"B"},{row:2,value:"N"},{row:2,value:"M"},{row:2,value:"delete"}];function Se(e,i,n){const t=e.slice();return t[14]=i[n].value,t}function Fe(e,i,n){const t=e.slice();return t[11]=i[n],t}function Ce(e){let i,n=e[14]+"";return{c(){i=b(n)},m(e,n){f(e,i,n)},p(e,t){1&t&&n!==(n=e[14]+"")&&R(i,n)},d(e){e&&y(i)}}}function De(e){let i,n,t=e[3][e[14]]+"";return{c(){n=x(),i=new N(n)},m(e,r){i.m(t,e,r),f(e,n,r)},p(e,n){1&n&&t!==(t=e[3][e[14]]+"")&&i.p(t)},d(e){e&&y(n),e&&i.d()}}}function Me(e){let i,n,t;function a(e,i){return e[3][e[14]]?De:Ce}let o=a(e),s=o(e);function c(...i){return e[5](e[14],...i)}function l(...i){return e[6](e[14],...i)}return{c(){i=A("button"),s.c(),L(i,"width",1===e[14].length?e[1]:"auto"),$(i,"class","svelte-1bx8glz"),D(i,"single",1===e[14].length)},m(e,r){f(e,i,r),s.m(i,null),n||(t=[_(i,"touchstart",c,{passive:!0}),_(i,"click",l)],n=!0)},p(n,t){o===(o=a(e=n))&&s?s.p(e,t):(s.d(1),s=o(e),s&&(s.c(),s.m(i,null))),3&t&&L(i,"width",1===e[14].length?e[1]:"auto"),1&t&&D(i,"single",1===e[14].length)},d(e){e&&y(i),s.d(),n=!1,r(t)}}}function Ne(e){let i,n,t=e[11],r=[];for(let i=0;i<t.length;i+=1)r[i]=Me(Se(e,t,i));return{c(){i=A("div");for(let e=0;e<r.length;e+=1)r[e].c();n=E(),$(i,"class","row svelte-1bx8glz")},m(e,t){f(e,i,t);for(let e=0;e<r.length;e+=1)r[e].m(i,null);g(i,n)},p(e,a){if(15&a){let o;for(t=e[11],o=0;o<t.length;o+=1){const s=Se(e,t,o);r[o]?r[o].p(s,a):(r[o]=Me(s),r[o].c(),r[o].m(i,n))}for(;o<r.length;o+=1)r[o].d(1);r.length=t.length}},d(e){e&&y(i),k(r,e)}}}function Ie(i){let n,t=i[0],r=[];for(let e=0;e<t.length;e+=1)r[e]=Ne(Fe(i,t,e));return{c(){n=A("div");for(let e=0;e<r.length;e+=1)r[e].c();$(n,"class","keyboard")},m(e,i){f(e,n,i);for(let e=0;e<r.length;e+=1)r[e].m(n,null)},p(e,[i]){if(15&i){let a;for(t=e[0],a=0;a<t.length;a+=1){const o=Fe(e,t,a);r[a]?r[a].p(o,i):(r[a]=Ne(o),r[a].c(),r[a].m(n,null))}for(;a<r.length;a+=1)r[a].d(1);r.length=t.length}},i:e,o:e,d(e){e&&y(n),k(r,e)}}}function Te(e,i,n){const t=G();let{data:r=Le}=i;const a=(o=r.map(e=>e.row),[...new Set(o)]);var o;a.sort((e,i)=>e-i);let s,c,l;return e.$$set=e=>{"data"in e&&n(4,r=e.data)},e.$$.update=()=>{16&e.$$.dirty&&n(0,s=a.map(e=>r.filter(i=>i.row===e))),1&e.$$.dirty&&n(7,c=Math.max(...s.map(e=>e.length))),128&e.$$.dirty&&n(1,l=1/c*100+"%")},[s,l,t,{delete:'<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-delete"><path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"></path><line x1="18" y1="9" x2="12" y2="15"></line><line x1="12" y1="9" x2="18" y2="15"></line></svg>'},r,e=>t("keydown",e),e=>t("keydown",e)]}class ze extends fe{constructor(e){super(),ge(this,e,Te,Ie,o,{data:4})}}const Pe=(e,i)=>Array.from({length:i-e+1},(i,n)=>n+e);function Be(e){let i,n,t,r;return{c(){i=v("text"),n=b(e[2]),$(i,"class","value svelte-1fqxzxj"),$(i,"x","0.5"),$(i,"y","0.9"),$(i,"dominant-baseline","auto"),$(i,"text-anchor","middle")},m(e,t){f(e,i,t),g(i,n),r=!0},p(i,t){e=i,(!r||4&t)&&R(n,e[2])},i(n){r||(q(()=>{t||(t=de(i,Oe,{y:5,delay:e[5],duration:e[6]?250:0},!0)),t.run(1)}),r=!0)},o(n){t||(t=de(i,Oe,{y:5,delay:e[5],duration:e[6]?250:0},!1)),t.run(0),r=!1},d(e){e&&y(i),e&&t&&t.end()}}}function He(e){let i,n,t,a,o,s,c,l,d,u,h=e[2]&&Be(e);return{c(){i=v("g"),n=v("rect"),h&&h.c(),t=v("text"),a=b(e[3]),$(n,"width","1"),$(n,"height","1"),$(n,"class","svelte-1fqxzxj"),$(t,"class","number svelte-1fqxzxj"),$(t,"x","0.1"),$(t,"y","0.1"),$(t,"dominant-baseline","hanging"),$(t,"text-anchor","start"),$(i,"class",o="cell "+e[4]+" svelte-1fqxzxj"),$(i,"transform",s=`translate(${e[0]}, ${e[1]})`),$(i,"id",c="cell-"+e[0]+"-"+e[1]),$(i,"tabindex","0"),D(i,"is-focused",e[7]),D(i,"is-secondarily-focused",e[8])},m(r,o){f(r,i,o),g(i,n),h&&h.m(i,null),g(i,t),g(t,a),e[19](i),l=!0,d||(u=[_(i,"click",e[11]),_(i,"keydown",e[10])],d=!0)},p(e,[n]){e[2]?h?(h.p(e,n),4&n&&se(h,1)):(h=Be(e),h.c(),se(h,1),h.m(i,t)):h&&(ae(),ce(h,1,1,()=>{h=null}),oe()),(!l||8&n)&&R(a,e[3]),(!l||16&n&&o!==(o="cell "+e[4]+" svelte-1fqxzxj"))&&$(i,"class",o),(!l||3&n&&s!==(s=`translate(${e[0]}, ${e[1]})`))&&$(i,"transform",s),(!l||3&n&&c!==(c="cell-"+e[0]+"-"+e[1]))&&$(i,"id",c),144&n&&D(i,"is-focused",e[7]),272&n&&D(i,"is-secondarily-focused",e[8])},i(e){l||(se(h),l=!0)},o(e){ce(h),l=!1},d(n){n&&y(i),h&&h.d(),e[19](null),d=!1,r(u)}}}function Oe(e,{delay:i=0,duration:n=250}){return{delay:i,duration:n,css:e=>[`transform: translate(0, ${1-e}px)`].join(";")}}function Ge(e,i,n){let t,{x:r}=i,{y:a}=i,{value:o}=i,{number:s}=i,{index:c}=i,{custom:l}=i,{changeDelay:d=0}=i,{isRevealing:u=!1}=i,{isFocused:h=!1}=i,{isSecondarilyFocused:w=!1}=i,{onFocusCell:p=(()=>{})}=i,{onCellUpdate:m=(()=>{})}=i,{onFocusClueDiff:g=(()=>{})}=i,{onMoveFocus:f=(()=>{})}=i,{onFlipDirection:y=(()=>{})}=i,{onHistoricalChange:k=(()=>{})}=i;return e.$$set=e=>{"x"in e&&n(0,r=e.x),"y"in e&&n(1,a=e.y),"value"in e&&n(2,o=e.value),"number"in e&&n(3,s=e.number),"index"in e&&n(12,c=e.index),"custom"in e&&n(4,l=e.custom),"changeDelay"in e&&n(5,d=e.changeDelay),"isRevealing"in e&&n(6,u=e.isRevealing),"isFocused"in e&&n(7,h=e.isFocused),"isSecondarilyFocused"in e&&n(8,w=e.isSecondarilyFocused),"onFocusCell"in e&&n(13,p=e.onFocusCell),"onCellUpdate"in e&&n(14,m=e.onCellUpdate),"onFocusClueDiff"in e&&n(15,g=e.onFocusClueDiff),"onMoveFocus"in e&&n(16,f=e.onMoveFocus),"onFlipDirection"in e&&n(17,y=e.onFlipDirection),"onHistoricalChange"in e&&n(18,k=e.onHistoricalChange)},e.$$.update=()=>{128&e.$$.dirty&&t&&h&&t.focus()},[r,a,o,s,l,d,u,h,w,t,function(e){if(e.ctrlKey&&"z"==e.key.toLowerCase()&&k(e.shiftKey?1:-1),e.ctrlKey)return;if(e.altKey)return;if("Tab"===e.key)return g(e.shiftKey?-1:1),e.preventDefault(),void e.stopPropagation();if(" "==e.key)return y(),e.preventDefault(),void e.stopPropagation();if(["Delete","Backspace"].includes(e.key))return void m(c,"",-1);if(/^[a-zA-Z()]$/.test(e.key))return void m(c,e.key.toUpperCase());const i={ArrowLeft:["across",-1],ArrowRight:["across",1],ArrowUp:["down",-1],ArrowDown:["down",1]}[e.key];return i?(f(...i),e.preventDefault(),void e.stopPropagation()):void 0},function(){p(c)},c,p,m,g,f,y,k,function(e){K[e?"unshift":"push"](()=>{t=e,n(9,t)})}]}class We extends fe{constructor(e){super(),ge(this,e,Ge,He,o,{x:0,y:1,value:2,number:3,index:12,custom:4,changeDelay:5,isRevealing:6,isFocused:7,isSecondarilyFocused:8,onFocusCell:13,onCellUpdate:14,onFocusClueDiff:15,onMoveFocus:16,onFlipDirection:17,onHistoricalChange:18})}}function Ke(e,i,n){const t=e.slice();return t[29]=i[n].x,t[30]=i[n].y,t[31]=i[n].value,t[32]=i[n].index,t[33]=i[n].number,t[34]=i[n].custom,t}function Je(e){let i,n;return i=new We({props:{x:e[29],y:e[30],index:e[32],value:e[31],number:e[33],custom:e[34],changeDelay:e[2]?e[5]/e[0].length*e[32]:0,isRevealing:e[2],isFocused:e[1]==e[32]&&!e[3],isSecondarilyFocused:e[6].includes(e[32])&&!e[3],onFocusCell:e[12],onCellUpdate:e[10],onFocusClueDiff:e[13],onMoveFocus:e[14],onFlipDirection:e[15],onHistoricalChange:e[11]}}),{c(){he(i.$$.fragment)},m(e,t){we(i,e,t),n=!0},p(e,n){const t={};1&n[0]&&(t.x=e[29]),1&n[0]&&(t.y=e[30]),1&n[0]&&(t.index=e[32]),1&n[0]&&(t.value=e[31]),1&n[0]&&(t.number=e[33]),1&n[0]&&(t.custom=e[34]),37&n[0]&&(t.changeDelay=e[2]?e[5]/e[0].length*e[32]:0),4&n[0]&&(t.isRevealing=e[2]),11&n[0]&&(t.isFocused=e[1]==e[32]&&!e[3]),73&n[0]&&(t.isSecondarilyFocused=e[6].includes(e[32])&&!e[3]),i.$set(t)},i(e){n||(se(i.$$.fragment,e),n=!0)},o(e){ce(i.$$.fragment,e),n=!1},d(e){pe(i,e)}}}function Ue(i){let n,t,r;return t=new ze({}),t.$on("keydown",i[16]),{c(){n=A("div"),he(t.$$.fragment),$(n,"class","keyboard svelte-1yaebvb")},m(e,i){f(e,n,i),we(t,n,null),r=!0},p:e,i(e){r||(se(t.$$.fragment,e),r=!0)},o(e){ce(t.$$.fragment,e),r=!1},d(e){e&&y(n),pe(t)}}}function Ve(e){let i,n,t,r,a,o,s=e[0],c=[];for(let i=0;i<s.length;i+=1)c[i]=Je(Ke(e,s,i));const l=e=>ce(c[e],1,1,()=>{c[e]=null});let d=e[9]&&Ue(e);return{c(){i=A("section"),n=v("svg");for(let e=0;e<c.length;e+=1)c[e].c();r=b("\n\n'"),d&&d.c(),a=x(),$(n,"viewBox",t="0 0 "+e[7]+" "+e[8]),$(n,"class","svelte-1yaebvb"),$(i,"class","puzzle svelte-1yaebvb"),D(i,"stacked",e[4])},m(e,t){f(e,i,t),g(i,n);for(let e=0;e<c.length;e+=1)c[e].m(n,null);f(e,r,t),d&&d.m(e,t),f(e,a,t),o=!0},p(e,r){if(64623&r[0]){let i;for(s=e[0],i=0;i<s.length;i+=1){const t=Ke(e,s,i);c[i]?(c[i].p(t,r),se(c[i],1)):(c[i]=Je(t),c[i].c(),se(c[i],1),c[i].m(n,null))}for(ae(),i=s.length;i<c.length;i+=1)l(i);oe()}(!o||384&r[0]&&t!==(t="0 0 "+e[7]+" "+e[8]))&&$(n,"viewBox",t),16&r[0]&&D(i,"stacked",e[4]),e[9]?d?(d.p(e,r),512&r[0]&&se(d,1)):(d=Ue(e),d.c(),se(d,1),d.m(a.parentNode,a)):d&&(ae(),ce(d,1,1,()=>{d=null}),oe())},i(e){if(!o){for(let e=0;e<s.length;e+=1)se(c[e]);se(d),o=!0}},o(e){c=c.filter(Boolean);for(let e=0;e<c.length;e+=1)ce(c[e]);ce(d),o=!1},d(e){e&&y(i),k(c,e),e&&y(r),d&&d.d(e),e&&y(a)}}}function je(e,i,n){let{clues:t}=i,{cells:r}=i,{focusedDirection:a}=i,{focusedCellIndex:o}=i,{focusedCell:s}=i,{isRevealing:c}=i,{isDisableHighlight:l}=i,{stacked:d}=i,{revealDuration:u=0}=i,{showKeyboard:h}=i,w=0,p=[],m=[],g=[],f=!1;var y;function k(){n(6,g=(({cells:e,focusedDirection:i,focusedCell:n})=>{const t="across"==i?"x":"y",r="across"==i?"y":"x",a=n[t],o=e.filter(e=>e[r]==n[r]).map(e=>({...e,diff:a-e[t]}));o.sort((e,i)=>e.diff-i.diff);const s=o.map(e=>e.diff),c=(Pe(Math.min(...s),Math.max(...s)).map(e=>s.includes(e)?e:" ").join(",").split(", ,").find(e=>e.startsWith("0,")||e.endsWith(",0")||e.includes(",0,"))||"").split(",").map(e=>+e);return o.filter(e=>c.includes(e.diff)).map(e=>e.index)})({cells:r,focusedDirection:a,focusedCell:s}))}function A(e,i,t=1){const a=!!r[e].value,s=[...r.slice(0,e),{...r[e],value:i},...r.slice(e+1)];p=[s,...p.slice(w)].slice(0,10),w=0,n(0,r=s),function(e,i=!0){const n=$.filter(e=>!!i||!e.value),t=n.findIndex(e=>e.index==o),a=(n[t+e]||{}).index;if(!r[a])return;v(a)}(t,a)}function v(e){e==o?b():(n(1,o=e),m=[e,...m.slice(0,10)])}function b(){const e="across"===a?"down":"across";!!s.clueNumbers[e]&&n(17,a=e)}let E,x,_,$;return y=()=>{n(25,f=function(){const e=()=>navigator.userAgent.match(/BlackBerry/i),i=()=>navigator.userAgent.match(/iPhone|iPad|iPod/i),n=()=>navigator.userAgent.match(/Opera Mini/i),t=()=>navigator.userAgent.match(/IEMobile/i);return navigator.userAgent.match(/Android/i)||e()||i()||n()||t()}())},O().$$.on_mount.push(y),e.$$set=e=>{"clues"in e&&n(18,t=e.clues),"cells"in e&&n(0,r=e.cells),"focusedDirection"in e&&n(17,a=e.focusedDirection),"focusedCellIndex"in e&&n(1,o=e.focusedCellIndex),"focusedCell"in e&&n(19,s=e.focusedCell),"isRevealing"in e&&n(2,c=e.isRevealing),"isDisableHighlight"in e&&n(3,l=e.isDisableHighlight),"stacked"in e&&n(4,d=e.stacked),"revealDuration"in e&&n(5,u=e.revealDuration),"showKeyboard"in e&&n(20,h=e.showKeyboard)},e.$$.update=()=>{1&e.$$.dirty[0]&&n(7,E=Math.max(...r.map(e=>e.x))+1),1&e.$$.dirty[0]&&n(8,x=Math.max(...r.map(e=>e.y))+1),34603008&e.$$.dirty[0]&&n(9,_="boolean"==typeof h?h:f),131075&e.$$.dirty[0]&&k(),131073&e.$$.dirty[0]&&($=[...r].sort((e,i)=>"down"==a?e.x-i.x||e.y-i.y:e.y-i.y||e.x-i.x))},[r,o,c,l,d,u,g,E,x,_,A,function(e){w+=-e,n(0,r=p[w]||r),n(1,o=m[w]||o)},v,function(e=1){const i=s.clueNumbers[a];let c=t.filter(n=>(e>0?n.number>i:n.number<i)&&n.direction==a);e<0&&(c=c.reverse());let l=c[Math.abs(e)-1];l||(b(),l=t.filter(e=>e.direction==a)[0]),n(1,o=r.findIndex(e=>e.x==l.x&&e.y==l.y))},function(e,i){if(a!=e)n(17,a=e);else{const n=(({diff:e,cells:i,direction:n,focusedCell:t})=>{const r="across"==n?"x":"y",a="across"==n?"y":"x",o=t[r],s=Math.abs(e),c=e<0,l=i.filter(e=>e[a]==t[a]&&(c?e[r]<o:e[r]>o)).map(e=>({...e,absDiff:Math.abs(o-e[r])}));return l.sort((e,i)=>e.absDiff-i.absDiff),l[s-1]})({diff:i,cells:r,direction:e,focusedCell:s});if(!n)return;v(n.index)}},b,function({detail:e}){A(o,"delete"===e?"":e,"delete"===e?-1:1)},a,t,s,h]}class qe extends fe{constructor(e){super(),ge(this,e,je,Ve,o,{clues:18,cells:0,focusedDirection:17,focusedCellIndex:1,focusedCell:19,isRevealing:2,isDisableHighlight:3,stacked:4,revealDuration:5,showKeyboard:20},[-1,-1])}}function Ye(e,i){return{update(i){if(!i)return;const n=e.parentElement.parentElement;if(!n)return;const t=e.offsetTop,r=n.scrollTop,a=r+n.clientHeight;(t<r+50||t>a-50)&&n.scrollTo({top:t,behavior:"smooth"})}}}function Qe(i){let n,t,o,s,c,l,d,u;return{c(){n=A("li"),t=A("button"),o=b(i[0]),s=b(".\n    "),c=b(i[1]),$(t,"class","clue svelte-1i661i1"),D(t,"is-number-focused",i[3]),D(t,"is-direction-focused",i[4]),D(t,"is-filled",i[2])},m(r,h){var w;f(r,n,h),g(n,t),g(t,o),g(t,s),g(t,c),i[8](n),d||(u=[_(t,"click",(function(){a(i[5])&&i[5].apply(this,arguments)})),(w=l=Ye.call(null,n,i[7]),w&&a(w.destroy)?w.destroy:e)],d=!0)},p(e,[n]){i=e,1&n&&R(o,i[0]),2&n&&R(c,i[1]),8&n&&D(t,"is-number-focused",i[3]),16&n&&D(t,"is-direction-focused",i[4]),4&n&&D(t,"is-filled",i[2]),l&&a(l.update)&&128&n&&l.update.call(null,i[7])},i:e,o:e,d(e){e&&y(n),i[8](null),d=!1,r(u)}}}function Ze(e,i,n){let t,r,{number:a}=i,{clue:o}=i,{isFilled:s}=i,{isNumberFocused:c=!1}=i,{isDirectionFocused:l=!1}=i,{onFocus:d=(()=>{})}=i;return e.$$set=e=>{"number"in e&&n(0,a=e.number),"clue"in e&&n(1,o=e.clue),"isFilled"in e&&n(2,s=e.isFilled),"isNumberFocused"in e&&n(3,c=e.isNumberFocused),"isDirectionFocused"in e&&n(4,l=e.isDirectionFocused),"onFocus"in e&&n(5,d=e.onFocus)},e.$$.update=()=>{8&e.$$.dirty&&n(7,r=c)},[a,o,s,c,l,d,t,r,function(e){K[e?"unshift":"push"](()=>{t=e,n(6,t)})}]}class Xe extends fe{constructor(e){super(),ge(this,e,Ze,Qe,o,{number:0,clue:1,isFilled:2,isNumberFocused:3,isDirectionFocused:4,onFocus:5})}}function ei(e,i,n){const t=e.slice();return t[6]=i[n],t}function ii(e){let i,n;function t(...i){return e[5](e[6],...i)}return i=new Xe({props:{clue:e[6].clue,number:e[6].number,isFilled:e[6].isFilled,isNumberFocused:e[2][e[0]]===e[6].number,isDirectionFocused:e[3],onFocus:t}}),{c(){he(i.$$.fragment)},m(e,t){we(i,e,t),n=!0},p(n,r){e=n;const a={};2&r&&(a.clue=e[6].clue),2&r&&(a.number=e[6].number),2&r&&(a.isFilled=e[6].isFilled),7&r&&(a.isNumberFocused=e[2][e[0]]===e[6].number),8&r&&(a.isDirectionFocused=e[3]),18&r&&(a.onFocus=t),i.$set(a)},i(e){n||(se(i.$$.fragment,e),n=!0)},o(e){ce(i.$$.fragment,e),n=!1},d(e){pe(i,e)}}}function ni(e){let i,n,t,r,a,o,s=e[1],c=[];for(let i=0;i<s.length;i+=1)c[i]=ii(ei(e,s,i));const l=e=>ce(c[e],1,1,()=>{c[e]=null});return{c(){i=A("p"),n=b(e[0]),t=E(),r=A("div"),a=A("ul");for(let e=0;e<c.length;e+=1)c[e].c();$(i,"class","svelte-1k6v3oi"),$(a,"class","svelte-1k6v3oi"),$(r,"class","list svelte-1k6v3oi")},m(e,s){f(e,i,s),g(i,n),f(e,t,s),f(e,r,s),g(r,a);for(let e=0;e<c.length;e+=1)c[e].m(a,null);o=!0},p(e,[i]){if((!o||1&i)&&R(n,e[0]),31&i){let n;for(s=e[1],n=0;n<s.length;n+=1){const t=ei(e,s,n);c[n]?(c[n].p(t,i),se(c[n],1)):(c[n]=ii(t),c[n].c(),se(c[n],1),c[n].m(a,null))}for(ae(),n=s.length;n<c.length;n+=1)l(n);oe()}},i(e){if(!o){for(let e=0;e<s.length;e+=1)se(c[e]);o=!0}},o(e){c=c.filter(Boolean);for(let e=0;e<c.length;e+=1)ce(c[e]);o=!1},d(e){e&&y(i),e&&y(t),e&&y(r),k(c,e)}}}function ti(e,i,n){let{direction:t}=i,{clues:r}=i,{focusedClueNumbers:a}=i,{isDirectionFocused:o}=i,{onClueFocus:s}=i;return e.$$set=e=>{"direction"in e&&n(0,t=e.direction),"clues"in e&&n(1,r=e.clues),"focusedClueNumbers"in e&&n(2,a=e.focusedClueNumbers),"isDirectionFocused"in e&&n(3,o=e.isDirectionFocused),"onClueFocus"in e&&n(4,s=e.onClueFocus)},[t,r,a,o,s,e=>s(e)]}class ri extends fe{constructor(e){super(),ge(this,e,ti,ni,o,{direction:0,clues:1,focusedClueNumbers:2,isDirectionFocused:3,onClueFocus:4})}}function ai(i){let n,t,a,o,s,c,l,d,u;return{c(){n=A("div"),t=A("button"),t.innerHTML='<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg>',a=E(),o=A("p"),s=b(i[1]),c=E(),l=A("button"),l.innerHTML='<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>',$(t,"class","svelte-1k30qnz"),$(o,"class","svelte-1k30qnz"),$(l,"class","svelte-1k30qnz"),$(n,"class","bar svelte-1k30qnz")},m(e,r){f(e,n,r),g(n,t),g(n,a),g(n,o),g(o,s),g(n,c),g(n,l),d||(u=[_(t,"click",i[3]),_(l,"click",i[4])],d=!0)},p(e,[i]){2&i&&R(s,e[1])},i:e,o:e,d(e){e&&y(n),d=!1,r(u)}}}function oi(e,i,n){const t=G();let{currentClue:r}=i;let a;return e.$$set=e=>{"currentClue"in e&&n(0,r=e.currentClue)},e.$$.update=()=>{1&e.$$.dirty&&n(1,a=r.clue)},[r,a,t,()=>t("nextClue",r.index-1),()=>t("nextClue",r.index+1)]}class si extends fe{constructor(e){super(),ge(this,e,oi,ai,o,{currentClue:0})}}function ci(e,i,n){const t=e.slice();return t[11]=i[n],t}function li(e){let i,n,t=["across","down"],r=[];for(let i=0;i<2;i+=1)r[i]=ui(ci(e,t,i));const a=e=>ce(r[e],1,1,()=>{r[e]=null});return{c(){i=A("div");for(let e=0;e<2;e+=1)r[e].c();$(i,"class","clues--list")},m(e,t){f(e,i,t);for(let e=0;e<2;e+=1)r[e].m(i,null);n=!0},p(e,n){if(43&n){let o;for(t=["across","down"],o=0;o<2;o+=1){const a=ci(e,t,o);r[o]?(r[o].p(a,n),se(r[o],1)):(r[o]=ui(a),r[o].c(),se(r[o],1),r[o].m(i,null))}for(ae(),o=2;o<2;o+=1)a(o);oe()}},i(e){if(!n){for(let e=0;e<2;e+=1)se(r[e]);n=!0}},o(e){r=r.filter(Boolean);for(let e=0;e<2;e+=1)ce(r[e]);n=!1},d(e){e&&y(i),k(r,e)}}}function di(e){let i,n,t;return n=new si({props:{currentClue:e[4]}}),n.$on("nextClue",e[6]),{c(){i=A("div"),he(n.$$.fragment),$(i,"class","clues--stacked svelte-16o7lzd")},m(e,r){f(e,i,r),we(n,i,null),t=!0},p(e,i){const t={};16&i&&(t.currentClue=e[4]),n.$set(t)},i(e){t||(se(n.$$.fragment,e),t=!0)},o(e){ce(n.$$.fragment,e),t=!1},d(e){e&&y(i),pe(n)}}}function ui(e){let i,n;function t(...i){return e[10](e[11],...i)}return i=new ri({props:{direction:e[11],focusedClueNumbers:e[3],clues:e[1].filter(t),isDirectionFocused:e[0]===e[11],onClueFocus:e[5]}}),{c(){he(i.$$.fragment)},m(e,t){we(i,e,t),n=!0},p(n,r){e=n;const a={};8&r&&(a.focusedClueNumbers=e[3]),2&r&&(a.clues=e[1].filter(t)),1&r&&(a.isDirectionFocused=e[0]===e[11]),i.$set(a)},i(e){n||(se(i.$$.fragment,e),n=!0)},o(e){ce(i.$$.fragment,e),n=!1},d(e){pe(i,e)}}}function hi(e){let i,n,t,r;const a=[di,li],o=[];function s(e,i){return e[2]?0:1}return n=s(e),t=o[n]=a[n](e),{c(){i=A("section"),t.c(),$(i,"class","clues svelte-16o7lzd"),D(i,"stacked",e[2])},m(e,t){f(e,i,t),o[n].m(i,null),r=!0},p(e,[r]){let c=n;n=s(e),n===c?o[n].p(e,r):(ae(),ce(o[c],1,1,()=>{o[c]=null}),oe(),t=o[n],t||(t=o[n]=a[n](e),t.c()),se(t,1),t.m(i,null)),4&r&&D(i,"stacked",e[2])},i(e){r||(se(t),r=!0)},o(e){ce(t),r=!1},d(e){e&&y(i),o[n].d()}}}function wi(e,i,n){let{clues:t}=i,{cellIndexMap:r}=i,{focusedDirection:a}=i,{focusedCellIndex:o}=i,{focusedCell:s}=i,{stacked:c}=i;function l({direction:e,id:i}){n(0,a=e),n(7,o=r[i]||0)}let d,u;return e.$$set=e=>{"clues"in e&&n(1,t=e.clues),"cellIndexMap"in e&&n(8,r=e.cellIndexMap),"focusedDirection"in e&&n(0,a=e.focusedDirection),"focusedCellIndex"in e&&n(7,o=e.focusedCellIndex),"focusedCell"in e&&n(9,s=e.focusedCell),"stacked"in e&&n(2,c=e.stacked)},e.$$.update=()=>{512&e.$$.dirty&&n(3,d=s.clueNumbers||{}),11&e.$$.dirty&&n(4,u=t.find(e=>e.direction===a&&e.number===d[a]))},[a,t,c,d,u,l,function({detail:e}){let i=e;i<0?i=t.length-1:i>t.length-1&&(i=0);const{direction:n,id:r}=t[i];l({direction:n,id:r})},o,r,s,(e,i)=>i.direction===e]}class pi extends fe{constructor(e){super(),ge(this,e,wi,hi,o,{clues:1,cellIndexMap:8,focusedDirection:0,focusedCellIndex:7,focusedCell:9,stacked:2})}}function mi(e){return e*e}function gi(e,{delay:n=0,duration:t=400,easing:r=i}){const a=+getComputedStyle(e).opacity;return{delay:n,duration:t,easing:r,css:e=>"opacity: "+e*a}}function fi(e,i,n){const t=e.slice();return t[8]=i[n][0],t[9]=i[n][1],t[10]=i[n][2],t[12]=n,t}function yi(e){let i,n,t,r,a=e[8]+"";return{c(){i=v("g"),n=v("g"),$(n,"fill",t=e[9]),$(n,"style",r=[`--rotation: ${360*Math.random()}deg`,`animation-delay: ${mi(e[12]/e[0])}s`,`animation-duration: ${e[1]*e[2](.7,1)}s`].join(";")),$(n,"class","svelte-15wt7c8"),L(i,"transform","scale("+e[10]+")"),$(i,"class","svelte-15wt7c8")},m(e,t){f(e,i,t),g(i,n),n.innerHTML=a},p(e,i){3&i&&r!==(r=[`--rotation: ${360*Math.random()}deg`,`animation-delay: ${mi(e[12]/e[0])}s`,`animation-duration: ${e[1]*e[2](.7,1)}s`].join(";"))&&$(n,"style",r)},d(e){e&&y(i)}}}function ki(i){let n,t=i[3],r=[];for(let e=0;e<t.length;e+=1)r[e]=yi(fi(i,t,e));return{c(){n=v("svg");for(let e=0;e<r.length;e+=1)r[e].c();$(n,"class","confetti svelte-15wt7c8"),$(n,"viewBox","-10 -10 10 10")},m(e,i){f(e,n,i);for(let e=0;e<r.length;e+=1)r[e].m(n,null)},p(e,[i]){if(15&i){let a;for(t=e[3],a=0;a<t.length;a+=1){const o=fi(e,t,a);r[a]?r[a].p(o,i):(r[a]=yi(o),r[a].c(),r[a].m(n,null))}for(;a<r.length;a+=1)r[a].d(1);r.length=t.length}},i:e,o:e,d(e){e&&y(n),k(r,e)}}}function Ai(e,i,n){let{numberOfElements:t=50}=i,{durationInSeconds:r=2}=i,{colors:a=["#fff","#c7ecee","#778beb","#f7d794","#63cdda","#cf6a87","#e77f67","#786fa6","#FDA7DF","#4b7bec","#475c83"]}=i;const o=e=>e[Math.round(Math.random()*e.length)],s=e=>new Array(30).fill(0).map(()=>e),c=[...s('<circle r="3" />'),...s('<path d="M3.83733 4.73234C4.38961 4.73234 4.83733 4.28463 4.83733 3.73234C4.83733 3.18006 4.38961 2.73234 3.83733 2.73234C3.28505 2.73234 2.83733 3.18006 2.83733 3.73234C2.83733 4.28463 3.28505 4.73234 3.83733 4.73234ZM3.83733 6.73234C5.49418 6.73234 6.83733 5.38919 6.83733 3.73234C6.83733 2.07549 5.49418 0.732341 3.83733 0.732341C2.18048 0.732341 0.83733 2.07549 0.83733 3.73234C0.83733 5.38919 2.18048 6.73234 3.83733 6.73234Z" />'),...s('<path d="M4.29742 2.26041C3.86864 2.1688 3.20695 2.21855 2.13614 3.0038C1.69078 3.33041 1.06498 3.23413 0.738375 2.78876C0.411774 2.3434 0.508051 1.7176 0.953417 1.39099C2.32237 0.387097 3.55827 0.0573281 4.71534 0.304565C5.80081 0.536504 6.61625 1.24716 7.20541 1.78276C7.28295 1.85326 7.35618 1.92051 7.4263 1.9849C7.64841 2.18888 7.83929 2.36418 8.03729 2.52315C8.29108 2.72692 8.48631 2.8439 8.64952 2.90181C8.7915 2.95219 8.91895 2.96216 9.07414 2.92095C9.24752 2.8749 9.5134 2.7484 9.88467 2.42214C10.2995 2.05757 10.9314 2.09833 11.2959 2.51319C11.6605 2.92805 11.6198 3.5599 11.2049 3.92447C10.6816 4.38435 10.1478 4.70514 9.58752 4.85394C9.00909 5.00756 8.469 4.95993 7.9807 4.78667C7.51364 4.62093 7.11587 4.34823 6.78514 4.08268C6.53001 3.87783 6.27248 3.64113 6.04114 3.4285C5.97868 3.37109 5.91814 3.31544 5.86006 3.26264C5.25645 2.7139 4.79779 2.36733 4.29742 2.26041Z" />'),...s('<rect width="4" height="4" x="-2" y="-2" />'),'<path d="M -5 5 L 0 -5 L 5 5 Z" />',..."ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map(e=>`<text style="font-weight: 700">${e}</text>`)],l=new Array(t).fill(0).map((e,i)=>[o(c),o(a),Math.random()]);return e.$$set=e=>{"numberOfElements"in e&&n(0,t=e.numberOfElements),"durationInSeconds"in e&&n(1,r=e.durationInSeconds),"colors"in e&&n(4,a=e.colors)},[t,r,(e,i)=>Math.random()*(i-e)+e,l,a]}class vi extends fe{constructor(e){super(),ge(this,e,Ai,ki,o,{numberOfElements:0,durationInSeconds:1,colors:4})}}const bi=e=>({}),Ei=e=>({});function xi(e){let i,n,t,a,o,c,d,u,h,w,p,m,k;const v=e[3].message,b=s(v,e,e[2],Ei),x=b||function(e){let i;return{c(){i=A("h3"),i.textContent="You solved it!",$(i,"class","svelte-9a7qrw")},m(e,n){f(e,i,n)},d(e){e&&y(i)}}}();let R=e[0]&&_i();return{c(){i=A("div"),n=A("div"),t=A("div"),x&&x.c(),a=E(),o=A("button"),o.textContent="View puzzle",c=E(),R&&R.c(),u=E(),h=A("div"),$(t,"class","message svelte-9a7qrw"),$(o,"class","svelte-9a7qrw"),$(n,"class","content svelte-9a7qrw"),$(i,"class","completed svelte-9a7qrw"),$(h,"class","curtain svelte-9a7qrw")},m(r,s){f(r,i,s),g(i,n),g(n,t),x&&x.m(t,null),g(n,a),g(n,o),g(i,c),R&&R.m(i,null),f(r,u,s),f(r,h,s),p=!0,m||(k=[_(o,"click",e[4]),_(h,"click",e[5])],m=!0)},p(e,n){b&&b.p&&4&n&&l(b,v,e,e[2],n,bi,Ei),e[0]?R?1&n&&se(R,1):(R=_i(),R.c(),se(R,1),R.m(i,null)):R&&(ae(),ce(R,1,1,()=>{R=null}),oe())},i(e){p||(se(x,e),se(R),q(()=>{d||(d=de(i,gi,{y:20},!0)),d.run(1)}),q(()=>{w||(w=de(h,gi,{duration:250},!0)),w.run(1)}),p=!0)},o(e){ce(x,e),ce(R),d||(d=de(i,gi,{y:20},!1)),d.run(0),w||(w=de(h,gi,{duration:250},!1)),w.run(0),p=!1},d(e){e&&y(i),x&&x.d(e),R&&R.d(),e&&d&&d.end(),e&&y(u),e&&y(h),e&&w&&w.end(),m=!1,r(k)}}}function _i(e){let i,n,t;return n=new vi({}),{c(){i=A("div"),he(n.$$.fragment),$(i,"class","confetti svelte-9a7qrw")},m(e,r){f(e,i,r),we(n,i,null),t=!0},i(e){t||(se(n.$$.fragment,e),t=!0)},o(e){ce(n.$$.fragment,e),t=!1},d(e){e&&y(i),pe(n)}}}function $i(e){let i,n,t=e[1]&&xi(e);return{c(){t&&t.c(),i=x()},m(e,r){t&&t.m(e,r),f(e,i,r),n=!0},p(e,[n]){e[1]?t?(t.p(e,n),2&n&&se(t,1)):(t=xi(e),t.c(),se(t,1),t.m(i.parentNode,i)):t&&(ae(),ce(t,1,1,()=>{t=null}),oe())},i(e){n||(se(t),n=!0)},o(e){ce(t),n=!1},d(e){t&&t.d(e),e&&y(i)}}}function Ri(e,i,n){let{$$slots:t={},$$scope:r}=i,{showConfetti:a=!0}=i,o=!0;return e.$$set=e=>{"showConfetti"in e&&n(0,a=e.showConfetti),"$$scope"in e&&n(2,r=e.$$scope)},[a,o,r,t,()=>n(1,o=!1),()=>n(1,o=!1)]}class Li extends fe{constructor(e){super(),ge(this,e,Ri,$i,o,{showConfetti:0})}}const Si=e=>({}),Fi=e=>({}),Ci=e=>({}),Di=e=>({onClear:e[18],onReveal:e[19]});function Mi(e){let i,n,t,r,a,o,c,d,u,h,w,p,m,k,v,b;const x=e[26].toolbar,R=s(x,e,e[34],Di),L=R||function(e){let i,n;return i=new Re({props:{actions:e[0]}}),i.$on("event",e[20]),{c(){he(i.$$.fragment)},m(e,t){we(i,e,t),n=!0},p(e,n){const t={};1&n[0]&&(t.actions=e[0]),i.$set(t)},i(e){n||(se(i.$$.fragment,e),n=!0)},o(e){ce(i.$$.fragment,e),n=!1},d(e){pe(i,e)}}}(e);function S(i){e[27].call(null,i)}function F(i){e[28].call(null,i)}function M(i){e[29].call(null,i)}let N={clues:e[10],cellIndexMap:e[13],stacked:e[17]};function I(i){e[30].call(null,i)}function T(i){e[31].call(null,i)}function z(i){e[32].call(null,i)}void 0!==e[7]&&(N.focusedCellIndex=e[7]),void 0!==e[12]&&(N.focusedCell=e[12]),void 0!==e[6]&&(N.focusedDirection=e[6]),r=new pi({props:N}),K.push(()=>ue(r,"focusedCellIndex",S)),K.push(()=>ue(r,"focusedCell",F)),K.push(()=>ue(r,"focusedDirection",M));let P={clues:e[10],focusedCell:e[12],isRevealing:e[8],isDisableHighlight:e[16],revealDuration:e[1],showKeyboard:e[4],stacked:e[17]};void 0!==e[11]&&(P.cells=e[11]),void 0!==e[7]&&(P.focusedCellIndex=e[7]),void 0!==e[6]&&(P.focusedDirection=e[6]),u=new qe({props:P}),K.push(()=>ue(u,"cells",I)),K.push(()=>ue(u,"focusedCellIndex",T)),K.push(()=>ue(u,"focusedDirection",z));let B=e[14]&&!e[8]&&e[2]&&Ni(e);return{c(){i=A("article"),L&&L.c(),n=E(),t=A("div"),he(r.$$.fragment),d=E(),he(u.$$.fragment),m=E(),B&&B.c(),$(t,"class","play svelte-1ein5he"),D(t,"stacked",e[17]),$(i,"class",k="crossword "+e[15]+" svelte-1ein5he"),q(()=>e[33].call(i))},m(a,o){f(a,i,o),L&&L.m(i,null),g(i,n),g(i,t),we(r,t,null),g(t,d),we(u,t,null),g(i,m),B&&B.m(i,null),v=function(e,i){const n=getComputedStyle(e),t=(parseInt(n.zIndex)||0)-1;"static"===n.position&&(e.style.position="relative");const r=A("iframe");r.setAttribute("style",`display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; border: 0; opacity: 0; pointer-events: none; z-index: ${t};`),r.setAttribute("aria-hidden","true"),r.tabIndex=-1;const a=C();let o;return a?(r.src="data:text/html,<script>onresize=function(){parent.postMessage(0,'*')}<\/script>",o=_(window,"message",e=>{e.source===r.contentWindow&&i()})):(r.src="about:blank",r.onload=()=>{o=_(r.contentWindow,"resize",i)}),g(e,r),()=>{(a||o&&r.contentWindow)&&o(),y(r)}}(i,e[33].bind(i)),b=!0},p(e,n){R?R.p&&8&n[1]&&l(R,x,e,e[34],n,Ci,Di):L&&L.p&&1&n[0]&&L.p(e,n);const s={};1024&n[0]&&(s.clues=e[10]),8192&n[0]&&(s.cellIndexMap=e[13]),131072&n[0]&&(s.stacked=e[17]),!a&&128&n[0]&&(a=!0,s.focusedCellIndex=e[7],Y(()=>a=!1)),!o&&4096&n[0]&&(o=!0,s.focusedCell=e[12],Y(()=>o=!1)),!c&&64&n[0]&&(c=!0,s.focusedDirection=e[6],Y(()=>c=!1)),r.$set(s);const d={};1024&n[0]&&(d.clues=e[10]),4096&n[0]&&(d.focusedCell=e[12]),256&n[0]&&(d.isRevealing=e[8]),65536&n[0]&&(d.isDisableHighlight=e[16]),2&n[0]&&(d.revealDuration=e[1]),16&n[0]&&(d.showKeyboard=e[4]),131072&n[0]&&(d.stacked=e[17]),!h&&2048&n[0]&&(h=!0,d.cells=e[11],Y(()=>h=!1)),!w&&128&n[0]&&(w=!0,d.focusedCellIndex=e[7],Y(()=>w=!1)),!p&&64&n[0]&&(p=!0,d.focusedDirection=e[6],Y(()=>p=!1)),u.$set(d),131072&n[0]&&D(t,"stacked",e[17]),e[14]&&!e[8]&&e[2]?B?(B.p(e,n),16644&n[0]&&se(B,1)):(B=Ni(e),B.c(),se(B,1),B.m(i,null)):B&&(ae(),ce(B,1,1,()=>{B=null}),oe()),(!b||32768&n[0]&&k!==(k="crossword "+e[15]+" svelte-1ein5he"))&&$(i,"class",k)},i(e){b||(se(L,e),se(r.$$.fragment,e),se(u.$$.fragment,e),se(B),b=!0)},o(e){ce(L,e),ce(r.$$.fragment,e),ce(u.$$.fragment,e),ce(B),b=!1},d(e){e&&y(i),L&&L.d(e),pe(r),pe(u),B&&B.d(),v()}}}function Ni(e){let i,n;return i=new Li({props:{showConfetti:e[3],$$slots:{default:[Ii]},$$scope:{ctx:e}}}),{c(){he(i.$$.fragment)},m(e,t){we(i,e,t),n=!0},p(e,n){const t={};8&n[0]&&(t.showConfetti=e[3]),8&n[1]&&(t.$$scope={dirty:n,ctx:e}),i.$set(t)},i(e){n||(se(i.$$.fragment,e),n=!0)},o(e){ce(i.$$.fragment,e),n=!1},d(e){pe(i,e)}}}function Ii(e){let i;const n=e[26].complete,t=s(n,e,e[34],Fi);return{c(){t&&t.c()},m(e,n){t&&t.m(e,n),i=!0},p(e,i){t&&t.p&&8&i[1]&&l(t,n,e,e[34],i,Si,Fi)},i(e){i||(se(t,e),i=!0)},o(e){ce(t,e),i=!1},d(e){t&&t.d(e)}}}function Ti(e){let i,n,t=e[9]&&Mi(e);return{c(){t&&t.c(),i=x()},m(e,r){t&&t.m(e,r),f(e,i,r),n=!0},p(e,n){e[9]?t?(t.p(e,n),512&n[0]&&se(t,1)):(t=Mi(e),t.c(),se(t,1),t.m(i.parentNode,i)):t&&(ae(),ce(t,1,1,()=>{t=null}),oe())},i(e){n||(se(t),n=!0)},o(e){ce(t),n=!1},d(e){t&&t.d(e),e&&y(i)}}}function zi(e,i,n){let t,{$$slots:r={},$$scope:a}=i,{data:o=[]}=i,{actions:s=["clear","reveal"]}=i,{theme:c="classic"}=i,{revealDuration:l=1e3}=i,{breakpoint:d=720}=i,{revealed:u=!1}=i,{disableHighlight:h=!1}=i,{showCompleteMessage:w=!0}=i,{showConfetti:p=!0}=i,{showKeyboard:m=!1}=i,g=0,f="across",y=0,k=!1,A=[],v=[],b=[],E=[];const x=()=>{A=function(e){const i=Math.min(...e.map(e=>e.x)),n=Math.min(...e.map(e=>e.y)),t=Math.min(i,n),r=e.map(e=>({...e,x:e.x-t,y:e.y-t})).map((e,i)=>({...e,id:`${e.x}-${e.y}`}));r.sort((e,i)=>e.y-i.y||e.x-i.x);let a={},o=1;const s=r.map(e=>{let i;return a[e.id]?i=a[e.id]:(a[e.id]=i=o,o+=1),{...e,number:i}}).map(e=>{const i=e.answer.split("").map((i,n)=>{const t=e.x+("across"===e.direction?n:0),r=e.y+("down"===e.direction?n:0),a=0===n?e.number:"",o={[e.direction]:e.number},s=`${t}-${r}`,c=e.custom||"";return{id:s,number:a,clueNumbers:o,x:t,y:r,value:"",answer:i.toUpperCase(),custom:c}});return{...e,cells:i}});return s.sort((e,i)=>e.direction<i.direction?-1:e.direction>i.direction?1:e.number-i.number),s.map((e,i)=>({...e,index:i}))}(o),n(9,v=function(e){const i=[{prop:"clue",type:"string"},{prop:"answer",type:"string"},{prop:"x",type:"number"},{prop:"y",type:"number"}];let n=!1;e.forEach(e=>!!i.map(i=>{typeof e[i.prop]!==i.type&&(n=!0,console.error(`"${i.prop}" is not a ${i.type}\n`,e))}));let t=!1;const r=[].concat(...e.map(e=>e.cells));let a={};return r.forEach(e=>{a[e.id]?a[e.id]!==e.answer&&(t=!0,console.error(`cell "${e.id}" has two different values\n`,`${a[e.id]} and ${e.answer}`)):a[e.id]=e.answer}),!n&&!t}(A)),n(10,b=A.map(e=>({...e}))),n(11,E=function(e){const i=[].concat(...e.map(e=>e.cells));let n={};i.sort((e,i)=>e.y-i.y||e.x-i.x||i.number-e.number),i.forEach(e=>{n[e.id]?(n[e.id].clueNumbers={...e.clueNumbers,...n[e.id].clueNumbers},n[e.id].custom!==e.custom&&(n[e.id].custom=`${n[e.id].custom} ${e.custom}`)):n[e.id]=e});const t=Object.keys(n).map(e=>n[e]);return t.sort((e,i)=>e.y-i.y||e.x-i.x),t.map((e,i)=>({...e,index:i}))}(A)),_()};function _(){n(8,k=!1),n(7,y=0),n(6,f="across")}function $(){_(),t&&clearTimeout(t),n(11,E=E.map(e=>({...e,value:""}))),n(21,u=!1)}function R(){if(u)return!0;_(),n(11,E=E.map(e=>({...e,value:e.answer}))),n(21,u=!0),function(){n(8,k=!0),t&&clearTimeout(t);t=setTimeout(()=>{n(8,k=!1)},l+250)}()}let L,S,F,C,D,M,N;return e.$$set=e=>{"data"in e&&n(22,o=e.data),"actions"in e&&n(0,s=e.actions),"theme"in e&&n(23,c=e.theme),"revealDuration"in e&&n(1,l=e.revealDuration),"breakpoint"in e&&n(24,d=e.breakpoint),"revealed"in e&&n(21,u=e.revealed),"disableHighlight"in e&&n(25,h=e.disableHighlight),"showCompleteMessage"in e&&n(2,w=e.showCompleteMessage),"showConfetti"in e&&n(3,p=e.showConfetti),"showKeyboard"in e&&n(4,m=e.showKeyboard),"$$scope"in e&&n(34,a=e.$$scope)},e.$$.update=()=>{4194304&e.$$.dirty[0]&&x(),2176&e.$$.dirty[0]&&n(12,L=E[y]||{}),2048&e.$$.dirty[0]&&n(13,S=function(e){let i={};return e.forEach(e=>{i[e[0]]=e[1]}),i}(E.map(e=>[e.id,e.index]))),2048&e.$$.dirty[0]&&n(37,F=E.filter(e=>e.answer===e.value).length/E.length),64&e.$$.dirty[1]&&n(14,C=1==F),8388608&e.$$.dirty[0]&&n(15,D=c?"theme-"+c:""),33570816&e.$$.dirty[0]&&n(16,M=C&&h),2048&e.$$.dirty[0]&&n(10,b=b.map(e=>{e.index;const i=e.cells.map(e=>{const{value:i}=E.find(i=>i.id===e.id);return{hasValue:!!i,hasCorrect:i===e.answer}}),n=i.filter(e=>e.hasCorrect).length===e.answer.length,t=i.filter(e=>e.hasValue).length===e.answer.length;return{...e,isCorrect:n,isFilled:t}})),16777248&e.$$.dirty[0]&&n(17,N=g<d)},[s,l,w,p,m,g,f,y,k,v,b,E,L,S,C,D,M,N,$,R,function({detail:e}){"clear"===e?$():"reveal"===e&&R()},u,o,c,d,h,r,function(e){y=e,n(7,y)},function(e){L=e,n(12,L),n(11,E),n(7,y)},function(e){f=e,n(6,f)},function(e){E=e,n(11,E)},function(e){y=e,n(7,y)},function(e){f=e,n(6,f)},function(){g=this.offsetWidth,n(5,g)},a]}class Pi extends fe{constructor(e){super(),ge(this,e,zi,Ti,o,{data:22,actions:0,theme:23,revealDuration:1,breakpoint:24,revealed:21,disableHighlight:25,showCompleteMessage:2,showConfetti:3,showKeyboard:4},[-1,-1])}}function Bi(e,i,n){const t=e.slice();return t[3]=i[n].id,t[9]=i[n].value,t}function Hi(e){let i,n,t,r=e[9]+"";return{c(){i=A("option"),n=b(r),i.__value=t=e[3],i.value=i.__value},m(e,t){f(e,i,t),g(i,n)},p(e,a){4&a&&r!==(r=e[9]+"")&&R(n,r),4&a&&t!==(t=e[3])&&(i.__value=t,i.value=i.__value)},d(e){e&&y(i)}}}function Oi(e){let i,n,t,r,a,o,s,c,l,u,h,w,p,m,v,x,L,F,C,D,M,N,I,T,z,P=e[2],B=[];for(let i=0;i<P.length;i+=1)B[i]=Hi(Bi(e,P,i));return C=new Pi({props:{data:e[6],theme:e[1]}}),{c(){i=A("section"),n=A("div"),t=A("h2"),r=b(e[0]),a=E(),o=A("select");for(let e=0;e<B.length;e+=1)B[e].c();s=E(),c=A("p"),l=b("In our sample of people in\n    "),u=b(e[5]),h=b("\n    puzzles, we found that...\n    "),w=A("br"),p=E(),m=A("button"),m.innerHTML='<span class="percent svelte-122pg2r">30%</span>\n      were underrepresented minorities',v=b("\n    and\n    "),x=A("button"),x.innerHTML='<span class="percent svelte-122pg2r">10%</span> were women.',L=E(),F=A("div"),he(C.$$.fragment),D=E(),M=A("p"),M.innerHTML="<em>Note: findings were rounded to the nearest 10% in order to map to the\n        10 clues.</em>",$(t,"class","svelte-122pg2r"),void 0===e[4]&&q(()=>e[7].call(o)),$(n,"class","info svelte-122pg2r"),$(m,"class","urm svelte-122pg2r"),$(x,"class","women svelte-122pg2r"),$(c,"class","insight svelte-122pg2r"),$(M,"class","note svelte-122pg2r"),$(F,"class","xd svelte-122pg2r"),$(i,"id",e[3]),$(i,"class",N=d(e[1])+" svelte-122pg2r")},m(d,y){f(d,i,y),g(i,n),g(n,t),g(t,r),g(n,a),g(n,o);for(let e=0;e<B.length;e+=1)B[e].m(o,null);S(o,e[4]),g(i,s),g(i,c),g(c,l),g(c,u),g(c,h),g(c,w),g(c,p),g(c,m),g(c,v),g(c,x),g(i,L),g(i,F),we(C,F,null),g(F,D),g(F,M),I=!0,T||(z=_(o,"change",e[7]),T=!0)},p(e,[n]){if((!I||1&n)&&R(r,e[0]),4&n){let i;for(P=e[2],i=0;i<P.length;i+=1){const t=Bi(e,P,i);B[i]?B[i].p(t,n):(B[i]=Hi(t),B[i].c(),B[i].m(o,null))}for(;i<B.length;i+=1)B[i].d(1);B.length=P.length}20&n&&S(o,e[4]),(!I||32&n)&&R(u,e[5]);const t={};64&n&&(t.data=e[6]),2&n&&(t.theme=e[1]),C.$set(t),(!I||8&n)&&$(i,"id",e[3]),(!I||2&n&&N!==(N=d(e[1])+" svelte-122pg2r"))&&$(i,"class",N)},i(e){I||(se(C.$$.fragment,e),I=!0)},o(e){ce(C.$$.fragment,e),I=!1},d(e){e&&y(i),k(B,e),pe(C),T=!1,z()}}}function Gi(e,i,n){let t,r,a,{id:o}=i,{title:s}=i,{theme:c="classic"}=i,{puzzles:l=[]}=i,d=l[0].id;return e.$$set=e=>{"id"in e&&n(3,o=e.id),"title"in e&&n(0,s=e.title),"theme"in e&&n(1,c=e.theme),"puzzles"in e&&n(2,l=e.puzzles)},e.$$.update=()=>{var i;20&e.$$.dirty&&n(8,t=l.find(e=>e.id===d)),256&e.$$.dirty&&n(5,r=t.value),256&e.$$.dirty&&n(6,(i=t.data,a=i.map(e=>({...e,custom:`${e.race} ${e.gender}`}))))},[s,c,l,o,d,r,a,function(){d=function(e){const i=e.querySelector(":checked")||e.options[0];return i&&i.__value}(this),n(4,d),n(2,l)}]}class Wi extends fe{constructor(e){super(),ge(this,e,Gi,Oi,o,{id:3,title:0,theme:1,puzzles:2})}}var Ki=[{x:0,y:0,answer:"TRACE",direction:"across",clue:'"Hustlers" actress Lysette',race:"white",binaryRace:"white",hispanic:"FALSE",gender:"woman",name:"Trace Lysette",wiki:"https://en.wikipedia.org/wiki/Trace_Lysette",description:"American actor"},{x:2,y:0,answer:"ANITA",direction:"down",clue:'Rita\'s role in "West Side Story"',race:"urm",binaryRace:"white",hispanic:"TRUE",gender:"woman",name:"Rita Moreno",wiki:"https://en.wikipedia.org/wiki/Rita_Moreno",description:"Puerto Rican singer, dancer, and actress"},{x:3,y:0,answer:"CHE",direction:"down",clue:"Guerrilla Guevara",race:"urm",binaryRace:"white",hispanic:"TRUE",gender:"man",name:"Che Guevara",wiki:"https://en.wikipedia.org/wiki/Che_Guevara",description:"Argentine Marxist revolutionary"},{x:4,y:0,answer:"ELL",direction:"down",clue:'"I Don\'t Love You" singer Lindsay',race:"white",binaryRace:"white",hispanic:"FALSE",gender:"woman",name:"Lindsay Ell",wiki:"https://en.wikipedia.org/wiki/Lindsay_Ell",description:"Canadian musician"},{x:2,y:1,answer:"NHL",direction:"across",clue:"Willie O'Ree played in it (Abbr.)",race:"urm",binaryRace:"poc",hispanic:"FALSE",gender:"man",name:"Willie O'Ree",wiki:"https://en.wikipedia.org/wiki/Willie_O%27Ree",description:"20th-century Canadian ice hockey player"},{x:0,y:2,answer:"ARIEL",direction:"across",clue:'"Modern Family" actress Winter',race:"white",binaryRace:"white",hispanic:"FALSE",gender:"woman",name:"Ariel Winter",wiki:"https://en.wikipedia.org/wiki/Ariel_Winter",description:"American actress, model and occasional singer"},{x:0,y:2,answer:"ALI",direction:"down",clue:"Broadway star Stroker",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"woman",name:"Ali Stroker",wiki:"https://en.wikipedia.org/wiki/Ali_Stroker",description:"American actress"},{x:1,y:2,answer:"REC",direction:"down",clue:'"Parks and ___" (Amy Poehler sitcom, for short)',race:"white",binaryRace:"white",hispanic:"FALSE",gender:"woman",name:"Amy Poehler",wiki:"https://en.wikipedia.org/wiki/Amy_Poehler",description:"American actress"},{x:0,y:3,answer:"LET",direction:"across",clue:'"___ America Be America Again" (Langston Hughes poem)',race:"urm",binaryRace:"poc",hispanic:"FALSE",gender:"man",name:"Langston Hughes",wiki:"https://en.wikipedia.org/wiki/Langston_Hughes",description:"American writer and social activist"},{x:0,y:4,answer:"ICARE",direction:"across",clue:"Beyonce song about emotional investment",race:"urm",binaryRace:"poc",hispanic:"FALSE",gender:"woman",name:"Beyoncé",wiki:"https://en.wikipedia.org/wiki/Beyonc%C3%A9",description:"American singer, songwriter, producer, and actress"}],Ji=[{x:1,y:0,answer:"ALDA",direction:"across",clue:"Hawkeye Pierce portrayer Alan",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Alan Alda",wiki:"https://en.wikipedia.org/wiki/Alan_Alda",description:"American actor, director, screenwriter, comedian and author"},{x:2,y:0,answer:"LILLY",direction:"down",clue:"Pharmaceuticals giant ___ Lilly",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Eli Lilly",wiki:"https://en.wikipedia.org/wiki/Eli_Lilly",description:"American pharmacist, Union Army officer, businessman, philanthropist"},{x:3,y:0,answer:"DAE",direction:"down",clue:'Daniel ___ Kim of "Lost"',race:"urm",binaryRace:"poc",hispanic:"FALSE",gender:"man",name:"Daniel Dae Kim",wiki:"https://en.wikipedia.org/wiki/Daniel_Dae_Kim",description:"Korean American actor"},{x:4,y:0,answer:"ANNA",direction:"down",clue:"Author ___ J. Cooper",race:"urm",binaryRace:"poc",hispanic:"FALSE",gender:"woman",name:"Anna J. Cooper",wiki:"https://en.wikipedia.org/wiki/Anna_J._Cooper",description:"African-American author, educator, speaker and scholar"},{x:0,y:1,answer:"SADE",direction:"down",clue:'"The Sweetest Taboo" singer',race:"urm",binaryRace:"poc",hispanic:"FALSE",gender:"woman",name:"Sade",wiki:"https://en.wikipedia.org/wiki/Sade_(singer)",description:"Nigerian singer and songwriter"},{x:2,y:1,answer:"IAN",direction:"across",clue:'"At Seventeen" singer Janis',race:"white",binaryRace:"white",hispanic:"FALSE",gender:"woman",name:"Janis Ian",wiki:"https://en.wikipedia.org/wiki/Janis_Ian",description:"American singer-songwriter and writer"},{x:0,y:2,answer:"ALLEN",direction:"across",clue:"Patriot Ethan",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Ethan Allen",wiki:"https://en.wikipedia.org/wiki/Ethan_Allen",description:"18th-century American general"},{x:1,y:2,answer:"LEN",direction:"down",clue:"Spy novelist Deighton",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Len Deighton",wiki:"https://en.wikipedia.org/wiki/Len_Deighton",description:"British author"},{x:0,y:3,answer:"DEL",direction:"across",clue:"Singer Del Rey",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"woman",name:"Lana Del Rey",wiki:"https://en.wikipedia.org/wiki/Lana_Del_Rey",description:"American singer-songwriter"},{x:0,y:4,answer:"ENYA",direction:"across",clue:"One-named Irish singer",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"woman",name:"Enya",wiki:"https://en.wikipedia.org/wiki/Enya",description:"Irish singer, songwriter, and musician"}],Ui=[{x:2,y:0,answer:"RAY",direction:"across",clue:"Dadaism pioneer",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Man Ray",wiki:"https://en.wikipedia.org/wiki/Man_Ray",description:"American artist and photographer"},{x:2,y:0,answer:"RODIN",direction:"down",clue:'"The Thinker" sculptor',race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Auguste Rodin",wiki:"https://en.wikipedia.org/wiki/Auguste_Rodin",description:"French sculptor"},{x:3,y:0,answer:"ARI",direction:"down",clue:"Horror film director Aster",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Ari Aster",wiki:"https://en.wikipedia.org/wiki/Ari_Aster",description:"American filmmaker and screenwriter"},{x:4,y:0,answer:"YANN",direction:"down",clue:'"Life of Pi" author Martel',race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Yann Martel",wiki:"https://en.wikipedia.org/wiki/Yann_Martel",description:"Canadian author best known for the book Life of Pi"},{x:0,y:1,answer:"ERMA",direction:"down",clue:'Bombeck who wrote "I Lost Everything in the Post-Natal Depression"',race:"white",binaryRace:"white",hispanic:"FALSE",gender:"woman",name:"Erma Bombeck",wiki:"https://en.wikipedia.org/wiki/Erma_Bombeck",description:"American humorist and writer"},{x:2,y:1,answer:"ORA",direction:"across",clue:"Pop singer Ora",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"woman",name:"Rita Ora",wiki:"https://en.wikipedia.org/wiki/Rita_Ora",description:"British singer and actress"},{x:0,y:2,answer:"RIDIN",direction:"across",clue:'2006 #1 Chamillionaire hit that begins "They see me rollin\'"',race:"urm",binaryRace:"poc",hispanic:"FALSE",gender:"man",name:"Chamillionaire",wiki:"https://en.wikipedia.org/wiki/Chamillionaire",description:"American rapper, entrepreneur, and investor from Texas"},{x:1,y:2,answer:"IAN",direction:"down",clue:"Novelist McEwan",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Ian McEwan",wiki:"https://en.wikipedia.org/wiki/Ian_McEwan",description:"British author"},{x:0,y:3,answer:"MAI",direction:"across",clue:'Singer Ella with the 2018 Grammy-winning R&B hit "Boo\'d Up"',race:"urm",binaryRace:"poc",hispanic:"FALSE",gender:"woman",name:"Ella Mai",wiki:"https://en.wikipedia.org/wiki/Ella_Mai",description:"English singer"},{x:0,y:4,answer:"ANN",direction:"across",clue:'___ Petry, first female African-American writer with a million-selling novel ("The Street")',race:"urm",binaryRace:"poc",hispanic:"FALSE",gender:"woman",name:"Ann Petry",wiki:"https://en.wikipedia.org/wiki/Ann_Petry",description:"American writer and journalist"}],Vi=[{x:0,y:0,answer:"KAREN",direction:"across",clue:'Actress Gillan of "Guardians of the Galaxy"',race:"white",binaryRace:"white",hispanic:"FALSE",gender:"woman",name:"Karen Gillan",wiki:"https://en.wikipedia.org/wiki/Karen_Gillan",description:"Scottish actress, director and screenwriter"},{x:1,y:0,answer:"ADELE",direction:"down",clue:"Singer with numbered albums",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"woman",name:"Adele",wiki:"https://en.wikipedia.org/wiki/Adele",description:"English singer-songwriter"},{x:2,y:0,answer:"RENEE",direction:"down",clue:"Soprano Fleming",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"woman",name:"Renée Fleming",wiki:"https://en.wikipedia.org/wiki/Ren%C3%A9e_Fleming",description:"American opera soprano"},{x:3,y:0,answer:"ELIEL",direction:"down",clue:"Architect Saarinen",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Eliel Saarinen",wiki:"https://en.wikipedia.org/wiki/Eliel_Saarinen",description:"Finnish-American architect (1873-1950)"},{x:1,y:1,answer:"DEL",direction:"across",clue:'"The Shape of Water" director',race:"urm",binaryRace:"white",hispanic:"TRUE",gender:"man",name:"Guillermo del Toro",wiki:"https://en.wikipedia.org/wiki/Guillermo_del_Toro",description:"Mexican filmmaker and author"},{x:0,y:2,answer:"DENIS",direction:"across",clue:"Comic Denis",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Denis Leary",wiki:"https://en.wikipedia.org/wiki/Denis_Leary",description:"American actor and comedian"},{x:1,y:3,answer:"LEE",direction:"across",clue:'Poe\'s "Annabel __"',race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Edgar Allan Poe",wiki:"https://en.wikipedia.org/wiki/Edgar_Allan_Poe",description:"19th-century American author, poet, editor and literary critic"},{x:0,y:4,answer:"PEELE",direction:"across",clue:'"The Twilight Zone" (2019) host Jordan',race:"urm",binaryRace:"poc",hispanic:"FALSE",gender:"man",name:"Jordan Peele",wiki:"https://en.wikipedia.org/wiki/Jordan_Peele",description:"American actor, comedian, writer, and director"}],ji=[{x:0,y:0,answer:"QUINN",direction:"across",clue:'"Elementary" actor Quinn',race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Aidan Quinn",wiki:"https://en.wikipedia.org/wiki/Aidan_Quinn",description:"American actor"},{x:2,y:0,answer:"IRENE",direction:"down",clue:"Marie Curie's scientist daughter",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"woman",name:"Irène Joliot-Curie",wiki:"https://en.wikipedia.org/wiki/Ir%C3%A8ne_Joliot-Curie",description:"French scientist"},{x:3,y:0,answer:"NAS",direction:"down",clue:'Lil ___ X ("Rodeo" rapper)',race:"urm",binaryRace:"poc",hispanic:"FALSE",gender:"man",name:"Lil Nas X",wiki:"https://en.wikipedia.org/wiki/Lil_Nas_X",description:"American rapper, singer, and songwriter from Georgia"},{x:4,y:0,answer:"NYE",direction:"down",clue:"Bill of scientific information",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Bill Nye",wiki:"https://en.wikipedia.org/wiki/Bill_Nye",description:"American science educator, comedian, television host, actor, writer, scientist and former mechanical engineer"},{x:2,y:1,answer:"RAY",direction:"across",clue:'Ray who\'s the subject of the 2016 biopic "The Founder"',race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Ray Kroc",wiki:"https://en.wikipedia.org/wiki/Ray_Kroc",description:"American businessman"},{x:0,y:2,answer:"REESE",direction:"across",clue:"She played June to Joaquin's Johnny",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"woman",name:"Reese Witherspoon",wiki:"https://en.wikipedia.org/wiki/Reese_Witherspoon",description:"American actress and producer"},{x:0,y:2,answer:"RAP",direction:"down",clue:"Drake's forte",race:"urm",binaryRace:"poc",hispanic:"FALSE",gender:"man",name:"Drake",wiki:"https://en.wikipedia.org/wiki/Drake_(musician)",description:"Canadian rapper, singer, songwriter, and actor"},{x:1,y:2,answer:"ENO",direction:"down",clue:"Musician who composed the Windows 95 start-up chime",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Brian Eno",wiki:"https://en.wikipedia.org/wiki/Brian_Eno",description:"English musician, composer, record producer and visual artist"},{x:0,y:3,answer:"ANN",direction:"across",clue:'"Bel Canto" author Patchett',race:"white",binaryRace:"white",hispanic:"FALSE",gender:"woman",name:"Ann Patchett",wiki:"https://en.wikipedia.org/wiki/Ann_Patchett",description:"American novelist and memoirist"},{x:0,y:4,answer:"POEMS",direction:"across",clue:"Frost lines",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Robert Frost",wiki:"https://en.wikipedia.org/wiki/Robert_Frost",description:"American poet"}],qi=[{x:1,y:0,answer:"KERR",direction:"across",clue:"Deborah ___.",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"woman",name:"Deborah Kerr",wiki:"https://en.wikipedia.org/wiki/Deborah_Kerr",description:"British film and television actress"},{x:2,y:0,answer:"ELMER",direction:"down",clue:"Newsman Davis.",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Elmer Davis",wiki:"https://en.wikipedia.org/wiki/Elmer_Davis",description:"American politician"},{x:3,y:0,answer:"RIO",direction:"down",clue:"President Carlos Arroyo Del ___ of Ecuador.",race:"urm",binaryRace:"white",hispanic:"TRUE",gender:"man",name:"Carlos Alberto Arroyo del Rio",wiki:"https://en.wikipedia.org/wiki/Carlos_Alberto_Arroyo_del_R%C3%ADo",description:"President of Ecuador (1939) / (1940 - 1944)"},{x:4,y:0,answer:"RENE",direction:"down",clue:'"Good King ___."',race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"René of Anjou",wiki:"https://en.wikipedia.org/wiki/Ren%C3%A9_of_Anjou",description:"15th-century French prince, briefly King of Naples"},{x:0,y:1,answer:"TSAR",direction:"down",clue:"He died at Ekaterinburg, 1918.",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Nicholas II of Russia",wiki:"https://en.wikipedia.org/wiki/Nicholas_II_of_Russia",description:"Emperor of All Russia"},{x:2,y:1,answer:"LIE",direction:"across",clue:"Mr. Lie.",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Trygve Lie",wiki:"https://en.wikipedia.org/wiki/Trygve_Lie",description:"1st Secretary-General of the United Nations"},{x:0,y:2,answer:"SIMON",direction:"across",clue:"British Foreign Secretary, 1931–35.",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"John Simon",wiki:"https://en.wikipedia.org/wiki/John_Simon,_1st_Viscount_Simon",description:"British politician"},{x:1,y:2,answer:"IRA",direction:"down",clue:"___ Gershwin.",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Ira Gershwin",wiki:"https://en.wikipedia.org/wiki/Ira_Gershwin",description:"American lyricist (1896-1983)"},{x:0,y:3,answer:"ARE",direction:"across",clue:"Second note of Guido's scale.",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Guido of Arezzo",wiki:"https://en.wikipedia.org/wiki/Guido_of_Arezzo",description:"11th century Italian monk, inventor of musical notaticulo"},{x:0,y:4,answer:"RARE",direction:"across",clue:'"Success is a ___ paint"—Suckling.',race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"John Suckling",wiki:"https://en.wikipedia.org/wiki/John_Suckling_(poet)",description:"17th-century English poet and playwright"}],Yi=[{x:2,y:0,answer:"ORR",direction:"across",clue:"Lord Boyd ___.",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"John Boyd Orr",wiki:"https://en.wikipedia.org/wiki/John_Boyd_Orr",description:"Scottish nutritionist, Director-General of the United Nations Food and Agriculture Organization (1880-1971)"},{x:2,y:0,answer:"OWENS",direction:"down",clue:"U. S. track star.",race:"urm",binaryRace:"poc",hispanic:"FALSE",gender:"man",name:"Jesse Owens",wiki:"https://en.wikipedia.org/wiki/Jesse_Owens",description:"American track and field athlete"},{x:3,y:0,answer:"RENI",direction:"down",clue:"Italian painter.",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Guido Reni",wiki:"https://en.wikipedia.org/wiki/Guido_Reni",description:"17th-century Bolognese painter"},{x:4,y:0,answer:"RYAN",direction:"down",clue:'Star of "Men in War."',race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Robert Ryan",wiki:"https://en.wikipedia.org/wiki/Robert_Ryan",description:"American actor"},{x:0,y:1,answer:"DEWEY",direction:"across",clue:"Noted librarian.",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Melvil Dewey",wiki:"https://en.wikipedia.org/wiki/Melvil_Dewey",description:"American librarian and educator"},{x:0,y:1,answer:"DELA",direction:"down",clue:"Mazo ___ Roche.",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"woman",name:"Mazo de la Roche",wiki:"https://en.wikipedia.org/wiki/Mazo_de_la_Roche",description:"Canadian writer"},{x:1,y:1,answer:"ELEE",direction:"down",clue:"Robert ___.",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Robert E. Lee",wiki:"https://en.wikipedia.org/wiki/Robert_E._Lee",description:"Confederate States Army commander"},{x:0,y:2,answer:"ELENA",direction:"across",clue:"Former Queen of Italy.",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"woman",name:"Elena of Montenegro",wiki:"https://en.wikipedia.org/wiki/Elena_of_Montenegro",description:"Queen consort of Italy"},{x:0,y:3,answer:"LENIN",direction:"across",clue:"Vladimir Ilich Ulianov.",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Vladimir Lenin",wiki:"https://en.wikipedia.org/wiki/Vladimir_Lenin",description:"Russian politician, communist theorist, and founder of the Soviet Union"},{x:0,y:4,answer:"AES",direction:"across",clue:"Political monogram.",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Adlai Stevenson II",wiki:"https://en.wikipedia.org/wiki/Adlai_Stevenson_II",description:"American politician"}],Qi=[{x:0,y:0,answer:"READE",direction:"across",clue:"British novelist.",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Charles Reade",wiki:"https://en.wikipedia.org/wiki/Charles_Reade",description:"British writer"},{x:2,y:0,answer:"ALLEN",direction:"down",clue:"Famous TV pioneer.",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Allen B. DuMont",wiki:"https://en.wikipedia.org/wiki/Allen_B._DuMont",description:"American electronics engineer and inventor"},{x:3,y:0,answer:"DEL",direction:"down",clue:"Del Sarto of Florence.",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Andrea del Sarto",wiki:"https://en.wikipedia.org/wiki/Andrea_del_Sarto",description:"Italian painter (1486-1530)"},{x:4,y:0,answer:"EVA",direction:"down",clue:"Stowe character.",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"woman",name:"Harriet Beecher Stowe",wiki:"https://en.wikipedia.org/wiki/Harriet_Beecher_Stowe",description:"19th-century American abolitionist and author"},{x:2,y:1,answer:"LEV",direction:"across",clue:"Real first name of 38 Down.",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Leon Trotsky",wiki:"https://en.wikipedia.org/wiki/Leon_Trotsky",description:"Marxist revolutionary from Ukraine"},{x:0,y:2,answer:"FALLA",direction:"across",clue:"Composer de Falla.",race:"urm",binaryRace:"white",hispanic:"TRUE",gender:"man",name:"Manuel de Falla",wiki:"https://en.wikipedia.org/wiki/Manuel_de_Falla",description:"Spanish composer (1876-1946)"},{x:0,y:2,answer:"FDR",direction:"down",clue:"The 6c stamp man.",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Franklin D. Roosevelt",wiki:"https://en.wikipedia.org/wiki/Franklin_D._Roosevelt",description:"32nd president of the United States"},{x:1,y:2,answer:"ADE",direction:"down",clue:"American humorist.",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"George Ade",wiki:"https://en.wikipedia.org/wiki/George_Ade",description:"American writer, newspaper columnist and playwright"},{x:0,y:3,answer:"DDE",direction:"across",clue:"Presidential initials.",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Dwight D. Eisenhower",wiki:"https://en.wikipedia.org/wiki/Dwight_D._Eisenhower",description:"American army general and 34th president of the United States (1890–1969)"},{x:0,y:4,answer:"RENES",direction:"across",clue:"Descartes and others.",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"René Descartes",wiki:"https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes",description:"17th-century French philosopher, mathematician, and scientist"}],Zi=[{x:2,y:0,answer:"ABE",direction:"across",clue:"Man from Illinois",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Abraham Lincoln",wiki:"https://en.wikipedia.org/wiki/Abraham_Lincoln",description:"American politician and 16th president of the United States"},{x:2,y:0,answer:"ARLEN",direction:"down",clue:'"Green Hat" author',race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Michael Arlen",wiki:"https://en.wikipedia.org/wiki/Michael_Arlen",description:"Armenian writer"},{x:3,y:0,answer:"BEA",direction:"down",clue:"Actress Arthur",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"woman",name:"Bea Arthur",wiki:"https://en.wikipedia.org/wiki/Bea_Arthur",description:"American actress, singer, and comedian"},{x:4,y:0,answer:"EDNA",direction:"down",clue:"Millay",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"woman",name:"Edna St. Vincent Millay",wiki:"https://en.wikipedia.org/wiki/Edna_St._Vincent_Millay",description:"American poet"},{x:0,y:1,answer:"FALK",direction:"down",clue:"Stage and film actor",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Peter Falk",wiki:"https://en.wikipedia.org/wiki/Peter_Falk",description:"American actor"},{x:2,y:1,answer:"RED",direction:"across",clue:"Mr. Buttons",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Red Buttons",wiki:"https://en.wikipedia.org/wiki/Red_Buttons",description:"American comedian and actor"},{x:0,y:2,answer:"ALLAN",direction:"across",clue:'Poe tale, with "The"',race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Edgar Allan Poe",wiki:"https://en.wikipedia.org/wiki/Edgar_Allan_Poe",description:"19th-century American author, poet, editor and literary critic"},{x:1,y:2,answer:"LEO",direction:"down",clue:"Durocher",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Leo Durocher",wiki:"https://en.wikipedia.org/wiki/Leo_Durocher",description:"American baseball player and manager"},{x:0,y:3,answer:"LEE",direction:"across",clue:"Trevino",race:"urm",binaryRace:"white",hispanic:"TRUE",gender:"man",name:"Lee Trevino",wiki:"https://en.wikipedia.org/wiki/Lee_Trevino",description:"American golfer"},{x:0,y:4,answer:"KON",direction:"across",clue:"___-Tiki (Heyerdahl boat)",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Thor Heyerdahl",wiki:"https://en.wikipedia.org/wiki/Thor_Heyerdahl",description:"Norwegian anthropologist and adventurer (1914–2002)"}],Xi=[{x:1,y:0,answer:"ROMA",direction:"across",clue:"Caesar's urbs",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Julius Caesar",wiki:"https://en.wikipedia.org/wiki/Julius_Caesar",description:"Roman general and dictator"},{x:2,y:0,answer:"OSLER",direction:"down",clue:"Canadian physician",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"William Osler",wiki:"https://en.wikipedia.org/wiki/William_Osler",description:"Canadian physician and co-founder of Johns Hopkins Hospital"},{x:3,y:0,answer:"MET",direction:"down",clue:"Showcase for a Pavarotti",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Luciano Pavarotti",wiki:"https://en.wikipedia.org/wiki/Luciano_Pavarotti",description:"Italian operatic tenor"},{x:4,y:0,answer:"ANA",direction:"down",clue:"Actress Alicia",race:"urm",binaryRace:"white",hispanic:"TRUE",gender:"woman",name:"Ana Alicia",wiki:"https://en.wikipedia.org/wiki/Ana_Alicia",description:"American actress"},{x:2,y:1,answer:"SEN",direction:"across",clue:"J.F.K.: 1953-61",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"John F. Kennedy",wiki:"https://en.wikipedia.org/wiki/John_F._Kennedy",description:"35th president of the United States"},{x:0,y:2,answer:"DELTA",direction:"across",clue:'Welty\'s "___ Wedding"',race:"white",binaryRace:"white",hispanic:"FALSE",gender:"woman",name:"Eudora Welty",wiki:"https://en.wikipedia.org/wiki/Eudora_Welty",description:"American short story writer, novelist and photographer"},{x:0,y:2,answer:"DON",direction:"down",clue:"Don Sutton is one",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Don Sutton",wiki:"https://en.wikipedia.org/wiki/Don_Sutton",description:"American baseball player"},{x:1,y:2,answer:"EDE",direction:"down",clue:"Basil ___, noted painter of birds",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Basil Ede",wiki:"https://en.wikipedia.org/wiki/Basil_Ede",description:"English artist (1931-2016)"},{x:0,y:3,answer:"ODE",direction:"across",clue:"Pindar product",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Pindar",wiki:"https://en.wikipedia.org/wiki/Pindar",description:"Ancient Greek lyric poet from Thebes"},{x:0,y:4,answer:"NERI",direction:"across",clue:"St. Philip ___",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Philip Neri",wiki:"https://en.wikipedia.org/wiki/Philip_Neri",description:"Italian Roman Catholic saint"}],en=[{x:1,y:0,answer:"EGAN",direction:"across",clue:"Richard ___, actor from San Francisco",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Richard Egan",wiki:"https://en.wikipedia.org/wiki/Richard_Egan_(actor)",description:"American actor (1921-1987)"},{x:2,y:0,answer:"GILDA",direction:"down",clue:"Hayworth title role",race:"urm",binaryRace:"white",hispanic:"TRUE",gender:"woman",name:"Rita Hayworth",wiki:"https://en.wikipedia.org/wiki/Rita_Hayworth",description:"American actress, dancer and director (1918-1987)"},{x:3,y:0,answer:"ARI",direction:"down",clue:"Jackie's second spouse",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Aristotle Onassis",wiki:"https://en.wikipedia.org/wiki/Aristotle_Onassis",description:"Greek shipping magnate"},{x:4,y:0,answer:"NAN",direction:"down",clue:"Photographer Goldin",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"woman",name:"Nan Goldin",wiki:"https://en.wikipedia.org/wiki/Nan_Goldin",description:"American photographer"},{x:2,y:1,answer:"IRA",direction:"across",clue:"Novelist Levin",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Ira Levin",wiki:"https://en.wikipedia.org/wiki/Ira_Levin",description:"Novelist, playwright"},{x:0,y:2,answer:"DOLIN",direction:"across",clue:"Dancer Dolin",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Anton Dolin",wiki:"https://en.wikipedia.org/wiki/Anton_Dolin",description:"ballet dancer and choreographer (1904-1983)"},{x:0,y:2,answer:"DEL",direction:"down",clue:"Sci-fi author Lester ___ Rey",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Lester del Rey",wiki:"https://en.wikipedia.org/wiki/Lester_del_Rey",description:"Novelist, short story writer, editor"},{x:1,y:2,answer:"ODE",direction:"down",clue:"Wordsworth work",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"William Wordsworth",wiki:"https://en.wikipedia.org/wiki/William_Wordsworth",description:"English Romantic poet"},{x:0,y:3,answer:"EDD",direction:"across",clue:"Actor Byrnes",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Edd Byrnes",wiki:"https://en.wikipedia.org/wiki/Edd_Byrnes",description:"American actor"},{x:0,y:4,answer:"LEAR",direction:"across",clue:"The man behind Bunker",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Norman Lear",wiki:"https://en.wikipedia.org/wiki/Norman_Lear",description:"American television writer and producer"}],nn=[{x:1,y:0,answer:"MORT",direction:"across",clue:"Cartoonist Walker",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Mort Walker",wiki:"https://en.wikipedia.org/wiki/Mort_Walker",description:"American comic strip cartoonist"},{x:2,y:0,answer:"OSHEA",direction:"down",clue:"Actor Milo",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Milo O'Shea",wiki:"https://en.wikipedia.org/wiki/Milo_O%27Shea",description:"Irish American actor (1926-2013)"},{x:3,y:0,answer:"REA",direction:"down",clue:'Peggy of "The Dukes of Hazzard"',race:"white",binaryRace:"white",hispanic:"FALSE",gender:"woman",name:"Peggy Rea",wiki:"https://en.wikipedia.org/wiki/Peggy_Rea",description:"actress (1921-2011)"},{x:4,y:0,answer:"TONI",direction:"down",clue:"Three-time skiing gold medalist ___ Sailer",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Toni Sailer",wiki:"https://en.wikipedia.org/wiki/Toni_Sailer",description:"Austrian alpine skier and actor"},{x:0,y:1,answer:"DEMI",direction:"down",clue:"Actress Moore",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"woman",name:"Demi Moore",wiki:"https://en.wikipedia.org/wiki/Demi_Moore",description:"American actress"},{x:2,y:1,answer:"SEO",direction:"across",clue:"Former major-league pitcher ___ Seo",race:"urm",binaryRace:"poc",hispanic:"FALSE",gender:"man",name:"Jae Weong Seo",wiki:"https://en.wikipedia.org/wiki/Jae_Weong_Seo",description:"South Korean baseball player"},{x:0,y:2,answer:"ETHAN",direction:"across",clue:"Hawke of Hollywood",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Ethan Hawke",wiki:"https://en.wikipedia.org/wiki/Ethan_Hawke",description:"American actor and writer"},{x:1,y:2,answer:"TOM",direction:"down",clue:"Hero of several Clancy novels",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Tom Clancy",wiki:"https://en.wikipedia.org/wiki/Tom_Clancy",description:"American author"},{x:0,y:3,answer:"MOE",direction:"across",clue:"Stooge name",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Moe Howard",wiki:"https://en.wikipedia.org/wiki/Moe_Howard",description:"American actor and comedian"},{x:0,y:4,answer:"IMAN",direction:"across",clue:"Mogadishu-born model",race:"urm",binaryRace:"poc",hispanic:"FALSE",gender:"woman",name:"Iman",wiki:"https://en.wikipedia.org/wiki/Iman_(model)",description:"Somali supermodel and entrepreneur"}],tn=[{x:0,y:0,answer:"SEGAR",direction:"across",clue:"Popeye creator E. C. ___",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"E. C. Segar",wiki:"https://en.wikipedia.org/wiki/E._C._Segar",description:"American cartoonist"},{x:2,y:0,answer:"GILDA",direction:"down",clue:"Baba ___ (Gilda Radner character)",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"woman",name:"Gilda Radner",wiki:"https://en.wikipedia.org/wiki/Gilda_Radner",description:"American comedian and actress"},{x:3,y:0,answer:"AVE",direction:"down",clue:"Caesar's greeting",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Julius Caesar",wiki:"https://en.wikipedia.org/wiki/Julius_Caesar",description:"Roman general and dictator"},{x:4,y:0,answer:"RON",direction:"down",clue:"Presidential son Reagan",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Ron Reagan",wiki:"https://en.wikipedia.org/wiki/Ron_Reagan",description:"talk radio host and political analyst"},{x:2,y:1,answer:"IVO",direction:"across",clue:"Pianist Pogorelich",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Ivo Pogorelić",wiki:"https://en.wikipedia.org/wiki/Ivo_Pogoreli%C4%87",description:"Croatian pianist"},{x:0,y:2,answer:"ARLEN",direction:"across",clue:"Specter of the Senate, once",race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Arlen Specter",wiki:"https://en.wikipedia.org/wiki/Arlen_Specter",description:"American politician; former United States Senator from Pennsylvania (1930-2012)"},{x:0,y:2,answer:"ANA",direction:"down",clue:'Ortiz of "Devious Maids"',race:"urm",binaryRace:"white",hispanic:"TRUE",gender:"woman",name:"Ana Ortiz",wiki:"https://en.wikipedia.org/wiki/Ana_Ortiz",description:"actress"},{x:1,y:2,answer:"REN",direction:"down",clue:'Kylo ___, Adam Driver\'s role in "Star Wars"',race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Adam Driver",wiki:"https://en.wikipedia.org/wiki/Adam_Driver",description:"American actor"},{x:0,y:3,answer:"NED",direction:"across",clue:'"Our Town" opera composer',race:"white",binaryRace:"white",hispanic:"FALSE",gender:"man",name:"Ned Rorem",wiki:"https://en.wikipedia.org/wiki/Ned_Rorem",description:"American composer (b1923)"},{x:0,y:4,answer:"ANAIS",direction:"across",clue:'Who wrote "We do not see things as they are, we see them as we are"',race:"urm",binaryRace:"white",hispanic:"TRUE",gender:"woman",name:"Anaïs Nin",wiki:"https://en.wikipedia.org/wiki/Ana%C3%AFs_Nin",description:"writer of novels, short stories."}];function rn(i){let n,t,r,a,o,s,c;return n=new Ae({}),a=new Wi({props:{puzzles:i[0],title:"Publications in 2020"}}),s=new Wi({props:{puzzles:i[1],title:"New York Times by decade"}}),{c(){he(n.$$.fragment),t=E(),r=A("article"),he(a.$$.fragment),o=E(),he(s.$$.fragment)},m(e,i){we(n,e,i),f(e,t,i),f(e,r,i),we(a,r,null),g(r,o),we(s,r,null),c=!0},p:e,i(e){c||(se(n.$$.fragment,e),se(a.$$.fragment,e),se(s.$$.fragment,e),c=!0)},o(e){ce(n.$$.fragment,e),ce(a.$$.fragment,e),ce(s.$$.fragment,e),c=!1},d(e){pe(n,e),e&&y(t),e&&y(r),pe(a),pe(s)}}}function an(e){return[[{id:"usa2020",value:"USA Today",data:Ki},{id:"up2020",value:"Universal",data:Ji},{id:"nyt2020",value:"New York Times",data:Ui},{id:"lat2020",value:"LA Times",data:Vi},{id:"wsj2020",value:"Wall Street Journal",data:ji}],[{id:"nyt1940s",value:"1940s",data:qi},{id:"nyt1950s",value:"1950s",data:Yi},{id:"nyt1960s",value:"1960s",data:Qi},{id:"nyt1970s",value:"1970s",data:Zi},{id:"nyt1980s",value:"1980s",data:Xi},{id:"nyt1990s",value:"1990s",data:en},{id:"nyt2000s",value:"2000s",data:nn},{id:"nyt2010s",value:"2010s",data:tn}]]}return new class extends fe{constructor(e){super(),ge(this,e,an,rn,o,{})}}({target:document.querySelector("main")})}();
+
+(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
+var app = (function () {
+    'use strict';
+
+    function noop() { }
+    const identity = x => x;
+    function assign(tar, src) {
+        // @ts-ignore
+        for (const k in src)
+            tar[k] = src[k];
+        return tar;
+    }
+    function add_location(element, file, line, column, char) {
+        element.__svelte_meta = {
+            loc: { file, line, column, char }
+        };
+    }
+    function run(fn) {
+        return fn();
+    }
+    function blank_object() {
+        return Object.create(null);
+    }
+    function run_all(fns) {
+        fns.forEach(run);
+    }
+    function is_function(thing) {
+        return typeof thing === 'function';
+    }
+    function safe_not_equal(a, b) {
+        return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
+    }
+    function is_empty(obj) {
+        return Object.keys(obj).length === 0;
+    }
+    function create_slot(definition, ctx, $$scope, fn) {
+        if (definition) {
+            const slot_ctx = get_slot_context(definition, ctx, $$scope, fn);
+            return definition[0](slot_ctx);
+        }
+    }
+    function get_slot_context(definition, ctx, $$scope, fn) {
+        return definition[1] && fn
+            ? assign($$scope.ctx.slice(), definition[1](fn(ctx)))
+            : $$scope.ctx;
+    }
+    function get_slot_changes(definition, $$scope, dirty, fn) {
+        if (definition[2] && fn) {
+            const lets = definition[2](fn(dirty));
+            if ($$scope.dirty === undefined) {
+                return lets;
+            }
+            if (typeof lets === 'object') {
+                const merged = [];
+                const len = Math.max($$scope.dirty.length, lets.length);
+                for (let i = 0; i < len; i += 1) {
+                    merged[i] = $$scope.dirty[i] | lets[i];
+                }
+                return merged;
+            }
+            return $$scope.dirty | lets;
+        }
+        return $$scope.dirty;
+    }
+    function update_slot(slot, slot_definition, ctx, $$scope, dirty, get_slot_changes_fn, get_slot_context_fn) {
+        const slot_changes = get_slot_changes(slot_definition, $$scope, dirty, get_slot_changes_fn);
+        if (slot_changes) {
+            const slot_context = get_slot_context(slot_definition, ctx, $$scope, get_slot_context_fn);
+            slot.p(slot_context, slot_changes);
+        }
+    }
+    function null_to_empty(value) {
+        return value == null ? '' : value;
+    }
+    function action_destroyer(action_result) {
+        return action_result && is_function(action_result.destroy) ? action_result.destroy : noop;
+    }
+
+    const is_client = typeof window !== 'undefined';
+    let now = is_client
+        ? () => window.performance.now()
+        : () => Date.now();
+    let raf = is_client ? cb => requestAnimationFrame(cb) : noop;
+
+    const tasks = new Set();
+    function run_tasks(now) {
+        tasks.forEach(task => {
+            if (!task.c(now)) {
+                tasks.delete(task);
+                task.f();
+            }
+        });
+        if (tasks.size !== 0)
+            raf(run_tasks);
+    }
+    /**
+     * Creates a new task that runs on each raf frame
+     * until it returns a falsy value or is aborted
+     */
+    function loop(callback) {
+        let task;
+        if (tasks.size === 0)
+            raf(run_tasks);
+        return {
+            promise: new Promise(fulfill => {
+                tasks.add(task = { c: callback, f: fulfill });
+            }),
+            abort() {
+                tasks.delete(task);
+            }
+        };
+    }
+
+    function append(target, node) {
+        target.appendChild(node);
+    }
+    function insert(target, node, anchor) {
+        target.insertBefore(node, anchor || null);
+    }
+    function detach(node) {
+        node.parentNode.removeChild(node);
+    }
+    function destroy_each(iterations, detaching) {
+        for (let i = 0; i < iterations.length; i += 1) {
+            if (iterations[i])
+                iterations[i].d(detaching);
+        }
+    }
+    function element(name) {
+        return document.createElement(name);
+    }
+    function svg_element(name) {
+        return document.createElementNS('http://www.w3.org/2000/svg', name);
+    }
+    function text(data) {
+        return document.createTextNode(data);
+    }
+    function space() {
+        return text(' ');
+    }
+    function empty() {
+        return text('');
+    }
+    function listen(node, event, handler, options) {
+        node.addEventListener(event, handler, options);
+        return () => node.removeEventListener(event, handler, options);
+    }
+    function attr(node, attribute, value) {
+        if (value == null)
+            node.removeAttribute(attribute);
+        else if (node.getAttribute(attribute) !== value)
+            node.setAttribute(attribute, value);
+    }
+    function children(element) {
+        return Array.from(element.childNodes);
+    }
+    function set_style(node, key, value, important) {
+        node.style.setProperty(key, value, important ? 'important' : '');
+    }
+    function select_option(select, value) {
+        for (let i = 0; i < select.options.length; i += 1) {
+            const option = select.options[i];
+            if (option.__value === value) {
+                option.selected = true;
+                return;
+            }
+        }
+    }
+    function select_value(select) {
+        const selected_option = select.querySelector(':checked') || select.options[0];
+        return selected_option && selected_option.__value;
+    }
+    // unfortunately this can't be a constant as that wouldn't be tree-shakeable
+    // so we cache the result instead
+    let crossorigin;
+    function is_crossorigin() {
+        if (crossorigin === undefined) {
+            crossorigin = false;
+            try {
+                if (typeof window !== 'undefined' && window.parent) {
+                    void window.parent.document;
+                }
+            }
+            catch (error) {
+                crossorigin = true;
+            }
+        }
+        return crossorigin;
+    }
+    function add_resize_listener(node, fn) {
+        const computed_style = getComputedStyle(node);
+        const z_index = (parseInt(computed_style.zIndex) || 0) - 1;
+        if (computed_style.position === 'static') {
+            node.style.position = 'relative';
+        }
+        const iframe = element('iframe');
+        iframe.setAttribute('style', 'display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; ' +
+            `overflow: hidden; border: 0; opacity: 0; pointer-events: none; z-index: ${z_index};`);
+        iframe.setAttribute('aria-hidden', 'true');
+        iframe.tabIndex = -1;
+        const crossorigin = is_crossorigin();
+        let unsubscribe;
+        if (crossorigin) {
+            iframe.src = "data:text/html,<script>onresize=function(){parent.postMessage(0,'*')}</script>";
+            unsubscribe = listen(window, 'message', (event) => {
+                if (event.source === iframe.contentWindow)
+                    fn();
+            });
+        }
+        else {
+            iframe.src = 'about:blank';
+            iframe.onload = () => {
+                unsubscribe = listen(iframe.contentWindow, 'resize', fn);
+            };
+        }
+        append(node, iframe);
+        return () => {
+            if (crossorigin) {
+                unsubscribe();
+            }
+            else if (unsubscribe && iframe.contentWindow) {
+                unsubscribe();
+            }
+            detach(iframe);
+        };
+    }
+    function toggle_class(element, name, toggle) {
+        element.classList[toggle ? 'add' : 'remove'](name);
+    }
+    function custom_event(type, detail) {
+        const e = document.createEvent('CustomEvent');
+        e.initCustomEvent(type, false, false, detail);
+        return e;
+    }
+    class HtmlTag {
+        constructor(anchor = null) {
+            this.a = anchor;
+            this.e = this.n = null;
+        }
+        m(html, target, anchor = null) {
+            if (!this.e) {
+                this.e = element(target.nodeName);
+                this.t = target;
+                this.h(html);
+            }
+            this.i(anchor);
+        }
+        h(html) {
+            this.e.innerHTML = html;
+            this.n = Array.from(this.e.childNodes);
+        }
+        i(anchor) {
+            for (let i = 0; i < this.n.length; i += 1) {
+                insert(this.t, this.n[i], anchor);
+            }
+        }
+        p(html) {
+            this.d();
+            this.h(html);
+            this.i(this.a);
+        }
+        d() {
+            this.n.forEach(detach);
+        }
+    }
+
+    const active_docs = new Set();
+    let active = 0;
+    // https://github.com/darkskyapp/string-hash/blob/master/index.js
+    function hash(str) {
+        let hash = 5381;
+        let i = str.length;
+        while (i--)
+            hash = ((hash << 5) - hash) ^ str.charCodeAt(i);
+        return hash >>> 0;
+    }
+    function create_rule(node, a, b, duration, delay, ease, fn, uid = 0) {
+        const step = 16.666 / duration;
+        let keyframes = '{\n';
+        for (let p = 0; p <= 1; p += step) {
+            const t = a + (b - a) * ease(p);
+            keyframes += p * 100 + `%{${fn(t, 1 - t)}}\n`;
+        }
+        const rule = keyframes + `100% {${fn(b, 1 - b)}}\n}`;
+        const name = `__svelte_${hash(rule)}_${uid}`;
+        const doc = node.ownerDocument;
+        active_docs.add(doc);
+        const stylesheet = doc.__svelte_stylesheet || (doc.__svelte_stylesheet = doc.head.appendChild(element('style')).sheet);
+        const current_rules = doc.__svelte_rules || (doc.__svelte_rules = {});
+        if (!current_rules[name]) {
+            current_rules[name] = true;
+            stylesheet.insertRule(`@keyframes ${name} ${rule}`, stylesheet.cssRules.length);
+        }
+        const animation = node.style.animation || '';
+        node.style.animation = `${animation ? `${animation}, ` : ''}${name} ${duration}ms linear ${delay}ms 1 both`;
+        active += 1;
+        return name;
+    }
+    function delete_rule(node, name) {
+        const previous = (node.style.animation || '').split(', ');
+        const next = previous.filter(name
+            ? anim => anim.indexOf(name) < 0 // remove specific animation
+            : anim => anim.indexOf('__svelte') === -1 // remove all Svelte animations
+        );
+        const deleted = previous.length - next.length;
+        if (deleted) {
+            node.style.animation = next.join(', ');
+            active -= deleted;
+            if (!active)
+                clear_rules();
+        }
+    }
+    function clear_rules() {
+        raf(() => {
+            if (active)
+                return;
+            active_docs.forEach(doc => {
+                const stylesheet = doc.__svelte_stylesheet;
+                let i = stylesheet.cssRules.length;
+                while (i--)
+                    stylesheet.deleteRule(i);
+                doc.__svelte_rules = {};
+            });
+            active_docs.clear();
+        });
+    }
+
+    let current_component;
+    function set_current_component(component) {
+        current_component = component;
+    }
+    function get_current_component() {
+        if (!current_component)
+            throw new Error('Function called outside component initialization');
+        return current_component;
+    }
+    function onMount(fn) {
+        get_current_component().$$.on_mount.push(fn);
+    }
+    function createEventDispatcher() {
+        const component = get_current_component();
+        return (type, detail) => {
+            const callbacks = component.$$.callbacks[type];
+            if (callbacks) {
+                // TODO are there situations where events could be dispatched
+                // in a server (non-DOM) environment?
+                const event = custom_event(type, detail);
+                callbacks.slice().forEach(fn => {
+                    fn.call(component, event);
+                });
+            }
+        };
+    }
+
+    const dirty_components = [];
+    const binding_callbacks = [];
+    const render_callbacks = [];
+    const flush_callbacks = [];
+    const resolved_promise = Promise.resolve();
+    let update_scheduled = false;
+    function schedule_update() {
+        if (!update_scheduled) {
+            update_scheduled = true;
+            resolved_promise.then(flush);
+        }
+    }
+    function add_render_callback(fn) {
+        render_callbacks.push(fn);
+    }
+    function add_flush_callback(fn) {
+        flush_callbacks.push(fn);
+    }
+    let flushing = false;
+    const seen_callbacks = new Set();
+    function flush() {
+        if (flushing)
+            return;
+        flushing = true;
+        do {
+            // first, call beforeUpdate functions
+            // and update components
+            for (let i = 0; i < dirty_components.length; i += 1) {
+                const component = dirty_components[i];
+                set_current_component(component);
+                update(component.$$);
+            }
+            set_current_component(null);
+            dirty_components.length = 0;
+            while (binding_callbacks.length)
+                binding_callbacks.pop()();
+            // then, once components are updated, call
+            // afterUpdate functions. This may cause
+            // subsequent updates...
+            for (let i = 0; i < render_callbacks.length; i += 1) {
+                const callback = render_callbacks[i];
+                if (!seen_callbacks.has(callback)) {
+                    // ...so guard against infinite loops
+                    seen_callbacks.add(callback);
+                    callback();
+                }
+            }
+            render_callbacks.length = 0;
+        } while (dirty_components.length);
+        while (flush_callbacks.length) {
+            flush_callbacks.pop()();
+        }
+        update_scheduled = false;
+        flushing = false;
+        seen_callbacks.clear();
+    }
+    function update($$) {
+        if ($$.fragment !== null) {
+            $$.update();
+            run_all($$.before_update);
+            const dirty = $$.dirty;
+            $$.dirty = [-1];
+            $$.fragment && $$.fragment.p($$.ctx, dirty);
+            $$.after_update.forEach(add_render_callback);
+        }
+    }
+
+    let promise;
+    function wait() {
+        if (!promise) {
+            promise = Promise.resolve();
+            promise.then(() => {
+                promise = null;
+            });
+        }
+        return promise;
+    }
+    function dispatch(node, direction, kind) {
+        node.dispatchEvent(custom_event(`${direction ? 'intro' : 'outro'}${kind}`));
+    }
+    const outroing = new Set();
+    let outros;
+    function group_outros() {
+        outros = {
+            r: 0,
+            c: [],
+            p: outros // parent group
+        };
+    }
+    function check_outros() {
+        if (!outros.r) {
+            run_all(outros.c);
+        }
+        outros = outros.p;
+    }
+    function transition_in(block, local) {
+        if (block && block.i) {
+            outroing.delete(block);
+            block.i(local);
+        }
+    }
+    function transition_out(block, local, detach, callback) {
+        if (block && block.o) {
+            if (outroing.has(block))
+                return;
+            outroing.add(block);
+            outros.c.push(() => {
+                outroing.delete(block);
+                if (callback) {
+                    if (detach)
+                        block.d(1);
+                    callback();
+                }
+            });
+            block.o(local);
+        }
+    }
+    const null_transition = { duration: 0 };
+    function create_bidirectional_transition(node, fn, params, intro) {
+        let config = fn(node, params);
+        let t = intro ? 0 : 1;
+        let running_program = null;
+        let pending_program = null;
+        let animation_name = null;
+        function clear_animation() {
+            if (animation_name)
+                delete_rule(node, animation_name);
+        }
+        function init(program, duration) {
+            const d = program.b - t;
+            duration *= Math.abs(d);
+            return {
+                a: t,
+                b: program.b,
+                d,
+                duration,
+                start: program.start,
+                end: program.start + duration,
+                group: program.group
+            };
+        }
+        function go(b) {
+            const { delay = 0, duration = 300, easing = identity, tick = noop, css } = config || null_transition;
+            const program = {
+                start: now() + delay,
+                b
+            };
+            if (!b) {
+                // @ts-ignore todo: improve typings
+                program.group = outros;
+                outros.r += 1;
+            }
+            if (running_program || pending_program) {
+                pending_program = program;
+            }
+            else {
+                // if this is an intro, and there's a delay, we need to do
+                // an initial tick and/or apply CSS animation immediately
+                if (css) {
+                    clear_animation();
+                    animation_name = create_rule(node, t, b, duration, delay, easing, css);
+                }
+                if (b)
+                    tick(0, 1);
+                running_program = init(program, duration);
+                add_render_callback(() => dispatch(node, b, 'start'));
+                loop(now => {
+                    if (pending_program && now > pending_program.start) {
+                        running_program = init(pending_program, duration);
+                        pending_program = null;
+                        dispatch(node, running_program.b, 'start');
+                        if (css) {
+                            clear_animation();
+                            animation_name = create_rule(node, t, running_program.b, running_program.duration, 0, easing, config.css);
+                        }
+                    }
+                    if (running_program) {
+                        if (now >= running_program.end) {
+                            tick(t = running_program.b, 1 - t);
+                            dispatch(node, running_program.b, 'end');
+                            if (!pending_program) {
+                                // we're done
+                                if (running_program.b) {
+                                    // intro — we can tidy up immediately
+                                    clear_animation();
+                                }
+                                else {
+                                    // outro — needs to be coordinated
+                                    if (!--running_program.group.r)
+                                        run_all(running_program.group.c);
+                                }
+                            }
+                            running_program = null;
+                        }
+                        else if (now >= running_program.start) {
+                            const p = now - running_program.start;
+                            t = running_program.a + running_program.d * easing(p / running_program.duration);
+                            tick(t, 1 - t);
+                        }
+                    }
+                    return !!(running_program || pending_program);
+                });
+            }
+        }
+        return {
+            run(b) {
+                if (is_function(config)) {
+                    wait().then(() => {
+                        // @ts-ignore
+                        config = config();
+                        go(b);
+                    });
+                }
+                else {
+                    go(b);
+                }
+            },
+            end() {
+                clear_animation();
+                running_program = pending_program = null;
+            }
+        };
+    }
+
+    function bind(component, name, callback) {
+        const index = component.$$.props[name];
+        if (index !== undefined) {
+            component.$$.bound[index] = callback;
+            callback(component.$$.ctx[index]);
+        }
+    }
+    function create_component(block) {
+        block && block.c();
+    }
+    function mount_component(component, target, anchor) {
+        const { fragment, on_mount, on_destroy, after_update } = component.$$;
+        fragment && fragment.m(target, anchor);
+        // onMount happens before the initial afterUpdate
+        add_render_callback(() => {
+            const new_on_destroy = on_mount.map(run).filter(is_function);
+            if (on_destroy) {
+                on_destroy.push(...new_on_destroy);
+            }
+            else {
+                // Edge case - component was destroyed immediately,
+                // most likely as a result of a binding initialising
+                run_all(new_on_destroy);
+            }
+            component.$$.on_mount = [];
+        });
+        after_update.forEach(add_render_callback);
+    }
+    function destroy_component(component, detaching) {
+        const $$ = component.$$;
+        if ($$.fragment !== null) {
+            run_all($$.on_destroy);
+            $$.fragment && $$.fragment.d(detaching);
+            // TODO null out other refs, including component.$$ (but need to
+            // preserve final state?)
+            $$.on_destroy = $$.fragment = null;
+            $$.ctx = [];
+        }
+    }
+    function make_dirty(component, i) {
+        if (component.$$.dirty[0] === -1) {
+            dirty_components.push(component);
+            schedule_update();
+            component.$$.dirty.fill(0);
+        }
+        component.$$.dirty[(i / 31) | 0] |= (1 << (i % 31));
+    }
+    function init(component, options, instance, create_fragment, not_equal, props, dirty = [-1]) {
+        const parent_component = current_component;
+        set_current_component(component);
+        const prop_values = options.props || {};
+        const $$ = component.$$ = {
+            fragment: null,
+            ctx: null,
+            // state
+            props,
+            update: noop,
+            not_equal,
+            bound: blank_object(),
+            // lifecycle
+            on_mount: [],
+            on_destroy: [],
+            before_update: [],
+            after_update: [],
+            context: new Map(parent_component ? parent_component.$$.context : []),
+            // everything else
+            callbacks: blank_object(),
+            dirty,
+            skip_bound: false
+        };
+        let ready = false;
+        $$.ctx = instance
+            ? instance(component, prop_values, (i, ret, ...rest) => {
+                const value = rest.length ? rest[0] : ret;
+                if ($$.ctx && not_equal($$.ctx[i], $$.ctx[i] = value)) {
+                    if (!$$.skip_bound && $$.bound[i])
+                        $$.bound[i](value);
+                    if (ready)
+                        make_dirty(component, i);
+                }
+                return ret;
+            })
+            : [];
+        $$.update();
+        ready = true;
+        run_all($$.before_update);
+        // `false` as a special case of no DOM component
+        $$.fragment = create_fragment ? create_fragment($$.ctx) : false;
+        if (options.target) {
+            if (options.hydrate) {
+                const nodes = children(options.target);
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment && $$.fragment.l(nodes);
+                nodes.forEach(detach);
+            }
+            else {
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment && $$.fragment.c();
+            }
+            if (options.intro)
+                transition_in(component.$$.fragment);
+            mount_component(component, options.target, options.anchor);
+            flush();
+        }
+        set_current_component(parent_component);
+    }
+    class SvelteComponent {
+        $destroy() {
+            destroy_component(this, 1);
+            this.$destroy = noop;
+        }
+        $on(type, callback) {
+            const callbacks = (this.$$.callbacks[type] || (this.$$.callbacks[type] = []));
+            callbacks.push(callback);
+            return () => {
+                const index = callbacks.indexOf(callback);
+                if (index !== -1)
+                    callbacks.splice(index, 1);
+            };
+        }
+        $set($$props) {
+            if (this.$$set && !is_empty($$props)) {
+                this.$$.skip_bound = true;
+                this.$$set($$props);
+                this.$$.skip_bound = false;
+            }
+        }
+    }
+
+    function dispatch_dev(type, detail) {
+        document.dispatchEvent(custom_event(type, Object.assign({ version: '3.29.4' }, detail)));
+    }
+    function append_dev(target, node) {
+        dispatch_dev('SvelteDOMInsert', { target, node });
+        append(target, node);
+    }
+    function insert_dev(target, node, anchor) {
+        dispatch_dev('SvelteDOMInsert', { target, node, anchor });
+        insert(target, node, anchor);
+    }
+    function detach_dev(node) {
+        dispatch_dev('SvelteDOMRemove', { node });
+        detach(node);
+    }
+    function listen_dev(node, event, handler, options, has_prevent_default, has_stop_propagation) {
+        const modifiers = options === true ? ['capture'] : options ? Array.from(Object.keys(options)) : [];
+        if (has_prevent_default)
+            modifiers.push('preventDefault');
+        if (has_stop_propagation)
+            modifiers.push('stopPropagation');
+        dispatch_dev('SvelteDOMAddEventListener', { node, event, handler, modifiers });
+        const dispose = listen(node, event, handler, options);
+        return () => {
+            dispatch_dev('SvelteDOMRemoveEventListener', { node, event, handler, modifiers });
+            dispose();
+        };
+    }
+    function attr_dev(node, attribute, value) {
+        attr(node, attribute, value);
+        if (value == null)
+            dispatch_dev('SvelteDOMRemoveAttribute', { node, attribute });
+        else
+            dispatch_dev('SvelteDOMSetAttribute', { node, attribute, value });
+    }
+    function prop_dev(node, property, value) {
+        node[property] = value;
+        dispatch_dev('SvelteDOMSetProperty', { node, property, value });
+    }
+    function set_data_dev(text, data) {
+        data = '' + data;
+        if (text.wholeText === data)
+            return;
+        dispatch_dev('SvelteDOMSetData', { node: text, data });
+        text.data = data;
+    }
+    function validate_each_argument(arg) {
+        if (typeof arg !== 'string' && !(arg && typeof arg === 'object' && 'length' in arg)) {
+            let msg = '{#each} only iterates over array-like objects.';
+            if (typeof Symbol === 'function' && arg && Symbol.iterator in arg) {
+                msg += ' You can use a spread to convert this iterable into an array.';
+            }
+            throw new Error(msg);
+        }
+    }
+    function validate_slots(name, slot, keys) {
+        for (const slot_key of Object.keys(slot)) {
+            if (!~keys.indexOf(slot_key)) {
+                console.warn(`<${name}> received an unexpected slot "${slot_key}".`);
+            }
+        }
+    }
+    class SvelteComponentDev extends SvelteComponent {
+        constructor(options) {
+            if (!options || (!options.target && !options.$$inline)) {
+                throw new Error("'target' is a required option");
+            }
+            super();
+        }
+        $destroy() {
+            super.$destroy();
+            this.$destroy = () => {
+                console.warn('Component was already destroyed'); // eslint-disable-line no-console
+            };
+        }
+        $capture_state() { }
+        $inject_state() { }
+    }
+
+    var wordmark = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->\n<svg version=\"1.1\" id=\"wordmark\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n\t viewBox=\"0 0 192.6 50\" style=\"enable-background:new 0 0 192.6 50;\" xml:space=\"preserve\">\n<g>\n\t<path class=\"st0\" d=\"M150.1,9.5c1.5,0,2.8,1.3,2.8,2.8s-1.3,2.8-2.8,2.8s-2.8-1.3-2.8-2.8S148.6,9.5,150.1,9.5z\"/>\n\t<path class=\"st0\" d=\"M147.2,17.3h5.6v18.2h-5.6V17.3z\"/>\n\t<path class=\"st0\" d=\"M77.1,9.5h-1.9h-7v19.3v6.7h5.6v-6.7v-1.4h1.4h1.9c4.9,0,8.9-4,8.9-8.9S82.1,9.5,77.1,9.5z M77.1,21.8h-1.9\n\t\th-1.4v-1.4v-3.8v-1.4h1.4h1.9c1.8,0,3.3,1.5,3.3,3.3S79,21.8,77.1,21.8z\"/>\n\t<path class=\"st0\" d=\"M105.7,17.6h-5.6v8.9c0,1.8-1.5,3.3-3.3,3.3s-3.3-1.5-3.3-3.3v-8.9h-5.6v8.9c0,4.9,4,8.9,8.9,8.9\n\t\ts8.9-4,8.9-8.9V17.6z\"/>\n\t<path class=\"st0\" d=\"M164.1,17.6c-4.9,0-8.9,4-8.9,8.9v8.9h5.6v-8.9c0-1.8,1.5-3.3,3.3-3.3s3.3,1.5,3.3,3.3v8.9h5.6v-8.9\n\t\tC173,21.6,169,17.6,164.1,17.6z\"/>\n\t<path class=\"st0\" d=\"M119.7,16.2v1.4h-1.4h-1.9c-4.9,0-8.9,4-8.9,8.9s4,8.9,8.9,8.9h1.9h7V16.2V9.5l-5.6,3.3\n\t\tC119.7,12.8,119.7,16.2,119.7,16.2z M119.8,24.6v3.8v1.4h-1.4h-1.9c-1.8,0-3.3-1.5-3.3-3.3s1.5-3.3,3.3-3.3h1.9h1.4V24.6z\"/>\n\t<path class=\"st0\" d=\"M139.3,16.2v1.4h-1.4H136c-4.9,0-8.9,4-8.9,8.9s4,8.9,8.9,8.9h1.9h7V16.2V9.5l-5.6,3.3V16.2z M139.4,24.6v3.8\n\t\tv1.4h-1.5H136c-1.8,0-3.3-1.5-3.3-3.3s1.5-3.3,3.3-3.3h1.9h1.4v1.4H139.4z\"/>\n\t<path class=\"st0\" d=\"M183.7,17.6c-4.9,0-8.9,4-8.9,8.9s4,8.9,8.9,8.9h1.9h1.4v1.4v0.9v1.4v1.4c0,1.8-1.5,3.3-3.3,3.3\n\t\ts-3.3-1.5-3.3-3.3V38l-5.6,3.3c0.4,4.5,4.2,8.1,8.9,8.1c4.9,0,8.9-4,8.9-8.9v-1.4v-2.3V17.6h-7H183.7z M187,23.4v1.4v3.8V30h-1.4\n\t\th-1.9c-1.8,0-3.3-1.5-3.3-3.3s1.5-3.3,3.3-3.3h1.9C185.6,23.4,187,23.4,187,23.4z\"/>\n\t<path class=\"st0\" d=\"M28.6,17.6c-1.2,0-2.3,0.2-3.3,0.6V9.5l-5.6,3.3v13.7v2v6.9h5.6v-6.9l0,0v-2c0-1.8,1.5-3.3,3.3-3.3\n\t\ts3.3,1.5,3.3,3.3v8.9h5.6v-8.9C37.5,21.6,33.5,17.6,28.6,17.6z\"/>\n\t<path class=\"st0\" d=\"M17.8,9.5H0v5.6h6.1v20.3h5.6V15.1h6.1V9.5z\"/>\n\t<path class=\"st0\" d=\"M48.3,30.2c-0.4,0-1.2-0.1-1.8-0.4l5.2-2.1l5.6-2.3l-1-2.3l-0.1-0.2c-0.1-0.3-0.3-0.6-0.5-1\n\t\tc-0.1-0.1-0.1-0.2-0.2-0.3c0,0,0-0.1-0.1-0.1l-0.1-0.1l-0.1-0.1c-1.6-2.2-4-3.5-6.7-3.7l0,0h-0.6c-4.9,0-8.9,4-8.9,8.9\n\t\tc0,0.4,0,0.9,0.1,1.4l0,0V28c0,0,0,0,0,0.1c0,0,0,0,0,0.1c0,0.3,0.1,0.5,0.2,0.8v0.1v0.1c0.1,0.3,0.2,0.7,0.4,1v0.1v0.1\n\t\tc0.1,0.3,0.3,0.5,0.4,0.8c0,0.1,0.1,0.1,0.1,0.2l0,0c0.1,0.2,0.3,0.4,0.4,0.6c0,0,0,0,0,0.1c0,0,0,0.1,0.1,0.1l0.1,0.1\n\t\tc1.7,2.1,4.4,3.4,7.2,3.4h6.1v-5.2C54.5,30.2,50.6,30.2,48.3,30.2L48.3,30.2z M56.2,22.9L56.2,22.9L56.2,22.9z M44.6,25.7\n\t\tL44.6,25.7l-0.2,0.1c0.2-1.9,1.8-3.5,3.7-3.5c0.9,0,1.8,0.4,2.4,0.9L46.2,25L44.6,25.7L44.6,25.7z\"/>\n</g>\n</svg>";
+
+    /* src/components/Intro.svelte generated by Svelte v3.29.4 */
+    const file = "src/components/Intro.svelte";
+
+    function create_fragment(ctx) {
+    	let nav;
+    	let div0;
+    	let a0;
+    	let t0;
+    	let section;
+    	let h1;
+    	let t2;
+    	let p0;
+    	let t3;
+    	let a1;
+    	let t5;
+    	let t6;
+    	let div2;
+    	let p1;
+    	let button;
+    	let t8;
+    	let div1;
+    	let p2;
+    	let mounted;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			nav = element("nav");
+    			div0 = element("div");
+    			a0 = element("a");
+    			t0 = space();
+    			section = element("section");
+    			h1 = element("h1");
+    			h1.textContent = "Crossword Puzzles";
+    			t2 = space();
+    			p0 = element("p");
+    			t3 = text("Below you will find playable mini-puzzles generated from the data behind\n    ");
+    			a1 = element("a");
+    			a1.textContent = "our story";
+    			t5 = text("\n    about inclusivity in crosswords. The ratio of the people referenced in the\n    clues or answers reflect the findings of our analysis about racial and\n    gender representation.");
+    			t6 = space();
+    			div2 = element("div");
+    			p1 = element("p");
+    			button = element("button");
+    			button.textContent = "How were these made?";
+    			t8 = space();
+    			div1 = element("div");
+    			p2 = element("p");
+    			p2.textContent = "TODO explain brief method, link to article. Explain that some of the\n        clue wording was altered to fit outside of its original context.";
+    			attr_dev(a0, "href", "https://pudding.cool");
+    			add_location(a0, file, 7, 4, 124);
+    			attr_dev(div0, "class", "wordmark svelte-13rlgju");
+    			add_location(div0, file, 6, 2, 97);
+    			add_location(nav, file, 5, 0, 89);
+    			attr_dev(h1, "class", "svelte-13rlgju");
+    			add_location(h1, file, 12, 2, 216);
+    			attr_dev(a1, "href", "https://pudding.cool/20202/11/crossword");
+    			add_location(a1, file, 15, 4, 330);
+    			attr_dev(p0, "class", "svelte-13rlgju");
+    			add_location(p0, file, 13, 2, 245);
+    			add_location(button, file, 22, 6, 616);
+    			attr_dev(p1, "class", "svelte-13rlgju");
+    			add_location(p1, file, 21, 4, 606);
+    			attr_dev(p2, "class", "svelte-13rlgju");
+    			add_location(p2, file, 25, 6, 748);
+    			attr_dev(div1, "class", "method svelte-13rlgju");
+    			toggle_class(div1, "visible", /*visible*/ ctx[0]);
+    			add_location(div1, file, 24, 4, 707);
+    			attr_dev(div2, "class", "how svelte-13rlgju");
+    			add_location(div2, file, 20, 2, 584);
+    			attr_dev(section, "id", "intro");
+    			attr_dev(section, "class", "svelte-13rlgju");
+    			add_location(section, file, 11, 0, 193);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, nav, anchor);
+    			append_dev(nav, div0);
+    			append_dev(div0, a0);
+    			a0.innerHTML = wordmark;
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, section, anchor);
+    			append_dev(section, h1);
+    			append_dev(section, t2);
+    			append_dev(section, p0);
+    			append_dev(p0, t3);
+    			append_dev(p0, a1);
+    			append_dev(p0, t5);
+    			append_dev(section, t6);
+    			append_dev(section, div2);
+    			append_dev(div2, p1);
+    			append_dev(p1, button);
+    			append_dev(div2, t8);
+    			append_dev(div2, div1);
+    			append_dev(div1, p2);
+
+    			if (!mounted) {
+    				dispose = listen_dev(button, "click", /*click_handler*/ ctx[1], false, false, false);
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*visible*/ 1) {
+    				toggle_class(div1, "visible", /*visible*/ ctx[0]);
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(nav);
+    			if (detaching) detach_dev(t0);
+    			if (detaching) detach_dev(section);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots("Intro", slots, []);
+    	let visible = false;
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Intro> was created with unknown prop '${key}'`);
+    	});
+
+    	const click_handler = () => $$invalidate(0, visible = !visible);
+    	$$self.$capture_state = () => ({ wordmark, visible });
+
+    	$$self.$inject_state = $$props => {
+    		if ("visible" in $$props) $$invalidate(0, visible = $$props.visible);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [visible, click_handler];
+    }
+
+    class Intro extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance, create_fragment, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Intro",
+    			options,
+    			id: create_fragment.name
+    		});
+    	}
+    }
+
+    /* node_modules/svelte-crossword/src/Toolbar.svelte generated by Svelte v3.29.4 */
+    const file$1 = "node_modules/svelte-crossword/src/Toolbar.svelte";
+
+    function get_each_context(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[4] = list[i];
+    	return child_ctx;
+    }
+
+    // (12:33) 
+    function create_if_block_1(ctx) {
+    	let button;
+    	let mounted;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			button = element("button");
+    			button.textContent = "Reveal";
+    			attr_dev(button, "class", "svelte-1d4ytnk");
+    			add_location(button, file$1, 12, 6, 352);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, button, anchor);
+
+    			if (!mounted) {
+    				dispose = listen_dev(button, "click", /*click_handler_1*/ ctx[3], false, false, false);
+    				mounted = true;
+    			}
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(button);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1.name,
+    		type: "if",
+    		source: "(12:33) ",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (10:4) {#if action == 'clear'}
+    function create_if_block(ctx) {
+    	let button;
+    	let mounted;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			button = element("button");
+    			button.textContent = "Clear";
+    			attr_dev(button, "class", "svelte-1d4ytnk");
+    			add_location(button, file$1, 10, 6, 243);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, button, anchor);
+
+    			if (!mounted) {
+    				dispose = listen_dev(button, "click", /*click_handler*/ ctx[2], false, false, false);
+    				mounted = true;
+    			}
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(button);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block.name,
+    		type: "if",
+    		source: "(10:4) {#if action == 'clear'}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (9:2) {#each actions as action}
+    function create_each_block(ctx) {
+    	let if_block_anchor;
+
+    	function select_block_type(ctx, dirty) {
+    		if (/*action*/ ctx[4] == "clear") return create_if_block;
+    		if (/*action*/ ctx[4] == "reveal") return create_if_block_1;
+    	}
+
+    	let current_block_type = select_block_type(ctx);
+    	let if_block = current_block_type && current_block_type(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block) {
+    				if_block.p(ctx, dirty);
+    			} else {
+    				if (if_block) if_block.d(1);
+    				if_block = current_block_type && current_block_type(ctx);
+
+    				if (if_block) {
+    					if_block.c();
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (if_block) {
+    				if_block.d(detaching);
+    			}
+
+    			if (detaching) detach_dev(if_block_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block.name,
+    		type: "each",
+    		source: "(9:2) {#each actions as action}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$1(ctx) {
+    	let div;
+    	let each_value = /*actions*/ ctx[0];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			attr_dev(div, "class", "toolbar svelte-1d4ytnk");
+    			add_location(div, file$1, 7, 0, 159);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div, null);
+    			}
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*dispatch, actions*/ 3) {
+    				each_value = /*actions*/ ctx[0];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(div, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value.length;
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$1.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$1($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots("Toolbar", slots, []);
+    	const dispatch = createEventDispatcher();
+    	let { actions = ["clear", "reveal"] } = $$props;
+    	const writable_props = ["actions"];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Toolbar> was created with unknown prop '${key}'`);
+    	});
+
+    	const click_handler = () => dispatch("event", "clear");
+    	const click_handler_1 = () => dispatch("event", "reveal");
+
+    	$$self.$$set = $$props => {
+    		if ("actions" in $$props) $$invalidate(0, actions = $$props.actions);
+    	};
+
+    	$$self.$capture_state = () => ({ createEventDispatcher, dispatch, actions });
+
+    	$$self.$inject_state = $$props => {
+    		if ("actions" in $$props) $$invalidate(0, actions = $$props.actions);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [actions, dispatch, click_handler, click_handler_1];
+    }
+
+    class Toolbar extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$1, create_fragment$1, safe_not_equal, { actions: 0 });
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Toolbar",
+    			options,
+    			id: create_fragment$1.name
+    		});
+    	}
+
+    	get actions() {
+    		throw new Error("<Toolbar>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set actions(value) {
+    		throw new Error("<Toolbar>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    var keyboardData = [{
+    	"row": 0,
+    	"value": "Q"
+    }, {
+    	"row": 0,
+    	"value": "W"
+    }, {
+    	"row": 0,
+    	"value": "E"
+    }, {
+    	"row": 0,
+    	"value": "R"
+    }, {
+    	"row": 0,
+    	"value": "T"
+    }, {
+    	"row": 0,
+    	"value": "Y"
+    }, {
+    	"row": 0,
+    	"value": "U"
+    },  {
+    	"row": 0,
+    	"value": "I"
+    },  {
+    	"row": 0,
+    	"value": "O"
+    },  {
+    	"row": 0,
+    	"value": "P"
+    }, {
+    	"row": 1,
+    	"value": "A"
+    }, {
+    	"row": 1,
+    	"value": "S"
+    }, {
+    	"row": 1,
+    	"value": "D"
+    }, {
+    	"row": 1,
+    	"value": "F"
+    }, {
+    	"row": 1,
+    	"value": "G"
+    }, {
+    	"row": 1,
+    	"value": "H"
+    }, {
+    	"row": 1,
+    	"value": "J"
+    }, {
+    	"row": 1,
+    	"value": "K"
+    }, {
+    	"row": 1,
+    	"value": "L"
+    }, {
+    	"row": 2,
+    	"value": "123"
+    }, {
+    	"row": 2,
+    	"value": "Z"
+    }, {
+    	"row": 2,
+    	"value": "X"
+    }, {
+    	"row": 2,
+    	"value": "C"
+    }, {
+    	"row": 2,
+    	"value": "V"
+    }, {
+    	"row": 2,
+    	"value": "B"
+    }, {
+    	"row": 2,
+    	"value": "N"
+    }, {
+    	"row": 2,
+    	"value": "M"
+    }, {
+    	"row": 2,
+    	"value": "delete"
+    }
+     ];
+
+    /* node_modules/svelte-keyboard/src/Keyboard.svelte generated by Svelte v3.29.4 */
+    const file$2 = "node_modules/svelte-keyboard/src/Keyboard.svelte";
+
+    function get_each_context_1(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[14] = list[i].value;
+    	return child_ctx;
+    }
+
+    function get_each_context$1(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[11] = list[i];
+    	return child_ctx;
+    }
+
+    // (68:10) {:else}
+    function create_else_block(ctx) {
+    	let t_value = /*value*/ ctx[14] + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text(t_value);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*rowData*/ 1 && t_value !== (t_value = /*value*/ ctx[14] + "")) set_data_dev(t, t_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block.name,
+    		type: "else",
+    		source: "(68:10) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (66:10) {#if swaps[value]}
+    function create_if_block$1(ctx) {
+    	let html_tag;
+    	let raw_value = /*swaps*/ ctx[3][/*value*/ ctx[14]] + "";
+    	let html_anchor;
+
+    	const block = {
+    		c: function create() {
+    			html_anchor = empty();
+    			html_tag = new HtmlTag(html_anchor);
+    		},
+    		m: function mount(target, anchor) {
+    			html_tag.m(raw_value, target, anchor);
+    			insert_dev(target, html_anchor, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*rowData*/ 1 && raw_value !== (raw_value = /*swaps*/ ctx[3][/*value*/ ctx[14]] + "")) html_tag.p(raw_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(html_anchor);
+    			if (detaching) html_tag.d();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$1.name,
+    		type: "if",
+    		source: "(66:10) {#if swaps[value]}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (60:6) {#each keys as { value }}
+    function create_each_block_1(ctx) {
+    	let button;
+    	let mounted;
+    	let dispose;
+
+    	function select_block_type(ctx, dirty) {
+    		if (/*swaps*/ ctx[3][/*value*/ ctx[14]]) return create_if_block$1;
+    		return create_else_block;
+    	}
+
+    	let current_block_type = select_block_type(ctx);
+    	let if_block = current_block_type(ctx);
+
+    	function touchstart_handler(...args) {
+    		return /*touchstart_handler*/ ctx[5](/*value*/ ctx[14], ...args);
+    	}
+
+    	function click_handler(...args) {
+    		return /*click_handler*/ ctx[6](/*value*/ ctx[14], ...args);
+    	}
+
+    	const block = {
+    		c: function create() {
+    			button = element("button");
+    			if_block.c();
+
+    			set_style(button, "width", /*value*/ ctx[14].length === 1
+    			? /*percentWidth*/ ctx[1]
+    			: "auto");
+
+    			attr_dev(button, "class", "svelte-1bx8glz");
+    			toggle_class(button, "single", /*value*/ ctx[14].length === 1);
+    			add_location(button, file$2, 60, 8, 1540);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, button, anchor);
+    			if_block.m(button, null);
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(button, "touchstart", touchstart_handler, { passive: true }, false, false),
+    					listen_dev(button, "click", click_handler, false, false, false)
+    				];
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+
+    			if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block) {
+    				if_block.p(ctx, dirty);
+    			} else {
+    				if_block.d(1);
+    				if_block = current_block_type(ctx);
+
+    				if (if_block) {
+    					if_block.c();
+    					if_block.m(button, null);
+    				}
+    			}
+
+    			if (dirty & /*rowData, percentWidth*/ 3) {
+    				set_style(button, "width", /*value*/ ctx[14].length === 1
+    				? /*percentWidth*/ ctx[1]
+    				: "auto");
+    			}
+
+    			if (dirty & /*rowData*/ 1) {
+    				toggle_class(button, "single", /*value*/ ctx[14].length === 1);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(button);
+    			if_block.d();
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_1.name,
+    		type: "each",
+    		source: "(60:6) {#each keys as { value }}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (58:2) {#each rowData as keys}
+    function create_each_block$1(ctx) {
+    	let div;
+    	let t;
+    	let each_value_1 = /*keys*/ ctx[11];
+    	validate_each_argument(each_value_1);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			t = space();
+    			attr_dev(div, "class", "row svelte-1bx8glz");
+    			add_location(div, file$2, 58, 4, 1482);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div, null);
+    			}
+
+    			append_dev(div, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*rowData, percentWidth, dispatch, swaps*/ 15) {
+    				each_value_1 = /*keys*/ ctx[11];
+    				validate_each_argument(each_value_1);
+    				let i;
+
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1(ctx, each_value_1, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block_1(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(div, t);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value_1.length;
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block$1.name,
+    		type: "each",
+    		source: "(58:2) {#each rowData as keys}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$2(ctx) {
+    	let div;
+    	let each_value = /*rowData*/ ctx[0];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$1(get_each_context$1(ctx, each_value, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			attr_dev(div, "class", "keyboard");
+    			add_location(div, file$2, 56, 0, 1429);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div, null);
+    			}
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*rowData, percentWidth, dispatch, swaps*/ 15) {
+    				each_value = /*rowData*/ ctx[0];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$1(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block$1(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(div, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value.length;
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$2.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$2($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots("Keyboard", slots, []);
+    	const dispatch = createEventDispatcher();
+    	let { data = keyboardData } = $$props;
+    	const unique = arr => [...new Set(arr)];
+    	const rows = unique(data.map(d => d.row));
+    	rows.sort((a, b) => a - b);
+
+    	const swaps = {
+    		delete: "<svg width=\"1em\" height=\"1em\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-delete\"><path d=\"M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z\"></path><line x1=\"18\" y1=\"9\" x2=\"12\" y2=\"15\"></line><line x1=\"12\" y1=\"9\" x2=\"18\" y2=\"15\"></line></svg>"
+    	};
+
+    	function onKey() {
+    		const value = this.innerText;
+    		dispatch("keydown", value);
+    	}
+
+    	const writable_props = ["data"];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Keyboard> was created with unknown prop '${key}'`);
+    	});
+
+    	const touchstart_handler = value => dispatch("keydown", value);
+    	const click_handler = value => dispatch("keydown", value);
+
+    	$$self.$$set = $$props => {
+    		if ("data" in $$props) $$invalidate(4, data = $$props.data);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		createEventDispatcher,
+    		keyboardData,
+    		dispatch,
+    		data,
+    		unique,
+    		rows,
+    		swaps,
+    		onKey,
+    		rowData,
+    		maxInRow,
+    		percentWidth
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ("data" in $$props) $$invalidate(4, data = $$props.data);
+    		if ("rowData" in $$props) $$invalidate(0, rowData = $$props.rowData);
+    		if ("maxInRow" in $$props) $$invalidate(7, maxInRow = $$props.maxInRow);
+    		if ("percentWidth" in $$props) $$invalidate(1, percentWidth = $$props.percentWidth);
+    	};
+
+    	let rowData;
+    	let maxInRow;
+    	let percentWidth;
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty & /*data*/ 16) {
+    			 $$invalidate(0, rowData = rows.map(r => data.filter(k => k.row === r)));
+    		}
+
+    		if ($$self.$$.dirty & /*rowData*/ 1) {
+    			 $$invalidate(7, maxInRow = Math.max(...rowData.map(r => r.length)));
+    		}
+
+    		if ($$self.$$.dirty & /*maxInRow*/ 128) {
+    			 $$invalidate(1, percentWidth = `${1 / maxInRow * 100}%`);
+    		}
+    	};
+
+    	return [
+    		rowData,
+    		percentWidth,
+    		dispatch,
+    		swaps,
+    		data,
+    		touchstart_handler,
+    		click_handler
+    	];
+    }
+
+    class Keyboard extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$2, create_fragment$2, safe_not_equal, { data: 4 });
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Keyboard",
+    			options,
+    			id: create_fragment$2.name
+    		});
+    	}
+
+    	get data() {
+    		throw new Error("<Keyboard>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set data(value) {
+    		throw new Error("<Keyboard>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    var getSecondarilyFocusedCells = ({ cells, focusedDirection, focusedCell }) => {
+      const dimension = focusedDirection == "across" ? "x" : "y";
+      const otherDimension = focusedDirection == "across" ? "y" : "x";
+      const start = focusedCell[dimension];
+
+      const cellsWithDiff = cells
+        .filter(
+          (cell) =>
+            // take out cells in other columns/rows
+            cell[otherDimension] == focusedCell[otherDimension]
+        )
+        .map((cell) => ({
+          ...cell,
+          // how far is this cell from our focused cell?
+          diff: start - cell[dimension],
+        }));
+        
+    	cellsWithDiff.sort((a, b) => a.diff - b.diff);
+
+      // highlight all cells in same row/column, without any breaks
+      const diffs = cellsWithDiff.map((d) => d.diff);
+      const indices = range(Math.min(...diffs), Math.max(...diffs)).map((i) =>
+        diffs.includes(i) ? i : " "
+      );
+      const chunks = indices.join(",").split(", ,");
+      const currentChunk = (
+        chunks.find(
+          (d) => d.startsWith("0,") || d.endsWith(",0") || d.includes(",0,")
+        ) || ""
+      )
+        .split(",")
+        .map((d) => +d);
+
+      const secondarilyFocusedCellIndices = cellsWithDiff
+        .filter((cell) => currentChunk.includes(cell.diff))
+        .map((cell) => cell.index);
+      return secondarilyFocusedCellIndices;
+    };
+
+    const range = (min, max) =>
+      Array.from({ length: max - min + 1 }, (v, k) => k + min);
+
+    var getCellAfterDiff = ({ diff, cells, direction, focusedCell }) => {
+      const dimension = direction == "across" ? "x" : "y";
+      const otherDimension = direction == "across" ? "y" : "x";
+      const start = focusedCell[dimension];
+      const absDiff = Math.abs(diff);
+      const isDiffNegative = diff < 0;
+
+      const cellsWithDiff = cells
+        .filter(
+          (cell) =>
+            // take out cells in other columns/rows
+            cell[otherDimension] == focusedCell[otherDimension] &&
+            // take out cells in wrong direction
+            (isDiffNegative ? cell[dimension] < start : cell[dimension] > start)
+        )
+        .map((cell) => ({
+          ...cell,
+          // how far is this cell from our focused cell?
+          absDiff: Math.abs(start - cell[dimension]),
+        }));
+
+      cellsWithDiff.sort((a, b) => a.absDiff - b.absDiff);
+      return cellsWithDiff[absDiff - 1];
+    };
+
+    function checkMobile() {
+    	const devices = {
+    		android: () => navigator.userAgent.match(/Android/i),
+
+    		blackberry: () => navigator.userAgent.match(/BlackBerry/i),
+
+    		ios: () => navigator.userAgent.match(/iPhone|iPad|iPod/i),
+
+    		opera: () => navigator.userAgent.match(/Opera Mini/i),
+
+    		windows: () => navigator.userAgent.match(/IEMobile/i),
+    	};
+
+    	return devices.android() ||
+    		devices.blackberry() ||
+    		devices.ios() ||
+    		devices.opera() ||
+    		devices.windows();
+    }
+
+    /* node_modules/svelte-crossword/src/Cell.svelte generated by Svelte v3.29.4 */
+
+    const file$3 = "node_modules/svelte-crossword/src/Cell.svelte";
+
+    // (104:2) {#if value}
+    function create_if_block$2(ctx) {
+    	let text_1;
+    	let t;
+    	let text_1_transition;
+    	let current;
+
+    	const block = {
+    		c: function create() {
+    			text_1 = svg_element("text");
+    			t = text(/*value*/ ctx[2]);
+    			attr_dev(text_1, "class", "value svelte-1fqxzxj");
+    			attr_dev(text_1, "x", "0.5");
+    			attr_dev(text_1, "y", "0.9");
+    			attr_dev(text_1, "dominant-baseline", "auto");
+    			attr_dev(text_1, "text-anchor", "middle");
+    			add_location(text_1, file$3, 104, 4, 2278);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, text_1, anchor);
+    			append_dev(text_1, t);
+    			current = true;
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			if (!current || dirty & /*value*/ 4) set_data_dev(t, /*value*/ ctx[2]);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+
+    			add_render_callback(() => {
+    				if (!text_1_transition) text_1_transition = create_bidirectional_transition(
+    					text_1,
+    					pop,
+    					{
+    						y: 5,
+    						delay: /*changeDelay*/ ctx[5],
+    						duration: /*isRevealing*/ ctx[6] ? 250 : 0
+    					},
+    					true
+    				);
+
+    				text_1_transition.run(1);
+    			});
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			if (!text_1_transition) text_1_transition = create_bidirectional_transition(
+    				text_1,
+    				pop,
+    				{
+    					y: 5,
+    					delay: /*changeDelay*/ ctx[5],
+    					duration: /*isRevealing*/ ctx[6] ? 250 : 0
+    				},
+    				false
+    			);
+
+    			text_1_transition.run(0);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(text_1);
+    			if (detaching && text_1_transition) text_1_transition.end();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$2.name,
+    		type: "if",
+    		source: "(104:2) {#if value}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$3(ctx) {
+    	let g;
+    	let rect;
+    	let text_1;
+    	let t;
+    	let g_class_value;
+    	let g_transform_value;
+    	let g_id_value;
+    	let current;
+    	let mounted;
+    	let dispose;
+    	let if_block = /*value*/ ctx[2] && create_if_block$2(ctx);
+
+    	const block = {
+    		c: function create() {
+    			g = svg_element("g");
+    			rect = svg_element("rect");
+    			if (if_block) if_block.c();
+    			text_1 = svg_element("text");
+    			t = text(/*number*/ ctx[3]);
+    			attr_dev(rect, "width", "1");
+    			attr_dev(rect, "height", "1");
+    			attr_dev(rect, "class", "svelte-1fqxzxj");
+    			add_location(rect, file$3, 102, 2, 2225);
+    			attr_dev(text_1, "class", "number svelte-1fqxzxj");
+    			attr_dev(text_1, "x", "0.1");
+    			attr_dev(text_1, "y", "0.1");
+    			attr_dev(text_1, "dominant-baseline", "hanging");
+    			attr_dev(text_1, "text-anchor", "start");
+    			add_location(text_1, file$3, 114, 2, 2514);
+    			attr_dev(g, "class", g_class_value = "cell " + /*custom*/ ctx[4] + " svelte-1fqxzxj");
+    			attr_dev(g, "transform", g_transform_value = `translate(${/*x*/ ctx[0]}, ${/*y*/ ctx[1]})`);
+    			attr_dev(g, "id", g_id_value = "cell-" + /*x*/ ctx[0] + "-" + /*y*/ ctx[1]);
+    			attr_dev(g, "tabindex", "0");
+    			toggle_class(g, "is-focused", /*isFocused*/ ctx[7]);
+    			toggle_class(g, "is-secondarily-focused", /*isSecondarilyFocused*/ ctx[8]);
+    			add_location(g, file$3, 92, 0, 1957);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, g, anchor);
+    			append_dev(g, rect);
+    			if (if_block) if_block.m(g, null);
+    			append_dev(g, text_1);
+    			append_dev(text_1, t);
+    			/*g_binding*/ ctx[19](g);
+    			current = true;
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(g, "click", /*onClick*/ ctx[11], false, false, false),
+    					listen_dev(g, "keydown", /*onKeydown*/ ctx[10], false, false, false)
+    				];
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (/*value*/ ctx[2]) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+
+    					if (dirty & /*value*/ 4) {
+    						transition_in(if_block, 1);
+    					}
+    				} else {
+    					if_block = create_if_block$2(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(g, text_1);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+
+    				check_outros();
+    			}
+
+    			if (!current || dirty & /*number*/ 8) set_data_dev(t, /*number*/ ctx[3]);
+
+    			if (!current || dirty & /*custom*/ 16 && g_class_value !== (g_class_value = "cell " + /*custom*/ ctx[4] + " svelte-1fqxzxj")) {
+    				attr_dev(g, "class", g_class_value);
+    			}
+
+    			if (!current || dirty & /*x, y*/ 3 && g_transform_value !== (g_transform_value = `translate(${/*x*/ ctx[0]}, ${/*y*/ ctx[1]})`)) {
+    				attr_dev(g, "transform", g_transform_value);
+    			}
+
+    			if (!current || dirty & /*x, y*/ 3 && g_id_value !== (g_id_value = "cell-" + /*x*/ ctx[0] + "-" + /*y*/ ctx[1])) {
+    				attr_dev(g, "id", g_id_value);
+    			}
+
+    			if (dirty & /*custom, isFocused*/ 144) {
+    				toggle_class(g, "is-focused", /*isFocused*/ ctx[7]);
+    			}
+
+    			if (dirty & /*custom, isSecondarilyFocused*/ 272) {
+    				toggle_class(g, "is-secondarily-focused", /*isSecondarilyFocused*/ ctx[8]);
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(g);
+    			if (if_block) if_block.d();
+    			/*g_binding*/ ctx[19](null);
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$3.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function pop(node, { delay = 0, duration = 250 }) {
+    	return {
+    		delay,
+    		duration,
+    		css: t => [`transform: translate(0, ${1 - t}px)`].join(";"), //
+    		
+    	};
+    }
+
+    function instance$3($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots("Cell", slots, []);
+    	let { x } = $$props;
+    	let { y } = $$props;
+    	let { value } = $$props;
+    	let { number } = $$props;
+    	let { index } = $$props;
+    	let { custom } = $$props;
+    	let { changeDelay = 0 } = $$props;
+    	let { isRevealing = false } = $$props;
+    	let { isFocused = false } = $$props;
+    	let { isSecondarilyFocused = false } = $$props;
+
+    	let { onFocusCell = () => {
+    		
+    	} } = $$props;
+
+    	let { onCellUpdate = () => {
+    		
+    	} } = $$props;
+
+    	let { onFocusClueDiff = () => {
+    		
+    	} } = $$props;
+
+    	let { onMoveFocus = () => {
+    		
+    	} } = $$props;
+
+    	let { onFlipDirection = () => {
+    		
+    	} } = $$props;
+
+    	let { onHistoricalChange = () => {
+    		
+    	} } = $$props;
+
+    	let element;
+
+    	function onFocusSelf() {
+    		if (!element) return;
+    		if (isFocused) element.focus();
+    	}
+
+    	function onKeydown(e) {
+    		if (e.ctrlKey && e.key.toLowerCase() == "z") {
+    			onHistoricalChange(e.shiftKey ? 1 : -1);
+    		}
+
+    		if (e.ctrlKey) return;
+    		if (e.altKey) return;
+
+    		if (e.key === "Tab") {
+    			onFocusClueDiff(e.shiftKey ? -1 : 1);
+    			e.preventDefault();
+    			e.stopPropagation();
+    			return;
+    		}
+
+    		if (e.key == " ") {
+    			onFlipDirection();
+    			e.preventDefault();
+    			e.stopPropagation();
+    			return;
+    		}
+
+    		if (["Delete", "Backspace"].includes(e.key)) {
+    			onCellUpdate(index, "", -1);
+    			return;
+    		}
+
+    		const isKeyInAlphabet = (/^[a-zA-Z()]$/).test(e.key);
+
+    		if (isKeyInAlphabet) {
+    			onCellUpdate(index, e.key.toUpperCase());
+    			return;
+    		}
+
+    		const diff = ({
+    			ArrowLeft: ["across", -1],
+    			ArrowRight: ["across", 1],
+    			ArrowUp: ["down", -1],
+    			ArrowDown: ["down", 1]
+    		})[e.key];
+
+    		if (diff) {
+    			onMoveFocus(...diff);
+    			e.preventDefault();
+    			e.stopPropagation();
+    			return;
+    		}
+    	}
+
+    	function onClick() {
+    		onFocusCell(index);
+    	}
+
+    	const writable_props = [
+    		"x",
+    		"y",
+    		"value",
+    		"number",
+    		"index",
+    		"custom",
+    		"changeDelay",
+    		"isRevealing",
+    		"isFocused",
+    		"isSecondarilyFocused",
+    		"onFocusCell",
+    		"onCellUpdate",
+    		"onFocusClueDiff",
+    		"onMoveFocus",
+    		"onFlipDirection",
+    		"onHistoricalChange"
+    	];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Cell> was created with unknown prop '${key}'`);
+    	});
+
+    	function g_binding($$value) {
+    		binding_callbacks[$$value ? "unshift" : "push"](() => {
+    			element = $$value;
+    			$$invalidate(9, element);
+    		});
+    	}
+
+    	$$self.$$set = $$props => {
+    		if ("x" in $$props) $$invalidate(0, x = $$props.x);
+    		if ("y" in $$props) $$invalidate(1, y = $$props.y);
+    		if ("value" in $$props) $$invalidate(2, value = $$props.value);
+    		if ("number" in $$props) $$invalidate(3, number = $$props.number);
+    		if ("index" in $$props) $$invalidate(12, index = $$props.index);
+    		if ("custom" in $$props) $$invalidate(4, custom = $$props.custom);
+    		if ("changeDelay" in $$props) $$invalidate(5, changeDelay = $$props.changeDelay);
+    		if ("isRevealing" in $$props) $$invalidate(6, isRevealing = $$props.isRevealing);
+    		if ("isFocused" in $$props) $$invalidate(7, isFocused = $$props.isFocused);
+    		if ("isSecondarilyFocused" in $$props) $$invalidate(8, isSecondarilyFocused = $$props.isSecondarilyFocused);
+    		if ("onFocusCell" in $$props) $$invalidate(13, onFocusCell = $$props.onFocusCell);
+    		if ("onCellUpdate" in $$props) $$invalidate(14, onCellUpdate = $$props.onCellUpdate);
+    		if ("onFocusClueDiff" in $$props) $$invalidate(15, onFocusClueDiff = $$props.onFocusClueDiff);
+    		if ("onMoveFocus" in $$props) $$invalidate(16, onMoveFocus = $$props.onMoveFocus);
+    		if ("onFlipDirection" in $$props) $$invalidate(17, onFlipDirection = $$props.onFlipDirection);
+    		if ("onHistoricalChange" in $$props) $$invalidate(18, onHistoricalChange = $$props.onHistoricalChange);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		x,
+    		y,
+    		value,
+    		number,
+    		index,
+    		custom,
+    		changeDelay,
+    		isRevealing,
+    		isFocused,
+    		isSecondarilyFocused,
+    		onFocusCell,
+    		onCellUpdate,
+    		onFocusClueDiff,
+    		onMoveFocus,
+    		onFlipDirection,
+    		onHistoricalChange,
+    		element,
+    		onFocusSelf,
+    		onKeydown,
+    		onClick,
+    		pop
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ("x" in $$props) $$invalidate(0, x = $$props.x);
+    		if ("y" in $$props) $$invalidate(1, y = $$props.y);
+    		if ("value" in $$props) $$invalidate(2, value = $$props.value);
+    		if ("number" in $$props) $$invalidate(3, number = $$props.number);
+    		if ("index" in $$props) $$invalidate(12, index = $$props.index);
+    		if ("custom" in $$props) $$invalidate(4, custom = $$props.custom);
+    		if ("changeDelay" in $$props) $$invalidate(5, changeDelay = $$props.changeDelay);
+    		if ("isRevealing" in $$props) $$invalidate(6, isRevealing = $$props.isRevealing);
+    		if ("isFocused" in $$props) $$invalidate(7, isFocused = $$props.isFocused);
+    		if ("isSecondarilyFocused" in $$props) $$invalidate(8, isSecondarilyFocused = $$props.isSecondarilyFocused);
+    		if ("onFocusCell" in $$props) $$invalidate(13, onFocusCell = $$props.onFocusCell);
+    		if ("onCellUpdate" in $$props) $$invalidate(14, onCellUpdate = $$props.onCellUpdate);
+    		if ("onFocusClueDiff" in $$props) $$invalidate(15, onFocusClueDiff = $$props.onFocusClueDiff);
+    		if ("onMoveFocus" in $$props) $$invalidate(16, onMoveFocus = $$props.onMoveFocus);
+    		if ("onFlipDirection" in $$props) $$invalidate(17, onFlipDirection = $$props.onFlipDirection);
+    		if ("onHistoricalChange" in $$props) $$invalidate(18, onHistoricalChange = $$props.onHistoricalChange);
+    		if ("element" in $$props) $$invalidate(9, element = $$props.element);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty & /*isFocused*/ 128) {
+    			 (onFocusSelf());
+    		}
+    	};
+
+    	return [
+    		x,
+    		y,
+    		value,
+    		number,
+    		custom,
+    		changeDelay,
+    		isRevealing,
+    		isFocused,
+    		isSecondarilyFocused,
+    		element,
+    		onKeydown,
+    		onClick,
+    		index,
+    		onFocusCell,
+    		onCellUpdate,
+    		onFocusClueDiff,
+    		onMoveFocus,
+    		onFlipDirection,
+    		onHistoricalChange,
+    		g_binding
+    	];
+    }
+
+    class Cell extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+
+    		init(this, options, instance$3, create_fragment$3, safe_not_equal, {
+    			x: 0,
+    			y: 1,
+    			value: 2,
+    			number: 3,
+    			index: 12,
+    			custom: 4,
+    			changeDelay: 5,
+    			isRevealing: 6,
+    			isFocused: 7,
+    			isSecondarilyFocused: 8,
+    			onFocusCell: 13,
+    			onCellUpdate: 14,
+    			onFocusClueDiff: 15,
+    			onMoveFocus: 16,
+    			onFlipDirection: 17,
+    			onHistoricalChange: 18
+    		});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Cell",
+    			options,
+    			id: create_fragment$3.name
+    		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*x*/ ctx[0] === undefined && !("x" in props)) {
+    			console.warn("<Cell> was created without expected prop 'x'");
+    		}
+
+    		if (/*y*/ ctx[1] === undefined && !("y" in props)) {
+    			console.warn("<Cell> was created without expected prop 'y'");
+    		}
+
+    		if (/*value*/ ctx[2] === undefined && !("value" in props)) {
+    			console.warn("<Cell> was created without expected prop 'value'");
+    		}
+
+    		if (/*number*/ ctx[3] === undefined && !("number" in props)) {
+    			console.warn("<Cell> was created without expected prop 'number'");
+    		}
+
+    		if (/*index*/ ctx[12] === undefined && !("index" in props)) {
+    			console.warn("<Cell> was created without expected prop 'index'");
+    		}
+
+    		if (/*custom*/ ctx[4] === undefined && !("custom" in props)) {
+    			console.warn("<Cell> was created without expected prop 'custom'");
+    		}
+    	}
+
+    	get x() {
+    		throw new Error("<Cell>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set x(value) {
+    		throw new Error("<Cell>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get y() {
+    		throw new Error("<Cell>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set y(value) {
+    		throw new Error("<Cell>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get value() {
+    		throw new Error("<Cell>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set value(value) {
+    		throw new Error("<Cell>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get number() {
+    		throw new Error("<Cell>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set number(value) {
+    		throw new Error("<Cell>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get index() {
+    		throw new Error("<Cell>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set index(value) {
+    		throw new Error("<Cell>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get custom() {
+    		throw new Error("<Cell>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set custom(value) {
+    		throw new Error("<Cell>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get changeDelay() {
+    		throw new Error("<Cell>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set changeDelay(value) {
+    		throw new Error("<Cell>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get isRevealing() {
+    		throw new Error("<Cell>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set isRevealing(value) {
+    		throw new Error("<Cell>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get isFocused() {
+    		throw new Error("<Cell>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set isFocused(value) {
+    		throw new Error("<Cell>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get isSecondarilyFocused() {
+    		throw new Error("<Cell>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set isSecondarilyFocused(value) {
+    		throw new Error("<Cell>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get onFocusCell() {
+    		throw new Error("<Cell>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set onFocusCell(value) {
+    		throw new Error("<Cell>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get onCellUpdate() {
+    		throw new Error("<Cell>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set onCellUpdate(value) {
+    		throw new Error("<Cell>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get onFocusClueDiff() {
+    		throw new Error("<Cell>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set onFocusClueDiff(value) {
+    		throw new Error("<Cell>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get onMoveFocus() {
+    		throw new Error("<Cell>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set onMoveFocus(value) {
+    		throw new Error("<Cell>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get onFlipDirection() {
+    		throw new Error("<Cell>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set onFlipDirection(value) {
+    		throw new Error("<Cell>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get onHistoricalChange() {
+    		throw new Error("<Cell>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set onHistoricalChange(value) {
+    		throw new Error("<Cell>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* node_modules/svelte-crossword/src/Puzzle.svelte generated by Svelte v3.29.4 */
+    const file$4 = "node_modules/svelte-crossword/src/Puzzle.svelte";
+
+    function get_each_context$2(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[29] = list[i].x;
+    	child_ctx[30] = list[i].y;
+    	child_ctx[31] = list[i].value;
+    	child_ctx[32] = list[i].index;
+    	child_ctx[33] = list[i].number;
+    	child_ctx[34] = list[i].custom;
+    	return child_ctx;
+    }
+
+    // (156:4) {#each cells as { x, y, value, index, number, custom }}
+    function create_each_block$2(ctx) {
+    	let cell;
+    	let current;
+
+    	cell = new Cell({
+    			props: {
+    				x: /*x*/ ctx[29],
+    				y: /*y*/ ctx[30],
+    				index: /*index*/ ctx[32],
+    				value: /*value*/ ctx[31],
+    				number: /*number*/ ctx[33],
+    				custom: /*custom*/ ctx[34],
+    				changeDelay: /*isRevealing*/ ctx[2]
+    				? /*revealDuration*/ ctx[5] / /*cells*/ ctx[0].length * /*index*/ ctx[32]
+    				: 0,
+    				isRevealing: /*isRevealing*/ ctx[2],
+    				isFocused: /*focusedCellIndex*/ ctx[1] == /*index*/ ctx[32] && !/*isDisableHighlight*/ ctx[3],
+    				isSecondarilyFocused: /*secondarilyFocusedCells*/ ctx[6].includes(/*index*/ ctx[32]) && !/*isDisableHighlight*/ ctx[3],
+    				onFocusCell: /*onFocusCell*/ ctx[12],
+    				onCellUpdate: /*onCellUpdate*/ ctx[10],
+    				onFocusClueDiff: /*onFocusClueDiff*/ ctx[13],
+    				onMoveFocus: /*onMoveFocus*/ ctx[14],
+    				onFlipDirection: /*onFlipDirection*/ ctx[15],
+    				onHistoricalChange: /*onHistoricalChange*/ ctx[11]
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(cell.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(cell, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const cell_changes = {};
+    			if (dirty[0] & /*cells*/ 1) cell_changes.x = /*x*/ ctx[29];
+    			if (dirty[0] & /*cells*/ 1) cell_changes.y = /*y*/ ctx[30];
+    			if (dirty[0] & /*cells*/ 1) cell_changes.index = /*index*/ ctx[32];
+    			if (dirty[0] & /*cells*/ 1) cell_changes.value = /*value*/ ctx[31];
+    			if (dirty[0] & /*cells*/ 1) cell_changes.number = /*number*/ ctx[33];
+    			if (dirty[0] & /*cells*/ 1) cell_changes.custom = /*custom*/ ctx[34];
+
+    			if (dirty[0] & /*isRevealing, revealDuration, cells*/ 37) cell_changes.changeDelay = /*isRevealing*/ ctx[2]
+    			? /*revealDuration*/ ctx[5] / /*cells*/ ctx[0].length * /*index*/ ctx[32]
+    			: 0;
+
+    			if (dirty[0] & /*isRevealing*/ 4) cell_changes.isRevealing = /*isRevealing*/ ctx[2];
+    			if (dirty[0] & /*focusedCellIndex, cells, isDisableHighlight*/ 11) cell_changes.isFocused = /*focusedCellIndex*/ ctx[1] == /*index*/ ctx[32] && !/*isDisableHighlight*/ ctx[3];
+    			if (dirty[0] & /*secondarilyFocusedCells, cells, isDisableHighlight*/ 73) cell_changes.isSecondarilyFocused = /*secondarilyFocusedCells*/ ctx[6].includes(/*index*/ ctx[32]) && !/*isDisableHighlight*/ ctx[3];
+    			cell.$set(cell_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(cell.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(cell.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(cell, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block$2.name,
+    		type: "each",
+    		source: "(156:4) {#each cells as { x, y, value, index, number, custom }}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (178:1) {#if keyboardVisible}
+    function create_if_block$3(ctx) {
+    	let div;
+    	let keyboard;
+    	let current;
+    	keyboard = new Keyboard({ $$inline: true });
+    	keyboard.$on("keydown", /*onKeydown*/ ctx[16]);
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			create_component(keyboard.$$.fragment);
+    			attr_dev(div, "class", "keyboard svelte-1yaebvb");
+    			add_location(div, file$4, 178, 2, 5468);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			mount_component(keyboard, div, null);
+    			current = true;
+    		},
+    		p: noop,
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(keyboard.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(keyboard.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			destroy_component(keyboard);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$3.name,
+    		type: "if",
+    		source: "(178:1) {#if keyboardVisible}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$4(ctx) {
+    	let section;
+    	let svg;
+    	let svg_viewBox_value;
+    	let t;
+    	let if_block_anchor;
+    	let current;
+    	let each_value = /*cells*/ ctx[0];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$2(get_each_context$2(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	let if_block = /*keyboardVisible*/ ctx[9] && create_if_block$3(ctx);
+
+    	const block = {
+    		c: function create() {
+    			section = element("section");
+    			svg = svg_element("svg");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			t = text("\n\n'");
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    			attr_dev(svg, "viewBox", svg_viewBox_value = "0 0 " + /*w*/ ctx[7] + " " + /*h*/ ctx[8]);
+    			attr_dev(svg, "class", "svelte-1yaebvb");
+    			add_location(svg, file$4, 154, 2, 4642);
+    			attr_dev(section, "class", "puzzle svelte-1yaebvb");
+    			toggle_class(section, "stacked", /*stacked*/ ctx[4]);
+    			add_location(section, file$4, 153, 0, 4601);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, section, anchor);
+    			append_dev(section, svg);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(svg, null);
+    			}
+
+    			insert_dev(target, t, anchor);
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*cells, isRevealing, revealDuration, focusedCellIndex, isDisableHighlight, secondarilyFocusedCells, onFocusCell, onCellUpdate, onFocusClueDiff, onMoveFocus, onFlipDirection, onHistoricalChange*/ 64623) {
+    				each_value = /*cells*/ ctx[0];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$2(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block$2(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(svg, null);
+    					}
+    				}
+
+    				group_outros();
+
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+
+    				check_outros();
+    			}
+
+    			if (!current || dirty[0] & /*w, h*/ 384 && svg_viewBox_value !== (svg_viewBox_value = "0 0 " + /*w*/ ctx[7] + " " + /*h*/ ctx[8])) {
+    				attr_dev(svg, "viewBox", svg_viewBox_value);
+    			}
+
+    			if (dirty[0] & /*stacked*/ 16) {
+    				toggle_class(section, "stacked", /*stacked*/ ctx[4]);
+    			}
+
+    			if (/*keyboardVisible*/ ctx[9]) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+
+    					if (dirty[0] & /*keyboardVisible*/ 512) {
+    						transition_in(if_block, 1);
+    					}
+    				} else {
+    					if_block = create_if_block$3(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			transition_in(if_block);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			transition_out(if_block);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(section);
+    			destroy_each(each_blocks, detaching);
+    			if (detaching) detach_dev(t);
+    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(if_block_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$4.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    const numberOfStatesInHistory = 10;
+
+    function instance$4($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots("Puzzle", slots, []);
+    	let { clues } = $$props;
+    	let { cells } = $$props;
+    	let { focusedDirection } = $$props;
+    	let { focusedCellIndex } = $$props;
+    	let { focusedCell } = $$props;
+    	let { isRevealing } = $$props;
+    	let { isDisableHighlight } = $$props;
+    	let { stacked } = $$props;
+    	let { revealDuration = 0 } = $$props;
+    	let { showKeyboard } = $$props;
+    	let cellsHistoryIndex = 0;
+    	let cellsHistory = [];
+    	let focusedCellIndexHistoryIndex = 0;
+    	let focusedCellIndexHistory = [];
+    	let secondarilyFocusedCells = [];
+    	let isMobile = false;
+
+    	onMount(() => {
+    		$$invalidate(25, isMobile = checkMobile());
+    	});
+
+    	function updateSecondarilyFocusedCells() {
+    		$$invalidate(6, secondarilyFocusedCells = getSecondarilyFocusedCells({ cells, focusedDirection, focusedCell }));
+    	}
+
+    	function onCellUpdate(index, newValue, diff = 1) {
+    		const doReplaceFilledCells = !!cells[index].value;
+
+    		const newCells = [
+    			...cells.slice(0, index),
+    			{ ...cells[index], value: newValue },
+    			...cells.slice(index + 1)
+    		];
+
+    		cellsHistory = [newCells, ...cellsHistory.slice(cellsHistoryIndex)].slice(0, numberOfStatesInHistory);
+    		cellsHistoryIndex = 0;
+    		$$invalidate(0, cells = newCells);
+    		onFocusCellDiff(diff, doReplaceFilledCells);
+    	}
+
+    	function onHistoricalChange(diff) {
+    		cellsHistoryIndex += -diff;
+    		$$invalidate(0, cells = cellsHistory[cellsHistoryIndex] || cells);
+    		focusedCellIndexHistoryIndex += -diff;
+    		$$invalidate(1, focusedCellIndex = focusedCellIndexHistory[cellsHistoryIndex] || focusedCellIndex);
+    	}
+
+    	function onFocusCell(index) {
+    		if (index == focusedCellIndex) {
+    			onFlipDirection();
+    		} else {
+    			$$invalidate(1, focusedCellIndex = index);
+    			focusedCellIndexHistory = [index, ...focusedCellIndexHistory.slice(0, numberOfStatesInHistory)];
+    			focusedCellIndexHistoryIndex = 0;
+    		}
+    	}
+
+    	function onFocusCellDiff(diff, doReplaceFilledCells = true) {
+    		const sortedCellsInDirectionFiltered = sortedCellsInDirection.filter(d => doReplaceFilledCells ? true : !d.value);
+    		const currentCellIndex = sortedCellsInDirectionFiltered.findIndex(d => d.index == focusedCellIndex);
+    		const nextCellIndex = (sortedCellsInDirectionFiltered[currentCellIndex + diff] || {}).index;
+    		const nextCell = cells[nextCellIndex];
+    		if (!nextCell) return;
+    		onFocusCell(nextCellIndex);
+    	}
+
+    	function onFocusClueDiff(diff = 1) {
+    		const currentNumber = focusedCell.clueNumbers[focusedDirection];
+
+    		let nextCluesInDirection = clues.filter(clue => (diff > 0
+    		? clue.number > currentNumber
+    		: clue.number < currentNumber) && clue.direction == focusedDirection);
+
+    		if (diff < 0) {
+    			nextCluesInDirection = nextCluesInDirection.reverse();
+    		}
+
+    		let nextClue = nextCluesInDirection[Math.abs(diff) - 1];
+
+    		if (!nextClue) {
+    			onFlipDirection();
+    			nextClue = clues.filter(clue => clue.direction == focusedDirection)[0];
+    		}
+
+    		$$invalidate(1, focusedCellIndex = cells.findIndex(cell => cell.x == nextClue.x && cell.y == nextClue.y));
+    	}
+
+    	function onMoveFocus(direction, diff) {
+    		if (focusedDirection != direction) {
+    			$$invalidate(17, focusedDirection = direction);
+    		} else {
+    			const nextCell = getCellAfterDiff({ diff, cells, direction, focusedCell });
+    			if (!nextCell) return;
+    			onFocusCell(nextCell.index);
+    		}
+    	}
+
+    	function onFlipDirection() {
+    		const newDirection = focusedDirection === "across" ? "down" : "across";
+    		const hasClueInNewDirection = !!focusedCell["clueNumbers"][newDirection];
+    		if (hasClueInNewDirection) $$invalidate(17, focusedDirection = newDirection);
+    	}
+
+    	function onKeydown({ detail }) {
+    		const diff = detail === "delete" ? -1 : 1;
+    		const value = detail === "delete" ? "" : detail;
+    		onCellUpdate(focusedCellIndex, value, diff);
+    	}
+
+    	const writable_props = [
+    		"clues",
+    		"cells",
+    		"focusedDirection",
+    		"focusedCellIndex",
+    		"focusedCell",
+    		"isRevealing",
+    		"isDisableHighlight",
+    		"stacked",
+    		"revealDuration",
+    		"showKeyboard"
+    	];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Puzzle> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$$set = $$props => {
+    		if ("clues" in $$props) $$invalidate(18, clues = $$props.clues);
+    		if ("cells" in $$props) $$invalidate(0, cells = $$props.cells);
+    		if ("focusedDirection" in $$props) $$invalidate(17, focusedDirection = $$props.focusedDirection);
+    		if ("focusedCellIndex" in $$props) $$invalidate(1, focusedCellIndex = $$props.focusedCellIndex);
+    		if ("focusedCell" in $$props) $$invalidate(19, focusedCell = $$props.focusedCell);
+    		if ("isRevealing" in $$props) $$invalidate(2, isRevealing = $$props.isRevealing);
+    		if ("isDisableHighlight" in $$props) $$invalidate(3, isDisableHighlight = $$props.isDisableHighlight);
+    		if ("stacked" in $$props) $$invalidate(4, stacked = $$props.stacked);
+    		if ("revealDuration" in $$props) $$invalidate(5, revealDuration = $$props.revealDuration);
+    		if ("showKeyboard" in $$props) $$invalidate(20, showKeyboard = $$props.showKeyboard);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		onMount,
+    		Keyboard,
+    		getSecondarilyFocusedCells,
+    		getCellAfterDiff,
+    		checkMobile,
+    		Cell,
+    		clues,
+    		cells,
+    		focusedDirection,
+    		focusedCellIndex,
+    		focusedCell,
+    		isRevealing,
+    		isDisableHighlight,
+    		stacked,
+    		revealDuration,
+    		showKeyboard,
+    		cellsHistoryIndex,
+    		cellsHistory,
+    		focusedCellIndexHistoryIndex,
+    		focusedCellIndexHistory,
+    		secondarilyFocusedCells,
+    		isMobile,
+    		numberOfStatesInHistory,
+    		updateSecondarilyFocusedCells,
+    		onCellUpdate,
+    		onHistoricalChange,
+    		onFocusCell,
+    		onFocusCellDiff,
+    		onFocusClueDiff,
+    		onMoveFocus,
+    		onFlipDirection,
+    		onKeydown,
+    		w,
+    		h,
+    		keyboardVisible,
+    		sortedCellsInDirection
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ("clues" in $$props) $$invalidate(18, clues = $$props.clues);
+    		if ("cells" in $$props) $$invalidate(0, cells = $$props.cells);
+    		if ("focusedDirection" in $$props) $$invalidate(17, focusedDirection = $$props.focusedDirection);
+    		if ("focusedCellIndex" in $$props) $$invalidate(1, focusedCellIndex = $$props.focusedCellIndex);
+    		if ("focusedCell" in $$props) $$invalidate(19, focusedCell = $$props.focusedCell);
+    		if ("isRevealing" in $$props) $$invalidate(2, isRevealing = $$props.isRevealing);
+    		if ("isDisableHighlight" in $$props) $$invalidate(3, isDisableHighlight = $$props.isDisableHighlight);
+    		if ("stacked" in $$props) $$invalidate(4, stacked = $$props.stacked);
+    		if ("revealDuration" in $$props) $$invalidate(5, revealDuration = $$props.revealDuration);
+    		if ("showKeyboard" in $$props) $$invalidate(20, showKeyboard = $$props.showKeyboard);
+    		if ("cellsHistoryIndex" in $$props) cellsHistoryIndex = $$props.cellsHistoryIndex;
+    		if ("cellsHistory" in $$props) cellsHistory = $$props.cellsHistory;
+    		if ("focusedCellIndexHistoryIndex" in $$props) focusedCellIndexHistoryIndex = $$props.focusedCellIndexHistoryIndex;
+    		if ("focusedCellIndexHistory" in $$props) focusedCellIndexHistory = $$props.focusedCellIndexHistory;
+    		if ("secondarilyFocusedCells" in $$props) $$invalidate(6, secondarilyFocusedCells = $$props.secondarilyFocusedCells);
+    		if ("isMobile" in $$props) $$invalidate(25, isMobile = $$props.isMobile);
+    		if ("w" in $$props) $$invalidate(7, w = $$props.w);
+    		if ("h" in $$props) $$invalidate(8, h = $$props.h);
+    		if ("keyboardVisible" in $$props) $$invalidate(9, keyboardVisible = $$props.keyboardVisible);
+    		if ("sortedCellsInDirection" in $$props) sortedCellsInDirection = $$props.sortedCellsInDirection;
+    	};
+
+    	let w;
+    	let h;
+    	let keyboardVisible;
+    	let sortedCellsInDirection;
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty[0] & /*cells*/ 1) {
+    			 $$invalidate(7, w = Math.max(...cells.map(d => d.x)) + 1);
+    		}
+
+    		if ($$self.$$.dirty[0] & /*cells*/ 1) {
+    			 $$invalidate(8, h = Math.max(...cells.map(d => d.y)) + 1);
+    		}
+
+    		if ($$self.$$.dirty[0] & /*showKeyboard, isMobile*/ 34603008) {
+    			 $$invalidate(9, keyboardVisible = typeof showKeyboard === "boolean"
+    			? showKeyboard
+    			: isMobile);
+    		}
+
+    		if ($$self.$$.dirty[0] & /*cells, focusedCellIndex, focusedDirection*/ 131075) {
+    			 (updateSecondarilyFocusedCells());
+    		}
+
+    		if ($$self.$$.dirty[0] & /*cells, focusedDirection*/ 131073) {
+    			 sortedCellsInDirection = [...cells].sort((a, b) => focusedDirection == "down"
+    			? a.x - b.x || a.y - b.y
+    			: a.y - b.y || a.x - b.x);
+    		}
+    	};
+
+    	return [
+    		cells,
+    		focusedCellIndex,
+    		isRevealing,
+    		isDisableHighlight,
+    		stacked,
+    		revealDuration,
+    		secondarilyFocusedCells,
+    		w,
+    		h,
+    		keyboardVisible,
+    		onCellUpdate,
+    		onHistoricalChange,
+    		onFocusCell,
+    		onFocusClueDiff,
+    		onMoveFocus,
+    		onFlipDirection,
+    		onKeydown,
+    		focusedDirection,
+    		clues,
+    		focusedCell,
+    		showKeyboard
+    	];
+    }
+
+    class Puzzle extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+
+    		init(
+    			this,
+    			options,
+    			instance$4,
+    			create_fragment$4,
+    			safe_not_equal,
+    			{
+    				clues: 18,
+    				cells: 0,
+    				focusedDirection: 17,
+    				focusedCellIndex: 1,
+    				focusedCell: 19,
+    				isRevealing: 2,
+    				isDisableHighlight: 3,
+    				stacked: 4,
+    				revealDuration: 5,
+    				showKeyboard: 20
+    			},
+    			[-1, -1]
+    		);
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Puzzle",
+    			options,
+    			id: create_fragment$4.name
+    		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*clues*/ ctx[18] === undefined && !("clues" in props)) {
+    			console.warn("<Puzzle> was created without expected prop 'clues'");
+    		}
+
+    		if (/*cells*/ ctx[0] === undefined && !("cells" in props)) {
+    			console.warn("<Puzzle> was created without expected prop 'cells'");
+    		}
+
+    		if (/*focusedDirection*/ ctx[17] === undefined && !("focusedDirection" in props)) {
+    			console.warn("<Puzzle> was created without expected prop 'focusedDirection'");
+    		}
+
+    		if (/*focusedCellIndex*/ ctx[1] === undefined && !("focusedCellIndex" in props)) {
+    			console.warn("<Puzzle> was created without expected prop 'focusedCellIndex'");
+    		}
+
+    		if (/*focusedCell*/ ctx[19] === undefined && !("focusedCell" in props)) {
+    			console.warn("<Puzzle> was created without expected prop 'focusedCell'");
+    		}
+
+    		if (/*isRevealing*/ ctx[2] === undefined && !("isRevealing" in props)) {
+    			console.warn("<Puzzle> was created without expected prop 'isRevealing'");
+    		}
+
+    		if (/*isDisableHighlight*/ ctx[3] === undefined && !("isDisableHighlight" in props)) {
+    			console.warn("<Puzzle> was created without expected prop 'isDisableHighlight'");
+    		}
+
+    		if (/*stacked*/ ctx[4] === undefined && !("stacked" in props)) {
+    			console.warn("<Puzzle> was created without expected prop 'stacked'");
+    		}
+
+    		if (/*showKeyboard*/ ctx[20] === undefined && !("showKeyboard" in props)) {
+    			console.warn("<Puzzle> was created without expected prop 'showKeyboard'");
+    		}
+    	}
+
+    	get clues() {
+    		throw new Error("<Puzzle>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set clues(value) {
+    		throw new Error("<Puzzle>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get cells() {
+    		throw new Error("<Puzzle>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set cells(value) {
+    		throw new Error("<Puzzle>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get focusedDirection() {
+    		throw new Error("<Puzzle>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set focusedDirection(value) {
+    		throw new Error("<Puzzle>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get focusedCellIndex() {
+    		throw new Error("<Puzzle>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set focusedCellIndex(value) {
+    		throw new Error("<Puzzle>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get focusedCell() {
+    		throw new Error("<Puzzle>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set focusedCell(value) {
+    		throw new Error("<Puzzle>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get isRevealing() {
+    		throw new Error("<Puzzle>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set isRevealing(value) {
+    		throw new Error("<Puzzle>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get isDisableHighlight() {
+    		throw new Error("<Puzzle>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set isDisableHighlight(value) {
+    		throw new Error("<Puzzle>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get stacked() {
+    		throw new Error("<Puzzle>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set stacked(value) {
+    		throw new Error("<Puzzle>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get revealDuration() {
+    		throw new Error("<Puzzle>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set revealDuration(value) {
+    		throw new Error("<Puzzle>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get showKeyboard() {
+    		throw new Error("<Puzzle>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set showKeyboard(value) {
+    		throw new Error("<Puzzle>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    function scrollTO (node, isFocused) {
+      return {
+        update(newIsFocused) {
+          isFocused = newIsFocused;
+          if (!isFocused) return;
+          const list = node.parentElement.parentElement;
+          if (!list) return;
+
+          const top = node.offsetTop;
+          const currentYTop = list.scrollTop;
+          const currentYBottom = currentYTop + list.clientHeight;
+          const buffer = 50;
+          if (top < currentYTop + buffer || top > currentYBottom - buffer) {
+            list.scrollTo({ top: top, behavior: "smooth" });
+          }
+        },
+      };
+    }
+
+    /* node_modules/svelte-crossword/src/Clue.svelte generated by Svelte v3.29.4 */
+    const file$5 = "node_modules/svelte-crossword/src/Clue.svelte";
+
+    function create_fragment$5(ctx) {
+    	let li;
+    	let button;
+    	let t0;
+    	let t1;
+    	let t2;
+    	let scrollTo_action;
+    	let mounted;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			li = element("li");
+    			button = element("button");
+    			t0 = text(/*number*/ ctx[0]);
+    			t1 = text(".\n    ");
+    			t2 = text(/*clue*/ ctx[1]);
+    			attr_dev(button, "class", "clue svelte-1i661i1");
+    			toggle_class(button, "is-number-focused", /*isNumberFocused*/ ctx[3]);
+    			toggle_class(button, "is-direction-focused", /*isDirectionFocused*/ ctx[4]);
+    			toggle_class(button, "is-filled", /*isFilled*/ ctx[2]);
+    			add_location(button, file$5, 16, 2, 351);
+    			add_location(li, file$5, 15, 0, 295);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, li, anchor);
+    			append_dev(li, button);
+    			append_dev(button, t0);
+    			append_dev(button, t1);
+    			append_dev(button, t2);
+    			/*li_binding*/ ctx[8](li);
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(
+    						button,
+    						"click",
+    						function () {
+    							if (is_function(/*onFocus*/ ctx[5])) /*onFocus*/ ctx[5].apply(this, arguments);
+    						},
+    						false,
+    						false,
+    						false
+    					),
+    					action_destroyer(scrollTo_action = scrollTO.call(null, li, /*isFocused*/ ctx[7]))
+    				];
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(new_ctx, [dirty]) {
+    			ctx = new_ctx;
+    			if (dirty & /*number*/ 1) set_data_dev(t0, /*number*/ ctx[0]);
+    			if (dirty & /*clue*/ 2) set_data_dev(t2, /*clue*/ ctx[1]);
+
+    			if (dirty & /*isNumberFocused*/ 8) {
+    				toggle_class(button, "is-number-focused", /*isNumberFocused*/ ctx[3]);
+    			}
+
+    			if (dirty & /*isDirectionFocused*/ 16) {
+    				toggle_class(button, "is-direction-focused", /*isDirectionFocused*/ ctx[4]);
+    			}
+
+    			if (dirty & /*isFilled*/ 4) {
+    				toggle_class(button, "is-filled", /*isFilled*/ ctx[2]);
+    			}
+
+    			if (scrollTo_action && is_function(scrollTo_action.update) && dirty & /*isFocused*/ 128) scrollTo_action.update.call(null, /*isFocused*/ ctx[7]);
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(li);
+    			/*li_binding*/ ctx[8](null);
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$5.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$5($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots("Clue", slots, []);
+    	let { number } = $$props;
+    	let { clue } = $$props;
+    	let { isFilled } = $$props;
+    	let { isNumberFocused = false } = $$props;
+    	let { isDirectionFocused = false } = $$props;
+
+    	let { onFocus = () => {
+    		
+    	} } = $$props;
+
+    	let element;
+
+    	const writable_props = [
+    		"number",
+    		"clue",
+    		"isFilled",
+    		"isNumberFocused",
+    		"isDirectionFocused",
+    		"onFocus"
+    	];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Clue> was created with unknown prop '${key}'`);
+    	});
+
+    	function li_binding($$value) {
+    		binding_callbacks[$$value ? "unshift" : "push"](() => {
+    			element = $$value;
+    			$$invalidate(6, element);
+    		});
+    	}
+
+    	$$self.$$set = $$props => {
+    		if ("number" in $$props) $$invalidate(0, number = $$props.number);
+    		if ("clue" in $$props) $$invalidate(1, clue = $$props.clue);
+    		if ("isFilled" in $$props) $$invalidate(2, isFilled = $$props.isFilled);
+    		if ("isNumberFocused" in $$props) $$invalidate(3, isNumberFocused = $$props.isNumberFocused);
+    		if ("isDirectionFocused" in $$props) $$invalidate(4, isDirectionFocused = $$props.isDirectionFocused);
+    		if ("onFocus" in $$props) $$invalidate(5, onFocus = $$props.onFocus);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		scrollTo: scrollTO,
+    		number,
+    		clue,
+    		isFilled,
+    		isNumberFocused,
+    		isDirectionFocused,
+    		onFocus,
+    		element,
+    		isFocused
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ("number" in $$props) $$invalidate(0, number = $$props.number);
+    		if ("clue" in $$props) $$invalidate(1, clue = $$props.clue);
+    		if ("isFilled" in $$props) $$invalidate(2, isFilled = $$props.isFilled);
+    		if ("isNumberFocused" in $$props) $$invalidate(3, isNumberFocused = $$props.isNumberFocused);
+    		if ("isDirectionFocused" in $$props) $$invalidate(4, isDirectionFocused = $$props.isDirectionFocused);
+    		if ("onFocus" in $$props) $$invalidate(5, onFocus = $$props.onFocus);
+    		if ("element" in $$props) $$invalidate(6, element = $$props.element);
+    		if ("isFocused" in $$props) $$invalidate(7, isFocused = $$props.isFocused);
+    	};
+
+    	let isFocused;
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty & /*isNumberFocused*/ 8) {
+    			 $$invalidate(7, isFocused = isNumberFocused);
+    		}
+    	};
+
+    	return [
+    		number,
+    		clue,
+    		isFilled,
+    		isNumberFocused,
+    		isDirectionFocused,
+    		onFocus,
+    		element,
+    		isFocused,
+    		li_binding
+    	];
+    }
+
+    class Clue extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+
+    		init(this, options, instance$5, create_fragment$5, safe_not_equal, {
+    			number: 0,
+    			clue: 1,
+    			isFilled: 2,
+    			isNumberFocused: 3,
+    			isDirectionFocused: 4,
+    			onFocus: 5
+    		});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Clue",
+    			options,
+    			id: create_fragment$5.name
+    		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*number*/ ctx[0] === undefined && !("number" in props)) {
+    			console.warn("<Clue> was created without expected prop 'number'");
+    		}
+
+    		if (/*clue*/ ctx[1] === undefined && !("clue" in props)) {
+    			console.warn("<Clue> was created without expected prop 'clue'");
+    		}
+
+    		if (/*isFilled*/ ctx[2] === undefined && !("isFilled" in props)) {
+    			console.warn("<Clue> was created without expected prop 'isFilled'");
+    		}
+    	}
+
+    	get number() {
+    		throw new Error("<Clue>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set number(value) {
+    		throw new Error("<Clue>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get clue() {
+    		throw new Error("<Clue>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set clue(value) {
+    		throw new Error("<Clue>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get isFilled() {
+    		throw new Error("<Clue>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set isFilled(value) {
+    		throw new Error("<Clue>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get isNumberFocused() {
+    		throw new Error("<Clue>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set isNumberFocused(value) {
+    		throw new Error("<Clue>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get isDirectionFocused() {
+    		throw new Error("<Clue>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set isDirectionFocused(value) {
+    		throw new Error("<Clue>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get onFocus() {
+    		throw new Error("<Clue>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set onFocus(value) {
+    		throw new Error("<Clue>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* node_modules/svelte-crossword/src/ClueList.svelte generated by Svelte v3.29.4 */
+    const file$6 = "node_modules/svelte-crossword/src/ClueList.svelte";
+
+    function get_each_context$3(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[6] = list[i];
+    	return child_ctx;
+    }
+
+    // (14:4) {#each clues as clue}
+    function create_each_block$3(ctx) {
+    	let clue;
+    	let current;
+
+    	function func(...args) {
+    		return /*func*/ ctx[5](/*clue*/ ctx[6], ...args);
+    	}
+
+    	clue = new Clue({
+    			props: {
+    				clue: /*clue*/ ctx[6].clue,
+    				number: /*clue*/ ctx[6].number,
+    				isFilled: /*clue*/ ctx[6].isFilled,
+    				isNumberFocused: /*focusedClueNumbers*/ ctx[2][/*direction*/ ctx[0]] === /*clue*/ ctx[6].number,
+    				isDirectionFocused: /*isDirectionFocused*/ ctx[3],
+    				onFocus: func
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(clue.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(clue, target, anchor);
+    			current = true;
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			const clue_changes = {};
+    			if (dirty & /*clues*/ 2) clue_changes.clue = /*clue*/ ctx[6].clue;
+    			if (dirty & /*clues*/ 2) clue_changes.number = /*clue*/ ctx[6].number;
+    			if (dirty & /*clues*/ 2) clue_changes.isFilled = /*clue*/ ctx[6].isFilled;
+    			if (dirty & /*focusedClueNumbers, direction, clues*/ 7) clue_changes.isNumberFocused = /*focusedClueNumbers*/ ctx[2][/*direction*/ ctx[0]] === /*clue*/ ctx[6].number;
+    			if (dirty & /*isDirectionFocused*/ 8) clue_changes.isDirectionFocused = /*isDirectionFocused*/ ctx[3];
+    			if (dirty & /*onClueFocus, clues*/ 18) clue_changes.onFocus = func;
+    			clue.$set(clue_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(clue.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(clue.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(clue, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block$3.name,
+    		type: "each",
+    		source: "(14:4) {#each clues as clue}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$6(ctx) {
+    	let p;
+    	let t0;
+    	let t1;
+    	let div;
+    	let ul;
+    	let current;
+    	let each_value = /*clues*/ ctx[1];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$3(get_each_context$3(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			t0 = text(/*direction*/ ctx[0]);
+    			t1 = space();
+    			div = element("div");
+    			ul = element("ul");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			attr_dev(p, "class", "svelte-1k6v3oi");
+    			add_location(p, file$6, 10, 0, 193);
+    			attr_dev(ul, "class", "svelte-1k6v3oi");
+    			add_location(ul, file$6, 12, 2, 233);
+    			attr_dev(div, "class", "list svelte-1k6v3oi");
+    			add_location(div, file$6, 11, 0, 212);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			append_dev(p, t0);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, div, anchor);
+    			append_dev(div, ul);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(ul, null);
+    			}
+
+    			current = true;
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (!current || dirty & /*direction*/ 1) set_data_dev(t0, /*direction*/ ctx[0]);
+
+    			if (dirty & /*clues, focusedClueNumbers, direction, isDirectionFocused, onClueFocus*/ 31) {
+    				each_value = /*clues*/ ctx[1];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$3(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block$3(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(ul, null);
+    					}
+    				}
+
+    				group_outros();
+
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(div);
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$6.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$6($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots("ClueList", slots, []);
+    	let { direction } = $$props;
+    	let { clues } = $$props;
+    	let { focusedClueNumbers } = $$props;
+    	let { isDirectionFocused } = $$props;
+    	let { onClueFocus } = $$props;
+
+    	const writable_props = [
+    		"direction",
+    		"clues",
+    		"focusedClueNumbers",
+    		"isDirectionFocused",
+    		"onClueFocus"
+    	];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<ClueList> was created with unknown prop '${key}'`);
+    	});
+
+    	const func = clue => onClueFocus(clue);
+
+    	$$self.$$set = $$props => {
+    		if ("direction" in $$props) $$invalidate(0, direction = $$props.direction);
+    		if ("clues" in $$props) $$invalidate(1, clues = $$props.clues);
+    		if ("focusedClueNumbers" in $$props) $$invalidate(2, focusedClueNumbers = $$props.focusedClueNumbers);
+    		if ("isDirectionFocused" in $$props) $$invalidate(3, isDirectionFocused = $$props.isDirectionFocused);
+    		if ("onClueFocus" in $$props) $$invalidate(4, onClueFocus = $$props.onClueFocus);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		Clue,
+    		direction,
+    		clues,
+    		focusedClueNumbers,
+    		isDirectionFocused,
+    		onClueFocus
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ("direction" in $$props) $$invalidate(0, direction = $$props.direction);
+    		if ("clues" in $$props) $$invalidate(1, clues = $$props.clues);
+    		if ("focusedClueNumbers" in $$props) $$invalidate(2, focusedClueNumbers = $$props.focusedClueNumbers);
+    		if ("isDirectionFocused" in $$props) $$invalidate(3, isDirectionFocused = $$props.isDirectionFocused);
+    		if ("onClueFocus" in $$props) $$invalidate(4, onClueFocus = $$props.onClueFocus);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [direction, clues, focusedClueNumbers, isDirectionFocused, onClueFocus, func];
+    }
+
+    class ClueList extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+
+    		init(this, options, instance$6, create_fragment$6, safe_not_equal, {
+    			direction: 0,
+    			clues: 1,
+    			focusedClueNumbers: 2,
+    			isDirectionFocused: 3,
+    			onClueFocus: 4
+    		});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "ClueList",
+    			options,
+    			id: create_fragment$6.name
+    		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*direction*/ ctx[0] === undefined && !("direction" in props)) {
+    			console.warn("<ClueList> was created without expected prop 'direction'");
+    		}
+
+    		if (/*clues*/ ctx[1] === undefined && !("clues" in props)) {
+    			console.warn("<ClueList> was created without expected prop 'clues'");
+    		}
+
+    		if (/*focusedClueNumbers*/ ctx[2] === undefined && !("focusedClueNumbers" in props)) {
+    			console.warn("<ClueList> was created without expected prop 'focusedClueNumbers'");
+    		}
+
+    		if (/*isDirectionFocused*/ ctx[3] === undefined && !("isDirectionFocused" in props)) {
+    			console.warn("<ClueList> was created without expected prop 'isDirectionFocused'");
+    		}
+
+    		if (/*onClueFocus*/ ctx[4] === undefined && !("onClueFocus" in props)) {
+    			console.warn("<ClueList> was created without expected prop 'onClueFocus'");
+    		}
+    	}
+
+    	get direction() {
+    		throw new Error("<ClueList>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set direction(value) {
+    		throw new Error("<ClueList>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get clues() {
+    		throw new Error("<ClueList>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set clues(value) {
+    		throw new Error("<ClueList>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get focusedClueNumbers() {
+    		throw new Error("<ClueList>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set focusedClueNumbers(value) {
+    		throw new Error("<ClueList>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get isDirectionFocused() {
+    		throw new Error("<ClueList>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set isDirectionFocused(value) {
+    		throw new Error("<ClueList>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get onClueFocus() {
+    		throw new Error("<ClueList>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set onClueFocus(value) {
+    		throw new Error("<ClueList>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* node_modules/svelte-crossword/src/ClueBar.svelte generated by Svelte v3.29.4 */
+    const file$7 = "node_modules/svelte-crossword/src/ClueBar.svelte";
+
+    function create_fragment$7(ctx) {
+    	let div;
+    	let button0;
+    	let svg0;
+    	let polyline0;
+    	let t0;
+    	let p;
+    	let t1;
+    	let t2;
+    	let button1;
+    	let svg1;
+    	let polyline1;
+    	let mounted;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			button0 = element("button");
+    			svg0 = svg_element("svg");
+    			polyline0 = svg_element("polyline");
+    			t0 = space();
+    			p = element("p");
+    			t1 = text(/*clue*/ ctx[1]);
+    			t2 = space();
+    			button1 = element("button");
+    			svg1 = svg_element("svg");
+    			polyline1 = svg_element("polyline");
+    			attr_dev(polyline0, "points", "15 18 9 12 15 6");
+    			add_location(polyline0, file$7, 19, 43, 507);
+    			attr_dev(svg0, "width", "24");
+    			attr_dev(svg0, "height", "24");
+    			attr_dev(svg0, "viewBox", "0 0 24 24");
+    			attr_dev(svg0, "fill", "none");
+    			attr_dev(svg0, "stroke", "currentColor");
+    			attr_dev(svg0, "stroke-width", "2");
+    			attr_dev(svg0, "stroke-linecap", "round");
+    			attr_dev(svg0, "stroke-linejoin", "round");
+    			attr_dev(svg0, "class", "feather feather-chevron-left");
+    			add_location(svg0, file$7, 10, 4, 270);
+    			attr_dev(button0, "class", "svelte-1k30qnz");
+    			add_location(button0, file$7, 9, 2, 194);
+    			attr_dev(p, "class", "svelte-1k30qnz");
+    			add_location(p, file$7, 22, 2, 582);
+    			attr_dev(polyline1, "points", "9 18 15 12 9 6");
+    			add_location(polyline1, file$7, 33, 44, 912);
+    			attr_dev(svg1, "width", "24");
+    			attr_dev(svg1, "height", "24");
+    			attr_dev(svg1, "viewBox", "0 0 24 24");
+    			attr_dev(svg1, "fill", "none");
+    			attr_dev(svg1, "stroke", "currentColor");
+    			attr_dev(svg1, "stroke-width", "2");
+    			attr_dev(svg1, "stroke-linecap", "round");
+    			attr_dev(svg1, "stroke-linejoin", "round");
+    			attr_dev(svg1, "class", "feather feather-chevron-right");
+    			add_location(svg1, file$7, 24, 4, 674);
+    			attr_dev(button1, "class", "svelte-1k30qnz");
+    			add_location(button1, file$7, 23, 2, 598);
+    			attr_dev(div, "class", "bar svelte-1k30qnz");
+    			add_location(div, file$7, 8, 0, 174);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, button0);
+    			append_dev(button0, svg0);
+    			append_dev(svg0, polyline0);
+    			append_dev(div, t0);
+    			append_dev(div, p);
+    			append_dev(p, t1);
+    			append_dev(div, t2);
+    			append_dev(div, button1);
+    			append_dev(button1, svg1);
+    			append_dev(svg1, polyline1);
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(button0, "click", /*click_handler*/ ctx[3], false, false, false),
+    					listen_dev(button1, "click", /*click_handler_1*/ ctx[4], false, false, false)
+    				];
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*clue*/ 2) set_data_dev(t1, /*clue*/ ctx[1]);
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$7.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$7($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots("ClueBar", slots, []);
+    	const dispatch = createEventDispatcher();
+    	let { currentClue } = $$props;
+    	const writable_props = ["currentClue"];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<ClueBar> was created with unknown prop '${key}'`);
+    	});
+
+    	const click_handler = () => dispatch("nextClue", currentClue.index - 1);
+    	const click_handler_1 = () => dispatch("nextClue", currentClue.index + 1);
+
+    	$$self.$$set = $$props => {
+    		if ("currentClue" in $$props) $$invalidate(0, currentClue = $$props.currentClue);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		createEventDispatcher,
+    		dispatch,
+    		currentClue,
+    		clue
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ("currentClue" in $$props) $$invalidate(0, currentClue = $$props.currentClue);
+    		if ("clue" in $$props) $$invalidate(1, clue = $$props.clue);
+    	};
+
+    	let clue;
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty & /*currentClue*/ 1) {
+    			 $$invalidate(1, clue = currentClue["clue"]);
+    		}
+    	};
+
+    	return [currentClue, clue, dispatch, click_handler, click_handler_1];
+    }
+
+    class ClueBar extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$7, create_fragment$7, safe_not_equal, { currentClue: 0 });
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "ClueBar",
+    			options,
+    			id: create_fragment$7.name
+    		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*currentClue*/ ctx[0] === undefined && !("currentClue" in props)) {
+    			console.warn("<ClueBar> was created without expected prop 'currentClue'");
+    		}
+    	}
+
+    	get currentClue() {
+    		throw new Error("<ClueBar>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set currentClue(value) {
+    		throw new Error("<ClueBar>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* node_modules/svelte-crossword/src/Clues.svelte generated by Svelte v3.29.4 */
+    const file$8 = "node_modules/svelte-crossword/src/Clues.svelte";
+
+    function get_each_context$4(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[11] = list[i];
+    	return child_ctx;
+    }
+
+    // (38:2) {:else}
+    function create_else_block$1(ctx) {
+    	let div;
+    	let current;
+    	let each_value = ["across", "down"];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < 2; i += 1) {
+    		each_blocks[i] = create_each_block$4(get_each_context$4(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+
+    			for (let i = 0; i < 2; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			attr_dev(div, "class", "clues--list");
+    			add_location(div, file$8, 38, 4, 1015);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+
+    			for (let i = 0; i < 2; i += 1) {
+    				each_blocks[i].m(div, null);
+    			}
+
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*focusedClueNumbers, clues, focusedDirection, onClueFocus*/ 43) {
+    				each_value = ["across", "down"];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < 2; i += 1) {
+    					const child_ctx = get_each_context$4(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block$4(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(div, null);
+    					}
+    				}
+
+    				group_outros();
+
+    				for (i = 2; i < 2; i += 1) {
+    					out(i);
+    				}
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+
+    			for (let i = 0; i < 2; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+
+    			for (let i = 0; i < 2; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block$1.name,
+    		type: "else",
+    		source: "(38:2) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (34:2) {#if stacked}
+    function create_if_block$4(ctx) {
+    	let div;
+    	let cluebar;
+    	let current;
+
+    	cluebar = new ClueBar({
+    			props: { currentClue: /*currentClue*/ ctx[4] },
+    			$$inline: true
+    		});
+
+    	cluebar.$on("nextClue", /*onNextClue*/ ctx[6]);
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			create_component(cluebar.$$.fragment);
+    			attr_dev(div, "class", "clues--stacked svelte-16o7lzd");
+    			add_location(div, file$8, 34, 4, 888);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			mount_component(cluebar, div, null);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const cluebar_changes = {};
+    			if (dirty & /*currentClue*/ 16) cluebar_changes.currentClue = /*currentClue*/ ctx[4];
+    			cluebar.$set(cluebar_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(cluebar.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(cluebar.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			destroy_component(cluebar);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$4.name,
+    		type: "if",
+    		source: "(34:2) {#if stacked}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (40:6) {#each ['across', 'down'] as direction}
+    function create_each_block$4(ctx) {
+    	let cluelist;
+    	let current;
+
+    	function func(...args) {
+    		return /*func*/ ctx[10](/*direction*/ ctx[11], ...args);
+    	}
+
+    	cluelist = new ClueList({
+    			props: {
+    				direction: /*direction*/ ctx[11],
+    				focusedClueNumbers: /*focusedClueNumbers*/ ctx[3],
+    				clues: /*clues*/ ctx[1].filter(func),
+    				isDirectionFocused: /*focusedDirection*/ ctx[0] === /*direction*/ ctx[11],
+    				onClueFocus: /*onClueFocus*/ ctx[5]
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(cluelist.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(cluelist, target, anchor);
+    			current = true;
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			const cluelist_changes = {};
+    			if (dirty & /*focusedClueNumbers*/ 8) cluelist_changes.focusedClueNumbers = /*focusedClueNumbers*/ ctx[3];
+    			if (dirty & /*clues*/ 2) cluelist_changes.clues = /*clues*/ ctx[1].filter(func);
+    			if (dirty & /*focusedDirection*/ 1) cluelist_changes.isDirectionFocused = /*focusedDirection*/ ctx[0] === /*direction*/ ctx[11];
+    			cluelist.$set(cluelist_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(cluelist.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(cluelist.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(cluelist, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block$4.name,
+    		type: "each",
+    		source: "(40:6) {#each ['across', 'down'] as direction}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$8(ctx) {
+    	let section;
+    	let current_block_type_index;
+    	let if_block;
+    	let current;
+    	const if_block_creators = [create_if_block$4, create_else_block$1];
+    	const if_blocks = [];
+
+    	function select_block_type(ctx, dirty) {
+    		if (/*stacked*/ ctx[2]) return 0;
+    		return 1;
+    	}
+
+    	current_block_type_index = select_block_type(ctx);
+    	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+    	const block = {
+    		c: function create() {
+    			section = element("section");
+    			if_block.c();
+    			attr_dev(section, "class", "clues svelte-16o7lzd");
+    			toggle_class(section, "stacked", /*stacked*/ ctx[2]);
+    			add_location(section, file$8, 32, 0, 830);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, section, anchor);
+    			if_blocks[current_block_type_index].m(section, null);
+    			current = true;
+    		},
+    		p: function update(ctx, [dirty]) {
+    			let previous_block_index = current_block_type_index;
+    			current_block_type_index = select_block_type(ctx);
+
+    			if (current_block_type_index === previous_block_index) {
+    				if_blocks[current_block_type_index].p(ctx, dirty);
+    			} else {
+    				group_outros();
+
+    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
+    					if_blocks[previous_block_index] = null;
+    				});
+
+    				check_outros();
+    				if_block = if_blocks[current_block_type_index];
+
+    				if (!if_block) {
+    					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    					if_block.c();
+    				}
+
+    				transition_in(if_block, 1);
+    				if_block.m(section, null);
+    			}
+
+    			if (dirty & /*stacked*/ 4) {
+    				toggle_class(section, "stacked", /*stacked*/ ctx[2]);
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(section);
+    			if_blocks[current_block_type_index].d();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$8.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$8($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots("Clues", slots, []);
+    	let { clues } = $$props;
+    	let { cellIndexMap } = $$props;
+    	let { focusedDirection } = $$props;
+    	let { focusedCellIndex } = $$props;
+    	let { focusedCell } = $$props;
+    	let { stacked } = $$props;
+
+    	function onClueFocus({ direction, id }) {
+    		$$invalidate(0, focusedDirection = direction);
+    		$$invalidate(7, focusedCellIndex = cellIndexMap[id] || 0);
+    	}
+
+    	function onNextClue({ detail }) {
+    		let next = detail;
+    		if (next < 0) next = clues.length - 1; else if (next > clues.length - 1) next = 0;
+    		const { direction, id } = clues[next];
+    		onClueFocus({ direction, id });
+    	}
+
+    	const writable_props = [
+    		"clues",
+    		"cellIndexMap",
+    		"focusedDirection",
+    		"focusedCellIndex",
+    		"focusedCell",
+    		"stacked"
+    	];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Clues> was created with unknown prop '${key}'`);
+    	});
+
+    	const func = (direction, d) => d.direction === direction;
+
+    	$$self.$$set = $$props => {
+    		if ("clues" in $$props) $$invalidate(1, clues = $$props.clues);
+    		if ("cellIndexMap" in $$props) $$invalidate(8, cellIndexMap = $$props.cellIndexMap);
+    		if ("focusedDirection" in $$props) $$invalidate(0, focusedDirection = $$props.focusedDirection);
+    		if ("focusedCellIndex" in $$props) $$invalidate(7, focusedCellIndex = $$props.focusedCellIndex);
+    		if ("focusedCell" in $$props) $$invalidate(9, focusedCell = $$props.focusedCell);
+    		if ("stacked" in $$props) $$invalidate(2, stacked = $$props.stacked);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		ClueList,
+    		ClueBar,
+    		clues,
+    		cellIndexMap,
+    		focusedDirection,
+    		focusedCellIndex,
+    		focusedCell,
+    		stacked,
+    		onClueFocus,
+    		onNextClue,
+    		focusedClueNumbers,
+    		currentClue
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ("clues" in $$props) $$invalidate(1, clues = $$props.clues);
+    		if ("cellIndexMap" in $$props) $$invalidate(8, cellIndexMap = $$props.cellIndexMap);
+    		if ("focusedDirection" in $$props) $$invalidate(0, focusedDirection = $$props.focusedDirection);
+    		if ("focusedCellIndex" in $$props) $$invalidate(7, focusedCellIndex = $$props.focusedCellIndex);
+    		if ("focusedCell" in $$props) $$invalidate(9, focusedCell = $$props.focusedCell);
+    		if ("stacked" in $$props) $$invalidate(2, stacked = $$props.stacked);
+    		if ("focusedClueNumbers" in $$props) $$invalidate(3, focusedClueNumbers = $$props.focusedClueNumbers);
+    		if ("currentClue" in $$props) $$invalidate(4, currentClue = $$props.currentClue);
+    	};
+
+    	let focusedClueNumbers;
+    	let currentClue;
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty & /*focusedCell*/ 512) {
+    			 $$invalidate(3, focusedClueNumbers = focusedCell.clueNumbers || {});
+    		}
+
+    		if ($$self.$$.dirty & /*clues, focusedDirection, focusedClueNumbers*/ 11) {
+    			 $$invalidate(4, currentClue = clues.find(c => c.direction === focusedDirection && c.number === focusedClueNumbers[focusedDirection]));
+    		}
+    	};
+
+    	return [
+    		focusedDirection,
+    		clues,
+    		stacked,
+    		focusedClueNumbers,
+    		currentClue,
+    		onClueFocus,
+    		onNextClue,
+    		focusedCellIndex,
+    		cellIndexMap,
+    		focusedCell,
+    		func
+    	];
+    }
+
+    class Clues extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+
+    		init(this, options, instance$8, create_fragment$8, safe_not_equal, {
+    			clues: 1,
+    			cellIndexMap: 8,
+    			focusedDirection: 0,
+    			focusedCellIndex: 7,
+    			focusedCell: 9,
+    			stacked: 2
+    		});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Clues",
+    			options,
+    			id: create_fragment$8.name
+    		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*clues*/ ctx[1] === undefined && !("clues" in props)) {
+    			console.warn("<Clues> was created without expected prop 'clues'");
+    		}
+
+    		if (/*cellIndexMap*/ ctx[8] === undefined && !("cellIndexMap" in props)) {
+    			console.warn("<Clues> was created without expected prop 'cellIndexMap'");
+    		}
+
+    		if (/*focusedDirection*/ ctx[0] === undefined && !("focusedDirection" in props)) {
+    			console.warn("<Clues> was created without expected prop 'focusedDirection'");
+    		}
+
+    		if (/*focusedCellIndex*/ ctx[7] === undefined && !("focusedCellIndex" in props)) {
+    			console.warn("<Clues> was created without expected prop 'focusedCellIndex'");
+    		}
+
+    		if (/*focusedCell*/ ctx[9] === undefined && !("focusedCell" in props)) {
+    			console.warn("<Clues> was created without expected prop 'focusedCell'");
+    		}
+
+    		if (/*stacked*/ ctx[2] === undefined && !("stacked" in props)) {
+    			console.warn("<Clues> was created without expected prop 'stacked'");
+    		}
+    	}
+
+    	get clues() {
+    		throw new Error("<Clues>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set clues(value) {
+    		throw new Error("<Clues>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get cellIndexMap() {
+    		throw new Error("<Clues>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set cellIndexMap(value) {
+    		throw new Error("<Clues>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get focusedDirection() {
+    		throw new Error("<Clues>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set focusedDirection(value) {
+    		throw new Error("<Clues>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get focusedCellIndex() {
+    		throw new Error("<Clues>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set focusedCellIndex(value) {
+    		throw new Error("<Clues>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get focusedCell() {
+    		throw new Error("<Clues>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set focusedCell(value) {
+    		throw new Error("<Clues>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get stacked() {
+    		throw new Error("<Clues>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set stacked(value) {
+    		throw new Error("<Clues>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    function quadIn(t) {
+        return t * t;
+    }
+
+    function fade(node, { delay = 0, duration = 400, easing = identity }) {
+        const o = +getComputedStyle(node).opacity;
+        return {
+            delay,
+            duration,
+            easing,
+            css: t => `opacity: ${t * o}`
+        };
+    }
+
+    /* node_modules/svelte-crossword/src/Confetti.svelte generated by Svelte v3.29.4 */
+    const file$9 = "node_modules/svelte-crossword/src/Confetti.svelte";
+
+    function get_each_context$5(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[8] = list[i][0];
+    	child_ctx[9] = list[i][1];
+    	child_ctx[10] = list[i][2];
+    	child_ctx[12] = i;
+    	return child_ctx;
+    }
+
+    // (45:2) {#each allElements as [element, color, scale], i}
+    function create_each_block$5(ctx) {
+    	let g1;
+    	let g0;
+    	let raw_value = /*element*/ ctx[8] + "";
+    	let g0_fill_value;
+    	let g0_style_value;
+
+    	const block = {
+    		c: function create() {
+    			g1 = svg_element("g");
+    			g0 = svg_element("g");
+    			attr_dev(g0, "fill", g0_fill_value = /*color*/ ctx[9]);
+
+    			attr_dev(g0, "style", g0_style_value = [
+    				`--rotation: ${Math.random() * 360}deg`,
+    				`animation-delay: ${quadIn(/*i*/ ctx[12] / /*numberOfElements*/ ctx[0])}s`,
+    				`animation-duration: ${/*durationInSeconds*/ ctx[1] * /*randomNumber*/ ctx[2](0.7, 1)}s`
+    			].join(";"));
+
+    			attr_dev(g0, "class", "svelte-15wt7c8");
+    			add_location(g0, file$9, 46, 6, 2525);
+    			set_style(g1, "transform", "scale(" + /*scale*/ ctx[10] + ")");
+    			attr_dev(g1, "class", "svelte-15wt7c8");
+    			add_location(g1, file$9, 45, 4, 2481);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, g1, anchor);
+    			append_dev(g1, g0);
+    			g0.innerHTML = raw_value;
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*numberOfElements, durationInSeconds*/ 3 && g0_style_value !== (g0_style_value = [
+    				`--rotation: ${Math.random() * 360}deg`,
+    				`animation-delay: ${quadIn(/*i*/ ctx[12] / /*numberOfElements*/ ctx[0])}s`,
+    				`animation-duration: ${/*durationInSeconds*/ ctx[1] * /*randomNumber*/ ctx[2](0.7, 1)}s`
+    			].join(";"))) {
+    				attr_dev(g0, "style", g0_style_value);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(g1);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block$5.name,
+    		type: "each",
+    		source: "(45:2) {#each allElements as [element, color, scale], i}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$9(ctx) {
+    	let svg;
+    	let each_value = /*allElements*/ ctx[3];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$5(get_each_context$5(ctx, each_value, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			svg = svg_element("svg");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			attr_dev(svg, "class", "confetti svelte-15wt7c8");
+    			attr_dev(svg, "viewBox", "-10 -10 10 10");
+    			add_location(svg, file$9, 43, 0, 2378);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, svg, anchor);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(svg, null);
+    			}
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*allElements, Math, quadIn, numberOfElements, durationInSeconds, randomNumber*/ 15) {
+    				each_value = /*allElements*/ ctx[3];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$5(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block$5(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(svg, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value.length;
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(svg);
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$9.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$9($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots("Confetti", slots, []);
+    	let { numberOfElements = 50 } = $$props;
+    	let { durationInSeconds = 2 } = $$props;
+
+    	let { colors = [
+    		"#fff",
+    		"#c7ecee",
+    		"#778beb",
+    		"#f7d794",
+    		"#63cdda",
+    		"#cf6a87",
+    		"#e77f67",
+    		"#786fa6",
+    		"#FDA7DF",
+    		"#4b7bec",
+    		"#475c83"
+    	] } = $$props;
+
+    	const pickFrom = arr => arr[Math.round(Math.random() * arr.length)];
+    	const randomNumber = (min, max) => Math.random() * (max - min) + min;
+    	const getManyOf = str => new Array(30).fill(0).map(() => str);
+
+    	const elementOptions = [
+    		...getManyOf(`<circle r="3" />`),
+    		...getManyOf(`<path d="M3.83733 4.73234C4.38961 4.73234 4.83733 4.28463 4.83733 3.73234C4.83733 3.18006 4.38961 2.73234 3.83733 2.73234C3.28505 2.73234 2.83733 3.18006 2.83733 3.73234C2.83733 4.28463 3.28505 4.73234 3.83733 4.73234ZM3.83733 6.73234C5.49418 6.73234 6.83733 5.38919 6.83733 3.73234C6.83733 2.07549 5.49418 0.732341 3.83733 0.732341C2.18048 0.732341 0.83733 2.07549 0.83733 3.73234C0.83733 5.38919 2.18048 6.73234 3.83733 6.73234Z" />`),
+    		...getManyOf(`<path d="M4.29742 2.26041C3.86864 2.1688 3.20695 2.21855 2.13614 3.0038C1.69078 3.33041 1.06498 3.23413 0.738375 2.78876C0.411774 2.3434 0.508051 1.7176 0.953417 1.39099C2.32237 0.387097 3.55827 0.0573281 4.71534 0.304565C5.80081 0.536504 6.61625 1.24716 7.20541 1.78276C7.28295 1.85326 7.35618 1.92051 7.4263 1.9849C7.64841 2.18888 7.83929 2.36418 8.03729 2.52315C8.29108 2.72692 8.48631 2.8439 8.64952 2.90181C8.7915 2.95219 8.91895 2.96216 9.07414 2.92095C9.24752 2.8749 9.5134 2.7484 9.88467 2.42214C10.2995 2.05757 10.9314 2.09833 11.2959 2.51319C11.6605 2.92805 11.6198 3.5599 11.2049 3.92447C10.6816 4.38435 10.1478 4.70514 9.58752 4.85394C9.00909 5.00756 8.469 4.95993 7.9807 4.78667C7.51364 4.62093 7.11587 4.34823 6.78514 4.08268C6.53001 3.87783 6.27248 3.64113 6.04114 3.4285C5.97868 3.37109 5.91814 3.31544 5.86006 3.26264C5.25645 2.7139 4.79779 2.36733 4.29742 2.26041Z" />`),
+    		...getManyOf(`<rect width="4" height="4" x="-2" y="-2" />`),
+    		`<path d="M -5 5 L 0 -5 L 5 5 Z" />`,
+    		...("ABCDEFGHIJKLMNOPQRSTUVWXYZ").split("").map(letter => `<text style="font-weight: 700">${letter}</text>`)
+    	];
+
+    	const allElements = new Array(numberOfElements).fill(0).map((_, i) => [pickFrom(elementOptions), pickFrom(colors), Math.random()]);
+    	const writable_props = ["numberOfElements", "durationInSeconds", "colors"];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Confetti> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$$set = $$props => {
+    		if ("numberOfElements" in $$props) $$invalidate(0, numberOfElements = $$props.numberOfElements);
+    		if ("durationInSeconds" in $$props) $$invalidate(1, durationInSeconds = $$props.durationInSeconds);
+    		if ("colors" in $$props) $$invalidate(4, colors = $$props.colors);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		quadIn,
+    		numberOfElements,
+    		durationInSeconds,
+    		colors,
+    		pickFrom,
+    		randomNumber,
+    		getManyOf,
+    		elementOptions,
+    		allElements
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ("numberOfElements" in $$props) $$invalidate(0, numberOfElements = $$props.numberOfElements);
+    		if ("durationInSeconds" in $$props) $$invalidate(1, durationInSeconds = $$props.durationInSeconds);
+    		if ("colors" in $$props) $$invalidate(4, colors = $$props.colors);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [numberOfElements, durationInSeconds, randomNumber, allElements, colors];
+    }
+
+    class Confetti extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+
+    		init(this, options, instance$9, create_fragment$9, safe_not_equal, {
+    			numberOfElements: 0,
+    			durationInSeconds: 1,
+    			colors: 4
+    		});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Confetti",
+    			options,
+    			id: create_fragment$9.name
+    		});
+    	}
+
+    	get numberOfElements() {
+    		throw new Error("<Confetti>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set numberOfElements(value) {
+    		throw new Error("<Confetti>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get durationInSeconds() {
+    		throw new Error("<Confetti>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set durationInSeconds(value) {
+    		throw new Error("<Confetti>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get colors() {
+    		throw new Error("<Confetti>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set colors(value) {
+    		throw new Error("<Confetti>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* node_modules/svelte-crossword/src/CompletedMessage.svelte generated by Svelte v3.29.4 */
+    const file$a = "node_modules/svelte-crossword/src/CompletedMessage.svelte";
+    const get_message_slot_changes = dirty => ({});
+    const get_message_slot_context = ctx => ({});
+
+    // (10:0) {#if isOpen}
+    function create_if_block$5(ctx) {
+    	let div2;
+    	let div1;
+    	let div0;
+    	let t0;
+    	let button;
+    	let t2;
+    	let div2_transition;
+    	let t3;
+    	let div3;
+    	let div3_transition;
+    	let current;
+    	let mounted;
+    	let dispose;
+    	const message_slot_template = /*#slots*/ ctx[3].message;
+    	const message_slot = create_slot(message_slot_template, ctx, /*$$scope*/ ctx[2], get_message_slot_context);
+    	const message_slot_or_fallback = message_slot || fallback_block(ctx);
+    	let if_block = /*showConfetti*/ ctx[0] && create_if_block_1$1(ctx);
+
+    	const block = {
+    		c: function create() {
+    			div2 = element("div");
+    			div1 = element("div");
+    			div0 = element("div");
+    			if (message_slot_or_fallback) message_slot_or_fallback.c();
+    			t0 = space();
+    			button = element("button");
+    			button.textContent = "View puzzle";
+    			t2 = space();
+    			if (if_block) if_block.c();
+    			t3 = space();
+    			div3 = element("div");
+    			attr_dev(div0, "class", "message svelte-9a7qrw");
+    			add_location(div0, file$a, 12, 6, 266);
+    			attr_dev(button, "class", "svelte-9a7qrw");
+    			add_location(button, file$a, 18, 6, 388);
+    			attr_dev(div1, "class", "content svelte-9a7qrw");
+    			add_location(div1, file$a, 11, 4, 238);
+    			attr_dev(div2, "class", "completed svelte-9a7qrw");
+    			add_location(div2, file$a, 10, 2, 180);
+    			attr_dev(div3, "class", "curtain svelte-9a7qrw");
+    			add_location(div3, file$a, 27, 2, 572);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div1);
+    			append_dev(div1, div0);
+
+    			if (message_slot_or_fallback) {
+    				message_slot_or_fallback.m(div0, null);
+    			}
+
+    			append_dev(div1, t0);
+    			append_dev(div1, button);
+    			append_dev(div2, t2);
+    			if (if_block) if_block.m(div2, null);
+    			insert_dev(target, t3, anchor);
+    			insert_dev(target, div3, anchor);
+    			current = true;
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(button, "click", /*click_handler*/ ctx[4], false, false, false),
+    					listen_dev(div3, "click", /*click_handler_1*/ ctx[5], false, false, false)
+    				];
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, dirty) {
+    			if (message_slot) {
+    				if (message_slot.p && dirty & /*$$scope*/ 4) {
+    					update_slot(message_slot, message_slot_template, ctx, /*$$scope*/ ctx[2], dirty, get_message_slot_changes, get_message_slot_context);
+    				}
+    			}
+
+    			if (/*showConfetti*/ ctx[0]) {
+    				if (if_block) {
+    					if (dirty & /*showConfetti*/ 1) {
+    						transition_in(if_block, 1);
+    					}
+    				} else {
+    					if_block = create_if_block_1$1(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(div2, null);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(message_slot_or_fallback, local);
+    			transition_in(if_block);
+
+    			add_render_callback(() => {
+    				if (!div2_transition) div2_transition = create_bidirectional_transition(div2, fade, { y: 20 }, true);
+    				div2_transition.run(1);
+    			});
+
+    			add_render_callback(() => {
+    				if (!div3_transition) div3_transition = create_bidirectional_transition(div3, fade, { duration: 250 }, true);
+    				div3_transition.run(1);
+    			});
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(message_slot_or_fallback, local);
+    			transition_out(if_block);
+    			if (!div2_transition) div2_transition = create_bidirectional_transition(div2, fade, { y: 20 }, false);
+    			div2_transition.run(0);
+    			if (!div3_transition) div3_transition = create_bidirectional_transition(div3, fade, { duration: 250 }, false);
+    			div3_transition.run(0);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div2);
+    			if (message_slot_or_fallback) message_slot_or_fallback.d(detaching);
+    			if (if_block) if_block.d();
+    			if (detaching && div2_transition) div2_transition.end();
+    			if (detaching) detach_dev(t3);
+    			if (detaching) detach_dev(div3);
+    			if (detaching && div3_transition) div3_transition.end();
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$5.name,
+    		type: "if",
+    		source: "(10:0) {#if isOpen}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (14:29)            
+    function fallback_block(ctx) {
+    	let h3;
+
+    	const block = {
+    		c: function create() {
+    			h3 = element("h3");
+    			h3.textContent = "You solved it!";
+    			attr_dev(h3, "class", "svelte-9a7qrw");
+    			add_location(h3, file$a, 14, 10, 328);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, h3, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(h3);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: fallback_block.name,
+    		type: "fallback",
+    		source: "(14:29)            ",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (22:4) {#if showConfetti}
+    function create_if_block_1$1(ctx) {
+    	let div;
+    	let confetti;
+    	let current;
+    	confetti = new Confetti({ $$inline: true });
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			create_component(confetti.$$.fragment);
+    			attr_dev(div, "class", "confetti svelte-9a7qrw");
+    			add_location(div, file$a, 22, 6, 494);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			mount_component(confetti, div, null);
+    			current = true;
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(confetti.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(confetti.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			destroy_component(confetti);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1$1.name,
+    		type: "if",
+    		source: "(22:4) {#if showConfetti}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$a(ctx) {
+    	let if_block_anchor;
+    	let current;
+    	let if_block = /*isOpen*/ ctx[1] && create_if_block$5(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (/*isOpen*/ ctx[1]) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+
+    					if (dirty & /*isOpen*/ 2) {
+    						transition_in(if_block, 1);
+    					}
+    				} else {
+    					if_block = create_if_block$5(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(if_block_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$a.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$a($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots("CompletedMessage", slots, ['message']);
+    	let { showConfetti = true } = $$props;
+    	let isOpen = true;
+    	const writable_props = ["showConfetti"];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<CompletedMessage> was created with unknown prop '${key}'`);
+    	});
+
+    	const click_handler = () => $$invalidate(1, isOpen = false);
+    	const click_handler_1 = () => $$invalidate(1, isOpen = false);
+
+    	$$self.$$set = $$props => {
+    		if ("showConfetti" in $$props) $$invalidate(0, showConfetti = $$props.showConfetti);
+    		if ("$$scope" in $$props) $$invalidate(2, $$scope = $$props.$$scope);
+    	};
+
+    	$$self.$capture_state = () => ({ fade, Confetti, showConfetti, isOpen });
+
+    	$$self.$inject_state = $$props => {
+    		if ("showConfetti" in $$props) $$invalidate(0, showConfetti = $$props.showConfetti);
+    		if ("isOpen" in $$props) $$invalidate(1, isOpen = $$props.isOpen);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [showConfetti, isOpen, $$scope, slots, click_handler, click_handler_1];
+    }
+
+    class CompletedMessage extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$a, create_fragment$a, safe_not_equal, { showConfetti: 0 });
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "CompletedMessage",
+    			options,
+    			id: create_fragment$a.name
+    		});
+    	}
+
+    	get showConfetti() {
+    		throw new Error("<CompletedMessage>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set showConfetti(value) {
+    		throw new Error("<CompletedMessage>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    function createClues(data) {
+    	// determine if 0 or 1 based
+    	const minX = Math.min(...data.map(d => d.x));
+    	const minY = Math.min(...data.map(d => d.y));
+    	const adjust = Math.min(minX, minY);
+
+    	
+    	const withAdjust = data.map(d => ({
+    		...d,
+    		x: d.x - adjust,
+    		y: d.y - adjust
+    	}));
+
+      const withId = withAdjust.map((d, i) => ({
+    		...d,
+        id: `${d.x}-${d.y}`,
+      }));
+    	
+      // sort asc by start position of clue so we have proper clue ordering
+      withId.sort((a, b) => a.y - b.y || a.x - b.x);
+
+      // create a lookup to store clue number (and reuse if same start pos)
+      let lookup = {};
+      let currentNumber = 1;
+
+      const withNumber = withId.map((d) => {
+        let number;
+        if (lookup[d.id]) number = lookup[d.id];
+        else {
+          lookup[d.id] = number = currentNumber;
+          currentNumber += 1;
+        }
+        return {
+          ...d,
+          number,
+        };
+      });
+
+
+    	// create cells for each letter
+    	const withCells = withNumber.map(d => {
+    		const chars = d.answer.split("");
+        const cells = chars.map((answer, i) => {
+          const x = d.x + (d.direction === "across" ? i : 0);
+          const y = d.y + (d.direction === "down" ? i : 0);
+          const number = i === 0 ? d.number : "";
+          const clueNumbers = { [d.direction]: d.number };
+          const id = `${x}-${y}`;
+          const value = "";
+          const custom = d.custom || "";
+          return {
+            id,
+            number,
+            clueNumbers,
+            x,
+            y,
+            value,
+            answer: answer.toUpperCase(),
+            custom,
+          };
+        });
+    		return {
+    			...d,
+    			cells
+    		}
+    	});
+
+    	withCells.sort((a, b) => {
+    		if (a.direction < b.direction) return -1;
+    		else if (a.direction > b.direction) return 1;
+    		return a.number - b.number;
+    	});
+    	const withIndex = withCells.map((d, i) => ({
+    		...d,
+    		index: i
+    	}));
+    	return withIndex;
+    }
+
+    function createCells(data) {
+      const cells = [].concat(...data.map(d => d.cells));
+      let dict = {};
+
+      // sort so that ones with number values come first and dedupe
+      cells.sort((a, b) => a.y - b.y || a.x - b.x || b.number - a.number);
+      cells.forEach((d) => {
+        if (!dict[d.id]) {
+          dict[d.id] = d;
+        } else {
+          // consolidate clue numbers for across & down
+          dict[d.id].clueNumbers = {
+            ...d.clueNumbers,
+            ...dict[d.id].clueNumbers,
+          };
+          // consolidate custom classes
+          if (dict[d.id].custom !== d.custom)
+            dict[d.id].custom = `${dict[d.id].custom} ${d.custom}`;
+        }
+      });
+
+      const unique = Object.keys(dict).map((d) => dict[d]);
+      unique.sort((a, b) => a.y - b.y || a.x - b.x);
+      // add index
+      const output = unique.map((d, i) => ({ ...d, index: i }));
+      return output;
+    }
+
+    function validateClues(data) {
+    	const props = [
+        {
+          prop: "clue",
+          type: "string",
+        },
+        {
+          prop: "answer",
+          type: "string",
+        },
+        {
+          prop: "x",
+          type: "number",
+        },
+        {
+          prop: "y",
+          type: "number",
+        }
+      ];
+
+    	// only store if they fail
+    	let failedProp = false;
+      data.forEach(d => !!props.map(p => {
+    		const f = typeof d[p.prop] !== p.type;
+    		if (f) {
+    			failedProp = true;
+    			console.error(`"${p.prop}" is not a ${p.type}\n`, d);
+    		}
+    	}));
+
+    	let failedCell = false;
+    	const cells = [].concat(...data.map(d => d.cells));
+    	
+    	let dict = {};
+    	cells.forEach((d) => {
+        if (!dict[d.id]) {
+          dict[d.id] = d.answer;
+        } else {
+    			if (dict[d.id] !== d.answer) {
+    				failedCell = true;
+    				console.error(`cell "${d.id}" has two different values\n`, `${dict[d.id]} and ${d.answer}`);
+    			}
+    		}
+      });
+
+    	return !failedProp && !failedCell;
+    }
+
+    function fromPairs(arr) {
+      let res = {};
+      arr.forEach((d) => {
+        res[d[0]] = d[1];
+      });
+      return res;
+    }
+
+    /* node_modules/svelte-crossword/src/Crossword.svelte generated by Svelte v3.29.4 */
+    const file$b = "node_modules/svelte-crossword/src/Crossword.svelte";
+    const get_complete_slot_changes = dirty => ({});
+    const get_complete_slot_context = ctx => ({});
+    const get_toolbar_slot_changes = dirty => ({});
+
+    const get_toolbar_slot_context = ctx => ({
+    	onClear: /*onClear*/ ctx[18],
+    	onReveal: /*onReveal*/ ctx[19]
+    });
+
+    // (115:0) {#if validated}
+    function create_if_block$6(ctx) {
+    	let article;
+    	let t0;
+    	let div;
+    	let clues_1;
+    	let updating_focusedCellIndex;
+    	let updating_focusedCell;
+    	let updating_focusedDirection;
+    	let t1;
+    	let puzzle;
+    	let updating_cells;
+    	let updating_focusedCellIndex_1;
+    	let updating_focusedDirection_1;
+    	let t2;
+    	let article_class_value;
+    	let article_resize_listener;
+    	let current;
+    	const toolbar_slot_template = /*#slots*/ ctx[26].toolbar;
+    	const toolbar_slot = create_slot(toolbar_slot_template, ctx, /*$$scope*/ ctx[34], get_toolbar_slot_context);
+    	const toolbar_slot_or_fallback = toolbar_slot || fallback_block$1(ctx);
+
+    	function clues_1_focusedCellIndex_binding(value) {
+    		/*clues_1_focusedCellIndex_binding*/ ctx[27].call(null, value);
+    	}
+
+    	function clues_1_focusedCell_binding(value) {
+    		/*clues_1_focusedCell_binding*/ ctx[28].call(null, value);
+    	}
+
+    	function clues_1_focusedDirection_binding(value) {
+    		/*clues_1_focusedDirection_binding*/ ctx[29].call(null, value);
+    	}
+
+    	let clues_1_props = {
+    		clues: /*clues*/ ctx[10],
+    		cellIndexMap: /*cellIndexMap*/ ctx[13],
+    		stacked: /*stacked*/ ctx[17]
+    	};
+
+    	if (/*focusedCellIndex*/ ctx[7] !== void 0) {
+    		clues_1_props.focusedCellIndex = /*focusedCellIndex*/ ctx[7];
+    	}
+
+    	if (/*focusedCell*/ ctx[12] !== void 0) {
+    		clues_1_props.focusedCell = /*focusedCell*/ ctx[12];
+    	}
+
+    	if (/*focusedDirection*/ ctx[6] !== void 0) {
+    		clues_1_props.focusedDirection = /*focusedDirection*/ ctx[6];
+    	}
+
+    	clues_1 = new Clues({ props: clues_1_props, $$inline: true });
+    	binding_callbacks.push(() => bind(clues_1, "focusedCellIndex", clues_1_focusedCellIndex_binding));
+    	binding_callbacks.push(() => bind(clues_1, "focusedCell", clues_1_focusedCell_binding));
+    	binding_callbacks.push(() => bind(clues_1, "focusedDirection", clues_1_focusedDirection_binding));
+
+    	function puzzle_cells_binding(value) {
+    		/*puzzle_cells_binding*/ ctx[30].call(null, value);
+    	}
+
+    	function puzzle_focusedCellIndex_binding(value) {
+    		/*puzzle_focusedCellIndex_binding*/ ctx[31].call(null, value);
+    	}
+
+    	function puzzle_focusedDirection_binding(value) {
+    		/*puzzle_focusedDirection_binding*/ ctx[32].call(null, value);
+    	}
+
+    	let puzzle_props = {
+    		clues: /*clues*/ ctx[10],
+    		focusedCell: /*focusedCell*/ ctx[12],
+    		isRevealing: /*isRevealing*/ ctx[8],
+    		isDisableHighlight: /*isDisableHighlight*/ ctx[16],
+    		revealDuration: /*revealDuration*/ ctx[1],
+    		showKeyboard: /*showKeyboard*/ ctx[4],
+    		stacked: /*stacked*/ ctx[17]
+    	};
+
+    	if (/*cells*/ ctx[11] !== void 0) {
+    		puzzle_props.cells = /*cells*/ ctx[11];
+    	}
+
+    	if (/*focusedCellIndex*/ ctx[7] !== void 0) {
+    		puzzle_props.focusedCellIndex = /*focusedCellIndex*/ ctx[7];
+    	}
+
+    	if (/*focusedDirection*/ ctx[6] !== void 0) {
+    		puzzle_props.focusedDirection = /*focusedDirection*/ ctx[6];
+    	}
+
+    	puzzle = new Puzzle({ props: puzzle_props, $$inline: true });
+    	binding_callbacks.push(() => bind(puzzle, "cells", puzzle_cells_binding));
+    	binding_callbacks.push(() => bind(puzzle, "focusedCellIndex", puzzle_focusedCellIndex_binding));
+    	binding_callbacks.push(() => bind(puzzle, "focusedDirection", puzzle_focusedDirection_binding));
+    	let if_block = /*isComplete*/ ctx[14] && !/*isRevealing*/ ctx[8] && /*showCompleteMessage*/ ctx[2] && create_if_block_1$2(ctx);
+
+    	const block = {
+    		c: function create() {
+    			article = element("article");
+    			if (toolbar_slot_or_fallback) toolbar_slot_or_fallback.c();
+    			t0 = space();
+    			div = element("div");
+    			create_component(clues_1.$$.fragment);
+    			t1 = space();
+    			create_component(puzzle.$$.fragment);
+    			t2 = space();
+    			if (if_block) if_block.c();
+    			attr_dev(div, "class", "play svelte-1ein5he");
+    			toggle_class(div, "stacked", /*stacked*/ ctx[17]);
+    			add_location(div, file$b, 120, 4, 3362);
+    			attr_dev(article, "class", article_class_value = "crossword " + /*themeClass*/ ctx[15] + " svelte-1ein5he");
+    			add_render_callback(() => /*article_elementresize_handler*/ ctx[33].call(article));
+    			add_location(article, file$b, 115, 2, 3143);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, article, anchor);
+
+    			if (toolbar_slot_or_fallback) {
+    				toolbar_slot_or_fallback.m(article, null);
+    			}
+
+    			append_dev(article, t0);
+    			append_dev(article, div);
+    			mount_component(clues_1, div, null);
+    			append_dev(div, t1);
+    			mount_component(puzzle, div, null);
+    			append_dev(article, t2);
+    			if (if_block) if_block.m(article, null);
+    			article_resize_listener = add_resize_listener(article, /*article_elementresize_handler*/ ctx[33].bind(article));
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			if (toolbar_slot) {
+    				if (toolbar_slot.p && dirty[1] & /*$$scope*/ 8) {
+    					update_slot(toolbar_slot, toolbar_slot_template, ctx, /*$$scope*/ ctx[34], dirty, get_toolbar_slot_changes, get_toolbar_slot_context);
+    				}
+    			} else {
+    				if (toolbar_slot_or_fallback && toolbar_slot_or_fallback.p && dirty[0] & /*actions*/ 1) {
+    					toolbar_slot_or_fallback.p(ctx, dirty);
+    				}
+    			}
+
+    			const clues_1_changes = {};
+    			if (dirty[0] & /*clues*/ 1024) clues_1_changes.clues = /*clues*/ ctx[10];
+    			if (dirty[0] & /*cellIndexMap*/ 8192) clues_1_changes.cellIndexMap = /*cellIndexMap*/ ctx[13];
+    			if (dirty[0] & /*stacked*/ 131072) clues_1_changes.stacked = /*stacked*/ ctx[17];
+
+    			if (!updating_focusedCellIndex && dirty[0] & /*focusedCellIndex*/ 128) {
+    				updating_focusedCellIndex = true;
+    				clues_1_changes.focusedCellIndex = /*focusedCellIndex*/ ctx[7];
+    				add_flush_callback(() => updating_focusedCellIndex = false);
+    			}
+
+    			if (!updating_focusedCell && dirty[0] & /*focusedCell*/ 4096) {
+    				updating_focusedCell = true;
+    				clues_1_changes.focusedCell = /*focusedCell*/ ctx[12];
+    				add_flush_callback(() => updating_focusedCell = false);
+    			}
+
+    			if (!updating_focusedDirection && dirty[0] & /*focusedDirection*/ 64) {
+    				updating_focusedDirection = true;
+    				clues_1_changes.focusedDirection = /*focusedDirection*/ ctx[6];
+    				add_flush_callback(() => updating_focusedDirection = false);
+    			}
+
+    			clues_1.$set(clues_1_changes);
+    			const puzzle_changes = {};
+    			if (dirty[0] & /*clues*/ 1024) puzzle_changes.clues = /*clues*/ ctx[10];
+    			if (dirty[0] & /*focusedCell*/ 4096) puzzle_changes.focusedCell = /*focusedCell*/ ctx[12];
+    			if (dirty[0] & /*isRevealing*/ 256) puzzle_changes.isRevealing = /*isRevealing*/ ctx[8];
+    			if (dirty[0] & /*isDisableHighlight*/ 65536) puzzle_changes.isDisableHighlight = /*isDisableHighlight*/ ctx[16];
+    			if (dirty[0] & /*revealDuration*/ 2) puzzle_changes.revealDuration = /*revealDuration*/ ctx[1];
+    			if (dirty[0] & /*showKeyboard*/ 16) puzzle_changes.showKeyboard = /*showKeyboard*/ ctx[4];
+    			if (dirty[0] & /*stacked*/ 131072) puzzle_changes.stacked = /*stacked*/ ctx[17];
+
+    			if (!updating_cells && dirty[0] & /*cells*/ 2048) {
+    				updating_cells = true;
+    				puzzle_changes.cells = /*cells*/ ctx[11];
+    				add_flush_callback(() => updating_cells = false);
+    			}
+
+    			if (!updating_focusedCellIndex_1 && dirty[0] & /*focusedCellIndex*/ 128) {
+    				updating_focusedCellIndex_1 = true;
+    				puzzle_changes.focusedCellIndex = /*focusedCellIndex*/ ctx[7];
+    				add_flush_callback(() => updating_focusedCellIndex_1 = false);
+    			}
+
+    			if (!updating_focusedDirection_1 && dirty[0] & /*focusedDirection*/ 64) {
+    				updating_focusedDirection_1 = true;
+    				puzzle_changes.focusedDirection = /*focusedDirection*/ ctx[6];
+    				add_flush_callback(() => updating_focusedDirection_1 = false);
+    			}
+
+    			puzzle.$set(puzzle_changes);
+
+    			if (dirty[0] & /*stacked*/ 131072) {
+    				toggle_class(div, "stacked", /*stacked*/ ctx[17]);
+    			}
+
+    			if (/*isComplete*/ ctx[14] && !/*isRevealing*/ ctx[8] && /*showCompleteMessage*/ ctx[2]) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+
+    					if (dirty[0] & /*isComplete, isRevealing, showCompleteMessage*/ 16644) {
+    						transition_in(if_block, 1);
+    					}
+    				} else {
+    					if_block = create_if_block_1$2(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(article, null);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+
+    				check_outros();
+    			}
+
+    			if (!current || dirty[0] & /*themeClass*/ 32768 && article_class_value !== (article_class_value = "crossword " + /*themeClass*/ ctx[15] + " svelte-1ein5he")) {
+    				attr_dev(article, "class", article_class_value);
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(toolbar_slot_or_fallback, local);
+    			transition_in(clues_1.$$.fragment, local);
+    			transition_in(puzzle.$$.fragment, local);
+    			transition_in(if_block);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(toolbar_slot_or_fallback, local);
+    			transition_out(clues_1.$$.fragment, local);
+    			transition_out(puzzle.$$.fragment, local);
+    			transition_out(if_block);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(article);
+    			if (toolbar_slot_or_fallback) toolbar_slot_or_fallback.d(detaching);
+    			destroy_component(clues_1);
+    			destroy_component(puzzle);
+    			if (if_block) if_block.d();
+    			article_resize_listener();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$6.name,
+    		type: "if",
+    		source: "(115:0) {#if validated}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (117:67)        
+    function fallback_block$1(ctx) {
+    	let toolbar;
+    	let current;
+
+    	toolbar = new Toolbar({
+    			props: { actions: /*actions*/ ctx[0] },
+    			$$inline: true
+    		});
+
+    	toolbar.$on("event", /*onToolbarEvent*/ ctx[20]);
+
+    	const block = {
+    		c: function create() {
+    			create_component(toolbar.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(toolbar, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const toolbar_changes = {};
+    			if (dirty[0] & /*actions*/ 1) toolbar_changes.actions = /*actions*/ ctx[0];
+    			toolbar.$set(toolbar_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(toolbar.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(toolbar.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(toolbar, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: fallback_block$1.name,
+    		type: "fallback",
+    		source: "(117:67)        ",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (142:4) {#if isComplete && !isRevealing && showCompleteMessage}
+    function create_if_block_1$2(ctx) {
+    	let completedmessage;
+    	let current;
+
+    	completedmessage = new CompletedMessage({
+    			props: {
+    				showConfetti: /*showConfetti*/ ctx[3],
+    				$$slots: { default: [create_default_slot] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(completedmessage.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(completedmessage, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const completedmessage_changes = {};
+    			if (dirty[0] & /*showConfetti*/ 8) completedmessage_changes.showConfetti = /*showConfetti*/ ctx[3];
+
+    			if (dirty[1] & /*$$scope*/ 8) {
+    				completedmessage_changes.$$scope = { dirty, ctx };
+    			}
+
+    			completedmessage.$set(completedmessage_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(completedmessage.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(completedmessage.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(completedmessage, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1$2.name,
+    		type: "if",
+    		source: "(142:4) {#if isComplete && !isRevealing && showCompleteMessage}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (143:6) <CompletedMessage showConfetti="{showConfetti}">
+    function create_default_slot(ctx) {
+    	let current;
+    	const complete_slot_template = /*#slots*/ ctx[26].complete;
+    	const complete_slot = create_slot(complete_slot_template, ctx, /*$$scope*/ ctx[34], get_complete_slot_context);
+
+    	const block = {
+    		c: function create() {
+    			if (complete_slot) complete_slot.c();
+    		},
+    		m: function mount(target, anchor) {
+    			if (complete_slot) {
+    				complete_slot.m(target, anchor);
+    			}
+
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			if (complete_slot) {
+    				if (complete_slot.p && dirty[1] & /*$$scope*/ 8) {
+    					update_slot(complete_slot, complete_slot_template, ctx, /*$$scope*/ ctx[34], dirty, get_complete_slot_changes, get_complete_slot_context);
+    				}
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(complete_slot, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(complete_slot, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (complete_slot) complete_slot.d(detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot.name,
+    		type: "slot",
+    		source: "(143:6) <CompletedMessage showConfetti=\\\"{showConfetti}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$b(ctx) {
+    	let if_block_anchor;
+    	let current;
+    	let if_block = /*validated*/ ctx[9] && create_if_block$6(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			if (/*validated*/ ctx[9]) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+
+    					if (dirty[0] & /*validated*/ 512) {
+    						transition_in(if_block, 1);
+    					}
+    				} else {
+    					if_block = create_if_block$6(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(if_block_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$b.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$b($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots("Crossword", slots, ['toolbar','complete']);
+    	let { data = [] } = $$props;
+    	let { actions = ["clear", "reveal"] } = $$props;
+    	let { theme = "classic" } = $$props;
+    	let { revealDuration = 1000 } = $$props;
+    	let { breakpoint = 720 } = $$props;
+    	let { revealed = false } = $$props;
+    	let { disableHighlight = false } = $$props;
+    	let { showCompleteMessage = true } = $$props;
+    	let { showConfetti = true } = $$props;
+    	let { showKeyboard = false } = $$props;
+    	let width = 0;
+    	let focusedDirection = "across";
+    	let focusedCellIndex = 0;
+    	let isRevealing = false;
+    	let revealTimeout;
+    	let clueCompletion;
+    	let originalClues = [];
+    	let validated = [];
+    	let clues = [];
+    	let cells = [];
+
+    	const onDataUpdate = () => {
+    		originalClues = createClues(data);
+    		$$invalidate(9, validated = validateClues(originalClues));
+    		$$invalidate(10, clues = originalClues.map(d => ({ ...d })));
+    		$$invalidate(11, cells = createCells(originalClues));
+    		reset();
+    	};
+
+    	function checkClues() {
+    		return clues.map(d => {
+    			const index = d.index;
+
+    			const cellChecks = d.cells.map(c => {
+    				const { value } = cells.find(e => e.id === c.id);
+    				const hasValue = !!value;
+    				const hasCorrect = value === c.answer;
+    				return { hasValue, hasCorrect };
+    			});
+
+    			const isCorrect = cellChecks.filter(c => c.hasCorrect).length === d.answer.length;
+    			const isFilled = cellChecks.filter(c => c.hasValue).length === d.answer.length;
+    			return { ...d, isCorrect, isFilled };
+    		});
+    	}
+
+    	function reset() {
+    		$$invalidate(8, isRevealing = false);
+    		$$invalidate(7, focusedCellIndex = 0);
+    		$$invalidate(6, focusedDirection = "across");
+    	}
+
+    	function onClear() {
+    		reset();
+    		if (revealTimeout) clearTimeout(revealTimeout);
+    		$$invalidate(11, cells = cells.map(cell => ({ ...cell, value: "" })));
+    		$$invalidate(21, revealed = false);
+    	}
+
+    	function onReveal() {
+    		if (revealed) return true;
+    		reset();
+    		$$invalidate(11, cells = cells.map(cell => ({ ...cell, value: cell.answer })));
+    		$$invalidate(21, revealed = true);
+    		startReveal();
+    	}
+
+    	function startReveal() {
+    		$$invalidate(8, isRevealing = true);
+    		if (revealTimeout) clearTimeout(revealTimeout);
+
+    		revealTimeout = setTimeout(
+    			() => {
+    				$$invalidate(8, isRevealing = false);
+    			},
+    			revealDuration + 250
+    		);
+    	}
+
+    	function onToolbarEvent({ detail }) {
+    		if (detail === "clear") onClear(); else if (detail === "reveal") onReveal();
+    	}
+
+    	const writable_props = [
+    		"data",
+    		"actions",
+    		"theme",
+    		"revealDuration",
+    		"breakpoint",
+    		"revealed",
+    		"disableHighlight",
+    		"showCompleteMessage",
+    		"showConfetti",
+    		"showKeyboard"
+    	];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Crossword> was created with unknown prop '${key}'`);
+    	});
+
+    	function clues_1_focusedCellIndex_binding(value) {
+    		focusedCellIndex = value;
+    		$$invalidate(7, focusedCellIndex);
+    	}
+
+    	function clues_1_focusedCell_binding(value) {
+    		focusedCell = value;
+    		(($$invalidate(12, focusedCell), $$invalidate(11, cells)), $$invalidate(7, focusedCellIndex));
+    	}
+
+    	function clues_1_focusedDirection_binding(value) {
+    		focusedDirection = value;
+    		$$invalidate(6, focusedDirection);
+    	}
+
+    	function puzzle_cells_binding(value) {
+    		cells = value;
+    		$$invalidate(11, cells);
+    	}
+
+    	function puzzle_focusedCellIndex_binding(value) {
+    		focusedCellIndex = value;
+    		$$invalidate(7, focusedCellIndex);
+    	}
+
+    	function puzzle_focusedDirection_binding(value) {
+    		focusedDirection = value;
+    		$$invalidate(6, focusedDirection);
+    	}
+
+    	function article_elementresize_handler() {
+    		width = this.offsetWidth;
+    		$$invalidate(5, width);
+    	}
+
+    	$$self.$$set = $$props => {
+    		if ("data" in $$props) $$invalidate(22, data = $$props.data);
+    		if ("actions" in $$props) $$invalidate(0, actions = $$props.actions);
+    		if ("theme" in $$props) $$invalidate(23, theme = $$props.theme);
+    		if ("revealDuration" in $$props) $$invalidate(1, revealDuration = $$props.revealDuration);
+    		if ("breakpoint" in $$props) $$invalidate(24, breakpoint = $$props.breakpoint);
+    		if ("revealed" in $$props) $$invalidate(21, revealed = $$props.revealed);
+    		if ("disableHighlight" in $$props) $$invalidate(25, disableHighlight = $$props.disableHighlight);
+    		if ("showCompleteMessage" in $$props) $$invalidate(2, showCompleteMessage = $$props.showCompleteMessage);
+    		if ("showConfetti" in $$props) $$invalidate(3, showConfetti = $$props.showConfetti);
+    		if ("showKeyboard" in $$props) $$invalidate(4, showKeyboard = $$props.showKeyboard);
+    		if ("$$scope" in $$props) $$invalidate(34, $$scope = $$props.$$scope);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		Toolbar,
+    		Puzzle,
+    		Clues,
+    		CompletedMessage,
+    		createClues,
+    		createCells,
+    		validateClues,
+    		fromPairs,
+    		data,
+    		actions,
+    		theme,
+    		revealDuration,
+    		breakpoint,
+    		revealed,
+    		disableHighlight,
+    		showCompleteMessage,
+    		showConfetti,
+    		showKeyboard,
+    		width,
+    		focusedDirection,
+    		focusedCellIndex,
+    		isRevealing,
+    		revealTimeout,
+    		clueCompletion,
+    		originalClues,
+    		validated,
+    		clues,
+    		cells,
+    		onDataUpdate,
+    		checkClues,
+    		reset,
+    		onClear,
+    		onReveal,
+    		startReveal,
+    		onToolbarEvent,
+    		focusedCell,
+    		cellIndexMap,
+    		percentCorrect,
+    		isComplete,
+    		themeClass,
+    		isDisableHighlight,
+    		stacked
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ("data" in $$props) $$invalidate(22, data = $$props.data);
+    		if ("actions" in $$props) $$invalidate(0, actions = $$props.actions);
+    		if ("theme" in $$props) $$invalidate(23, theme = $$props.theme);
+    		if ("revealDuration" in $$props) $$invalidate(1, revealDuration = $$props.revealDuration);
+    		if ("breakpoint" in $$props) $$invalidate(24, breakpoint = $$props.breakpoint);
+    		if ("revealed" in $$props) $$invalidate(21, revealed = $$props.revealed);
+    		if ("disableHighlight" in $$props) $$invalidate(25, disableHighlight = $$props.disableHighlight);
+    		if ("showCompleteMessage" in $$props) $$invalidate(2, showCompleteMessage = $$props.showCompleteMessage);
+    		if ("showConfetti" in $$props) $$invalidate(3, showConfetti = $$props.showConfetti);
+    		if ("showKeyboard" in $$props) $$invalidate(4, showKeyboard = $$props.showKeyboard);
+    		if ("width" in $$props) $$invalidate(5, width = $$props.width);
+    		if ("focusedDirection" in $$props) $$invalidate(6, focusedDirection = $$props.focusedDirection);
+    		if ("focusedCellIndex" in $$props) $$invalidate(7, focusedCellIndex = $$props.focusedCellIndex);
+    		if ("isRevealing" in $$props) $$invalidate(8, isRevealing = $$props.isRevealing);
+    		if ("revealTimeout" in $$props) revealTimeout = $$props.revealTimeout;
+    		if ("clueCompletion" in $$props) clueCompletion = $$props.clueCompletion;
+    		if ("originalClues" in $$props) originalClues = $$props.originalClues;
+    		if ("validated" in $$props) $$invalidate(9, validated = $$props.validated);
+    		if ("clues" in $$props) $$invalidate(10, clues = $$props.clues);
+    		if ("cells" in $$props) $$invalidate(11, cells = $$props.cells);
+    		if ("focusedCell" in $$props) $$invalidate(12, focusedCell = $$props.focusedCell);
+    		if ("cellIndexMap" in $$props) $$invalidate(13, cellIndexMap = $$props.cellIndexMap);
+    		if ("percentCorrect" in $$props) $$invalidate(37, percentCorrect = $$props.percentCorrect);
+    		if ("isComplete" in $$props) $$invalidate(14, isComplete = $$props.isComplete);
+    		if ("themeClass" in $$props) $$invalidate(15, themeClass = $$props.themeClass);
+    		if ("isDisableHighlight" in $$props) $$invalidate(16, isDisableHighlight = $$props.isDisableHighlight);
+    		if ("stacked" in $$props) $$invalidate(17, stacked = $$props.stacked);
+    	};
+
+    	let focusedCell;
+    	let cellIndexMap;
+    	let percentCorrect;
+    	let isComplete;
+    	let themeClass;
+    	let isDisableHighlight;
+    	let stacked;
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty[0] & /*data*/ 4194304) {
+    			 (onDataUpdate());
+    		}
+
+    		if ($$self.$$.dirty[0] & /*cells, focusedCellIndex*/ 2176) {
+    			 $$invalidate(12, focusedCell = cells[focusedCellIndex] || {});
+    		}
+
+    		if ($$self.$$.dirty[0] & /*cells*/ 2048) {
+    			 $$invalidate(13, cellIndexMap = fromPairs(cells.map(cell => [cell.id, cell.index])));
+    		}
+
+    		if ($$self.$$.dirty[0] & /*cells*/ 2048) {
+    			 $$invalidate(37, percentCorrect = cells.filter(d => d.answer === d.value).length / cells.length);
+    		}
+
+    		if ($$self.$$.dirty[1] & /*percentCorrect*/ 64) {
+    			 $$invalidate(14, isComplete = percentCorrect == 1);
+    		}
+
+    		if ($$self.$$.dirty[0] & /*theme*/ 8388608) {
+    			 $$invalidate(15, themeClass = theme ? `theme-${theme}` : "");
+    		}
+
+    		if ($$self.$$.dirty[0] & /*isComplete, disableHighlight*/ 33570816) {
+    			 $$invalidate(16, isDisableHighlight = isComplete && disableHighlight);
+    		}
+
+    		if ($$self.$$.dirty[0] & /*cells*/ 2048) {
+    			 ($$invalidate(10, clues = checkClues()));
+    		}
+
+    		if ($$self.$$.dirty[0] & /*width, breakpoint*/ 16777248) {
+    			 $$invalidate(17, stacked = width < breakpoint);
+    		}
+    	};
+
+    	return [
+    		actions,
+    		revealDuration,
+    		showCompleteMessage,
+    		showConfetti,
+    		showKeyboard,
+    		width,
+    		focusedDirection,
+    		focusedCellIndex,
+    		isRevealing,
+    		validated,
+    		clues,
+    		cells,
+    		focusedCell,
+    		cellIndexMap,
+    		isComplete,
+    		themeClass,
+    		isDisableHighlight,
+    		stacked,
+    		onClear,
+    		onReveal,
+    		onToolbarEvent,
+    		revealed,
+    		data,
+    		theme,
+    		breakpoint,
+    		disableHighlight,
+    		slots,
+    		clues_1_focusedCellIndex_binding,
+    		clues_1_focusedCell_binding,
+    		clues_1_focusedDirection_binding,
+    		puzzle_cells_binding,
+    		puzzle_focusedCellIndex_binding,
+    		puzzle_focusedDirection_binding,
+    		article_elementresize_handler,
+    		$$scope
+    	];
+    }
+
+    class Crossword extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+
+    		init(
+    			this,
+    			options,
+    			instance$b,
+    			create_fragment$b,
+    			safe_not_equal,
+    			{
+    				data: 22,
+    				actions: 0,
+    				theme: 23,
+    				revealDuration: 1,
+    				breakpoint: 24,
+    				revealed: 21,
+    				disableHighlight: 25,
+    				showCompleteMessage: 2,
+    				showConfetti: 3,
+    				showKeyboard: 4
+    			},
+    			[-1, -1]
+    		);
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Crossword",
+    			options,
+    			id: create_fragment$b.name
+    		});
+    	}
+
+    	get data() {
+    		throw new Error("<Crossword>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set data(value) {
+    		throw new Error("<Crossword>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get actions() {
+    		throw new Error("<Crossword>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set actions(value) {
+    		throw new Error("<Crossword>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get theme() {
+    		throw new Error("<Crossword>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set theme(value) {
+    		throw new Error("<Crossword>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get revealDuration() {
+    		throw new Error("<Crossword>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set revealDuration(value) {
+    		throw new Error("<Crossword>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get breakpoint() {
+    		throw new Error("<Crossword>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set breakpoint(value) {
+    		throw new Error("<Crossword>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get revealed() {
+    		throw new Error("<Crossword>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set revealed(value) {
+    		throw new Error("<Crossword>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get disableHighlight() {
+    		throw new Error("<Crossword>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set disableHighlight(value) {
+    		throw new Error("<Crossword>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get showCompleteMessage() {
+    		throw new Error("<Crossword>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set showCompleteMessage(value) {
+    		throw new Error("<Crossword>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get showConfetti() {
+    		throw new Error("<Crossword>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set showConfetti(value) {
+    		throw new Error("<Crossword>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get showKeyboard() {
+    		throw new Error("<Crossword>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set showKeyboard(value) {
+    		throw new Error("<Crossword>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src/components/Play.svelte generated by Svelte v3.29.4 */
+    const file$c = "src/components/Play.svelte";
+
+    function get_each_context$6(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[3] = list[i].id;
+    	child_ctx[9] = list[i].value;
+    	return child_ctx;
+    }
+
+    // (26:6) {#each puzzles as { id, value }}
+    function create_each_block$6(ctx) {
+    	let option;
+    	let t_value = /*value*/ ctx[9] + "";
+    	let t;
+    	let option_value_value;
+
+    	const block = {
+    		c: function create() {
+    			option = element("option");
+    			t = text(t_value);
+    			option.__value = option_value_value = /*id*/ ctx[3];
+    			option.value = option.__value;
+    			add_location(option, file$c, 26, 8, 591);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, option, anchor);
+    			append_dev(option, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*puzzles*/ 4 && t_value !== (t_value = /*value*/ ctx[9] + "")) set_data_dev(t, t_value);
+
+    			if (dirty & /*puzzles*/ 4 && option_value_value !== (option_value_value = /*id*/ ctx[3])) {
+    				prop_dev(option, "__value", option_value_value);
+    				option.value = option.__value;
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(option);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block$6.name,
+    		type: "each",
+    		source: "(26:6) {#each puzzles as { id, value }}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$c(ctx) {
+    	let section;
+    	let div0;
+    	let h2;
+    	let t0;
+    	let t1;
+    	let select;
+    	let t2;
+    	let p0;
+    	let t3;
+    	let t4;
+    	let t5;
+    	let br;
+    	let t6;
+    	let button0;
+    	let span0;
+    	let t8;
+    	let t9;
+    	let button1;
+    	let span1;
+    	let t11;
+    	let t12;
+    	let div1;
+    	let crossword;
+    	let t13;
+    	let p1;
+    	let em;
+    	let section_class_value;
+    	let current;
+    	let mounted;
+    	let dispose;
+    	let each_value = /*puzzles*/ ctx[2];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$6(get_each_context$6(ctx, each_value, i));
+    	}
+
+    	crossword = new Crossword({
+    			props: {
+    				data: /*data*/ ctx[6],
+    				theme: /*theme*/ ctx[1]
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			section = element("section");
+    			div0 = element("div");
+    			h2 = element("h2");
+    			t0 = text(/*title*/ ctx[0]);
+    			t1 = space();
+    			select = element("select");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			t2 = space();
+    			p0 = element("p");
+    			t3 = text("In our sample of people in\n    ");
+    			t4 = text(/*name*/ ctx[5]);
+    			t5 = text("\n    puzzles, we found that...\n    ");
+    			br = element("br");
+    			t6 = space();
+    			button0 = element("button");
+    			span0 = element("span");
+    			span0.textContent = "30%";
+    			t8 = text("\n      were underrepresented minorities");
+    			t9 = text("\n    and\n    ");
+    			button1 = element("button");
+    			span1 = element("span");
+    			span1.textContent = "10%";
+    			t11 = text(" were women.");
+    			t12 = space();
+    			div1 = element("div");
+    			create_component(crossword.$$.fragment);
+    			t13 = space();
+    			p1 = element("p");
+    			em = element("em");
+    			em.textContent = "Note: findings were rounded to the nearest 10% in order to map to the\n        10 clues.";
+    			attr_dev(h2, "class", "svelte-122pg2r");
+    			add_location(h2, file$c, 23, 4, 491);
+    			if (/*current*/ ctx[4] === void 0) add_render_callback(() => /*select_change_handler*/ ctx[7].call(select));
+    			add_location(select, file$c, 24, 4, 512);
+    			attr_dev(div0, "class", "info svelte-122pg2r");
+    			add_location(div0, file$c, 22, 2, 468);
+    			add_location(br, file$c, 35, 4, 765);
+    			attr_dev(span0, "class", "percent svelte-122pg2r");
+    			add_location(span0, file$c, 36, 24, 796);
+    			attr_dev(button0, "class", "urm svelte-122pg2r");
+    			add_location(button0, file$c, 36, 4, 776);
+    			attr_dev(span1, "class", "percent svelte-122pg2r");
+    			add_location(span1, file$c, 39, 26, 911);
+    			attr_dev(button1, "class", "women svelte-122pg2r");
+    			add_location(button1, file$c, 39, 4, 889);
+    			attr_dev(p0, "class", "insight svelte-122pg2r");
+    			add_location(p0, file$c, 31, 2, 669);
+    			add_location(em, file$c, 45, 6, 1067);
+    			attr_dev(p1, "class", "note svelte-122pg2r");
+    			add_location(p1, file$c, 44, 4, 1044);
+    			attr_dev(div1, "class", "xd svelte-122pg2r");
+    			add_location(div1, file$c, 42, 2, 975);
+    			attr_dev(section, "id", /*id*/ ctx[3]);
+    			attr_dev(section, "class", section_class_value = "" + (null_to_empty(/*theme*/ ctx[1]) + " svelte-122pg2r"));
+    			add_location(section, file$c, 21, 0, 430);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, section, anchor);
+    			append_dev(section, div0);
+    			append_dev(div0, h2);
+    			append_dev(h2, t0);
+    			append_dev(div0, t1);
+    			append_dev(div0, select);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(select, null);
+    			}
+
+    			select_option(select, /*current*/ ctx[4]);
+    			append_dev(section, t2);
+    			append_dev(section, p0);
+    			append_dev(p0, t3);
+    			append_dev(p0, t4);
+    			append_dev(p0, t5);
+    			append_dev(p0, br);
+    			append_dev(p0, t6);
+    			append_dev(p0, button0);
+    			append_dev(button0, span0);
+    			append_dev(button0, t8);
+    			append_dev(p0, t9);
+    			append_dev(p0, button1);
+    			append_dev(button1, span1);
+    			append_dev(button1, t11);
+    			append_dev(section, t12);
+    			append_dev(section, div1);
+    			mount_component(crossword, div1, null);
+    			append_dev(div1, t13);
+    			append_dev(div1, p1);
+    			append_dev(p1, em);
+    			current = true;
+
+    			if (!mounted) {
+    				dispose = listen_dev(select, "change", /*select_change_handler*/ ctx[7]);
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (!current || dirty & /*title*/ 1) set_data_dev(t0, /*title*/ ctx[0]);
+
+    			if (dirty & /*puzzles*/ 4) {
+    				each_value = /*puzzles*/ ctx[2];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$6(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block$6(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(select, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value.length;
+    			}
+
+    			if (dirty & /*current, puzzles*/ 20) {
+    				select_option(select, /*current*/ ctx[4]);
+    			}
+
+    			if (!current || dirty & /*name*/ 32) set_data_dev(t4, /*name*/ ctx[5]);
+    			const crossword_changes = {};
+    			if (dirty & /*data*/ 64) crossword_changes.data = /*data*/ ctx[6];
+    			if (dirty & /*theme*/ 2) crossword_changes.theme = /*theme*/ ctx[1];
+    			crossword.$set(crossword_changes);
+
+    			if (!current || dirty & /*id*/ 8) {
+    				attr_dev(section, "id", /*id*/ ctx[3]);
+    			}
+
+    			if (!current || dirty & /*theme*/ 2 && section_class_value !== (section_class_value = "" + (null_to_empty(/*theme*/ ctx[1]) + " svelte-122pg2r"))) {
+    				attr_dev(section, "class", section_class_value);
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(crossword.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(crossword.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(section);
+    			destroy_each(each_blocks, detaching);
+    			destroy_component(crossword);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$c.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function addCustom(arr) {
+    	return arr.map(d => ({ ...d, custom: `${d.race} ${d.gender}` }));
+    }
+
+    function instance$c($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots("Play", slots, []);
+    	let { id } = $$props;
+    	let { title } = $$props;
+    	let { theme = "classic" } = $$props;
+    	let { puzzles = [] } = $$props;
+    	let current = puzzles[0].id;
+    	const writable_props = ["id", "title", "theme", "puzzles"];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Play> was created with unknown prop '${key}'`);
+    	});
+
+    	function select_change_handler() {
+    		current = select_value(this);
+    		$$invalidate(4, current);
+    		$$invalidate(2, puzzles);
+    	}
+
+    	$$self.$$set = $$props => {
+    		if ("id" in $$props) $$invalidate(3, id = $$props.id);
+    		if ("title" in $$props) $$invalidate(0, title = $$props.title);
+    		if ("theme" in $$props) $$invalidate(1, theme = $$props.theme);
+    		if ("puzzles" in $$props) $$invalidate(2, puzzles = $$props.puzzles);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		Crossword,
+    		id,
+    		title,
+    		theme,
+    		puzzles,
+    		current,
+    		addCustom,
+    		puzzle,
+    		name,
+    		data
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ("id" in $$props) $$invalidate(3, id = $$props.id);
+    		if ("title" in $$props) $$invalidate(0, title = $$props.title);
+    		if ("theme" in $$props) $$invalidate(1, theme = $$props.theme);
+    		if ("puzzles" in $$props) $$invalidate(2, puzzles = $$props.puzzles);
+    		if ("current" in $$props) $$invalidate(4, current = $$props.current);
+    		if ("puzzle" in $$props) $$invalidate(8, puzzle = $$props.puzzle);
+    		if ("name" in $$props) $$invalidate(5, name = $$props.name);
+    		if ("data" in $$props) $$invalidate(6, data = $$props.data);
+    	};
+
+    	let puzzle;
+    	let name;
+    	let data;
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty & /*puzzles, current*/ 20) {
+    			 $$invalidate(8, puzzle = puzzles.find(d => d.id === current));
+    		}
+
+    		if ($$self.$$.dirty & /*puzzle*/ 256) {
+    			 $$invalidate(5, name = puzzle.value);
+    		}
+
+    		if ($$self.$$.dirty & /*puzzle*/ 256) {
+    			 $$invalidate(6, data = addCustom(puzzle.data));
+    		}
+    	};
+
+    	return [title, theme, puzzles, id, current, name, data, select_change_handler];
+    }
+
+    class Play extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$c, create_fragment$c, safe_not_equal, { id: 3, title: 0, theme: 1, puzzles: 2 });
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Play",
+    			options,
+    			id: create_fragment$c.name
+    		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*id*/ ctx[3] === undefined && !("id" in props)) {
+    			console.warn("<Play> was created without expected prop 'id'");
+    		}
+
+    		if (/*title*/ ctx[0] === undefined && !("title" in props)) {
+    			console.warn("<Play> was created without expected prop 'title'");
+    		}
+    	}
+
+    	get id() {
+    		throw new Error("<Play>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set id(value) {
+    		throw new Error("<Play>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get title() {
+    		throw new Error("<Play>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set title(value) {
+    		throw new Error("<Play>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get theme() {
+    		throw new Error("<Play>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set theme(value) {
+    		throw new Error("<Play>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get puzzles() {
+    		throw new Error("<Play>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set puzzles(value) {
+    		throw new Error("<Play>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    var usa2020 = [
+    	{
+    		x: 0,
+    		y: 0,
+    		answer: "TRACE",
+    		direction: "across",
+    		clue: "\"Hustlers\" actress Lysette",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Trace Lysette",
+    		wiki: "https://en.wikipedia.org/wiki/Trace_Lysette",
+    		description: "American actor"
+    	},
+    	{
+    		x: 2,
+    		y: 0,
+    		answer: "ANITA",
+    		direction: "down",
+    		clue: "Rita's role in \"West Side Story\"",
+    		race: "urm",
+    		binaryRace: "white",
+    		hispanic: "TRUE",
+    		gender: "woman",
+    		name: "Rita Moreno",
+    		wiki: "https://en.wikipedia.org/wiki/Rita_Moreno",
+    		description: "Puerto Rican singer, dancer, and actress"
+    	},
+    	{
+    		x: 3,
+    		y: 0,
+    		answer: "CHE",
+    		direction: "down",
+    		clue: "Guerrilla Guevara",
+    		race: "urm",
+    		binaryRace: "white",
+    		hispanic: "TRUE",
+    		gender: "man",
+    		name: "Che Guevara",
+    		wiki: "https://en.wikipedia.org/wiki/Che_Guevara",
+    		description: "Argentine Marxist revolutionary"
+    	},
+    	{
+    		x: 4,
+    		y: 0,
+    		answer: "ELL",
+    		direction: "down",
+    		clue: "\"I Don't Love You\" singer Lindsay",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Lindsay Ell",
+    		wiki: "https://en.wikipedia.org/wiki/Lindsay_Ell",
+    		description: "Canadian musician"
+    	},
+    	{
+    		x: 2,
+    		y: 1,
+    		answer: "NHL",
+    		direction: "across",
+    		clue: "Willie O'Ree played in it (Abbr.)",
+    		race: "urm",
+    		binaryRace: "poc",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Willie O'Ree",
+    		wiki: "https://en.wikipedia.org/wiki/Willie_O%27Ree",
+    		description: "20th-century Canadian ice hockey player"
+    	},
+    	{
+    		x: 0,
+    		y: 2,
+    		answer: "ARIEL",
+    		direction: "across",
+    		clue: "\"Modern Family\" actress Winter",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Ariel Winter",
+    		wiki: "https://en.wikipedia.org/wiki/Ariel_Winter",
+    		description: "American actress, model and occasional singer"
+    	},
+    	{
+    		x: 0,
+    		y: 2,
+    		answer: "ALI",
+    		direction: "down",
+    		clue: "Broadway star Stroker",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Ali Stroker",
+    		wiki: "https://en.wikipedia.org/wiki/Ali_Stroker",
+    		description: "American actress"
+    	},
+    	{
+    		x: 1,
+    		y: 2,
+    		answer: "REC",
+    		direction: "down",
+    		clue: "\"Parks and ___\" (Amy Poehler sitcom, for short)",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Amy Poehler",
+    		wiki: "https://en.wikipedia.org/wiki/Amy_Poehler",
+    		description: "American actress"
+    	},
+    	{
+    		x: 0,
+    		y: 3,
+    		answer: "LET",
+    		direction: "across",
+    		clue: "\"___ America Be America Again\" (Langston Hughes poem)",
+    		race: "urm",
+    		binaryRace: "poc",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Langston Hughes",
+    		wiki: "https://en.wikipedia.org/wiki/Langston_Hughes",
+    		description: "American writer and social activist"
+    	},
+    	{
+    		x: 0,
+    		y: 4,
+    		answer: "ICARE",
+    		direction: "across",
+    		clue: "Beyonce song about emotional investment",
+    		race: "urm",
+    		binaryRace: "poc",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Beyoncé",
+    		wiki: "https://en.wikipedia.org/wiki/Beyonc%C3%A9",
+    		description: "American singer, songwriter, producer, and actress"
+    	}
+    ];
+
+    var up2020 = [
+    	{
+    		x: 1,
+    		y: 0,
+    		answer: "ALDA",
+    		direction: "across",
+    		clue: "Hawkeye Pierce portrayer Alan",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Alan Alda",
+    		wiki: "https://en.wikipedia.org/wiki/Alan_Alda",
+    		description: "American actor, director, screenwriter, comedian and author"
+    	},
+    	{
+    		x: 2,
+    		y: 0,
+    		answer: "LILLY",
+    		direction: "down",
+    		clue: "Pharmaceuticals giant ___ Lilly",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Eli Lilly",
+    		wiki: "https://en.wikipedia.org/wiki/Eli_Lilly",
+    		description: "American pharmacist, Union Army officer, businessman, philanthropist"
+    	},
+    	{
+    		x: 3,
+    		y: 0,
+    		answer: "DAE",
+    		direction: "down",
+    		clue: "Daniel ___ Kim of \"Lost\"",
+    		race: "urm",
+    		binaryRace: "poc",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Daniel Dae Kim",
+    		wiki: "https://en.wikipedia.org/wiki/Daniel_Dae_Kim",
+    		description: "Korean American actor"
+    	},
+    	{
+    		x: 4,
+    		y: 0,
+    		answer: "ANNA",
+    		direction: "down",
+    		clue: "Author ___ J. Cooper",
+    		race: "urm",
+    		binaryRace: "poc",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Anna J. Cooper",
+    		wiki: "https://en.wikipedia.org/wiki/Anna_J._Cooper",
+    		description: "African-American author, educator, speaker and scholar"
+    	},
+    	{
+    		x: 0,
+    		y: 1,
+    		answer: "SADE",
+    		direction: "down",
+    		clue: "\"The Sweetest Taboo\" singer",
+    		race: "urm",
+    		binaryRace: "poc",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Sade",
+    		wiki: "https://en.wikipedia.org/wiki/Sade_(singer)",
+    		description: "Nigerian singer and songwriter"
+    	},
+    	{
+    		x: 2,
+    		y: 1,
+    		answer: "IAN",
+    		direction: "across",
+    		clue: "\"At Seventeen\" singer Janis",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Janis Ian",
+    		wiki: "https://en.wikipedia.org/wiki/Janis_Ian",
+    		description: "American singer-songwriter and writer"
+    	},
+    	{
+    		x: 0,
+    		y: 2,
+    		answer: "ALLEN",
+    		direction: "across",
+    		clue: "Patriot Ethan",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Ethan Allen",
+    		wiki: "https://en.wikipedia.org/wiki/Ethan_Allen",
+    		description: "18th-century American general"
+    	},
+    	{
+    		x: 1,
+    		y: 2,
+    		answer: "LEN",
+    		direction: "down",
+    		clue: "Spy novelist Deighton",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Len Deighton",
+    		wiki: "https://en.wikipedia.org/wiki/Len_Deighton",
+    		description: "British author"
+    	},
+    	{
+    		x: 0,
+    		y: 3,
+    		answer: "DEL",
+    		direction: "across",
+    		clue: "Singer Del Rey",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Lana Del Rey",
+    		wiki: "https://en.wikipedia.org/wiki/Lana_Del_Rey",
+    		description: "American singer-songwriter"
+    	},
+    	{
+    		x: 0,
+    		y: 4,
+    		answer: "ENYA",
+    		direction: "across",
+    		clue: "One-named Irish singer",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Enya",
+    		wiki: "https://en.wikipedia.org/wiki/Enya",
+    		description: "Irish singer, songwriter, and musician"
+    	}
+    ];
+
+    var nyt2020 = [
+    	{
+    		x: 2,
+    		y: 0,
+    		answer: "RAY",
+    		direction: "across",
+    		clue: "Dadaism pioneer",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Man Ray",
+    		wiki: "https://en.wikipedia.org/wiki/Man_Ray",
+    		description: "American artist and photographer"
+    	},
+    	{
+    		x: 2,
+    		y: 0,
+    		answer: "RODIN",
+    		direction: "down",
+    		clue: "\"The Thinker\" sculptor",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Auguste Rodin",
+    		wiki: "https://en.wikipedia.org/wiki/Auguste_Rodin",
+    		description: "French sculptor"
+    	},
+    	{
+    		x: 3,
+    		y: 0,
+    		answer: "ARI",
+    		direction: "down",
+    		clue: "Horror film director Aster",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Ari Aster",
+    		wiki: "https://en.wikipedia.org/wiki/Ari_Aster",
+    		description: "American filmmaker and screenwriter"
+    	},
+    	{
+    		x: 4,
+    		y: 0,
+    		answer: "YANN",
+    		direction: "down",
+    		clue: "\"Life of Pi\" author Martel",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Yann Martel",
+    		wiki: "https://en.wikipedia.org/wiki/Yann_Martel",
+    		description: "Canadian author best known for the book Life of Pi"
+    	},
+    	{
+    		x: 0,
+    		y: 1,
+    		answer: "ERMA",
+    		direction: "down",
+    		clue: "Bombeck who wrote \"I Lost Everything in the Post-Natal Depression\"",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Erma Bombeck",
+    		wiki: "https://en.wikipedia.org/wiki/Erma_Bombeck",
+    		description: "American humorist and writer"
+    	},
+    	{
+    		x: 2,
+    		y: 1,
+    		answer: "ORA",
+    		direction: "across",
+    		clue: "Pop singer Ora",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Rita Ora",
+    		wiki: "https://en.wikipedia.org/wiki/Rita_Ora",
+    		description: "British singer and actress"
+    	},
+    	{
+    		x: 0,
+    		y: 2,
+    		answer: "RIDIN",
+    		direction: "across",
+    		clue: "2006 #1 Chamillionaire hit that begins \"They see me rollin'\"",
+    		race: "urm",
+    		binaryRace: "poc",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Chamillionaire",
+    		wiki: "https://en.wikipedia.org/wiki/Chamillionaire",
+    		description: "American rapper, entrepreneur, and investor from Texas"
+    	},
+    	{
+    		x: 1,
+    		y: 2,
+    		answer: "IAN",
+    		direction: "down",
+    		clue: "Novelist McEwan",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Ian McEwan",
+    		wiki: "https://en.wikipedia.org/wiki/Ian_McEwan",
+    		description: "British author"
+    	},
+    	{
+    		x: 0,
+    		y: 3,
+    		answer: "MAI",
+    		direction: "across",
+    		clue: "Singer Ella with the 2018 Grammy-winning R&B hit \"Boo'd Up\"",
+    		race: "urm",
+    		binaryRace: "poc",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Ella Mai",
+    		wiki: "https://en.wikipedia.org/wiki/Ella_Mai",
+    		description: "English singer"
+    	},
+    	{
+    		x: 0,
+    		y: 4,
+    		answer: "ANN",
+    		direction: "across",
+    		clue: "___ Petry, first female African-American writer with a million-selling novel (\"The Street\")",
+    		race: "urm",
+    		binaryRace: "poc",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Ann Petry",
+    		wiki: "https://en.wikipedia.org/wiki/Ann_Petry",
+    		description: "American writer and journalist"
+    	}
+    ];
+
+    var lat2020 = [
+    	{
+    		x: 0,
+    		y: 0,
+    		answer: "KAREN",
+    		direction: "across",
+    		clue: "Actress Gillan of \"Guardians of the Galaxy\"",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Karen Gillan",
+    		wiki: "https://en.wikipedia.org/wiki/Karen_Gillan",
+    		description: "Scottish actress, director and screenwriter"
+    	},
+    	{
+    		x: 1,
+    		y: 0,
+    		answer: "ADELE",
+    		direction: "down",
+    		clue: "Singer with numbered albums",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Adele",
+    		wiki: "https://en.wikipedia.org/wiki/Adele",
+    		description: "English singer-songwriter"
+    	},
+    	{
+    		x: 2,
+    		y: 0,
+    		answer: "RENEE",
+    		direction: "down",
+    		clue: "Soprano Fleming",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Renée Fleming",
+    		wiki: "https://en.wikipedia.org/wiki/Ren%C3%A9e_Fleming",
+    		description: "American opera soprano"
+    	},
+    	{
+    		x: 3,
+    		y: 0,
+    		answer: "ELIEL",
+    		direction: "down",
+    		clue: "Architect Saarinen",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Eliel Saarinen",
+    		wiki: "https://en.wikipedia.org/wiki/Eliel_Saarinen",
+    		description: "Finnish-American architect (1873-1950)"
+    	},
+    	{
+    		x: 1,
+    		y: 1,
+    		answer: "DEL",
+    		direction: "across",
+    		clue: "\"The Shape of Water\" director",
+    		race: "urm",
+    		binaryRace: "white",
+    		hispanic: "TRUE",
+    		gender: "man",
+    		name: "Guillermo del Toro",
+    		wiki: "https://en.wikipedia.org/wiki/Guillermo_del_Toro",
+    		description: "Mexican filmmaker and author"
+    	},
+    	{
+    		x: 0,
+    		y: 2,
+    		answer: "DENIS",
+    		direction: "across",
+    		clue: "Comic Denis",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Denis Leary",
+    		wiki: "https://en.wikipedia.org/wiki/Denis_Leary",
+    		description: "American actor and comedian"
+    	},
+    	{
+    		x: 1,
+    		y: 3,
+    		answer: "LEE",
+    		direction: "across",
+    		clue: "Poe's \"Annabel __\"",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Edgar Allan Poe",
+    		wiki: "https://en.wikipedia.org/wiki/Edgar_Allan_Poe",
+    		description: "19th-century American author, poet, editor and literary critic"
+    	},
+    	{
+    		x: 0,
+    		y: 4,
+    		answer: "PEELE",
+    		direction: "across",
+    		clue: "\"The Twilight Zone\" (2019) host Jordan",
+    		race: "urm",
+    		binaryRace: "poc",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Jordan Peele",
+    		wiki: "https://en.wikipedia.org/wiki/Jordan_Peele",
+    		description: "American actor, comedian, writer, and director"
+    	}
+    ];
+
+    var wsj2020 = [
+    	{
+    		x: 0,
+    		y: 0,
+    		answer: "QUINN",
+    		direction: "across",
+    		clue: "\"Elementary\" actor Quinn",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Aidan Quinn",
+    		wiki: "https://en.wikipedia.org/wiki/Aidan_Quinn",
+    		description: "American actor"
+    	},
+    	{
+    		x: 2,
+    		y: 0,
+    		answer: "IRENE",
+    		direction: "down",
+    		clue: "Marie Curie's scientist daughter",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Irène Joliot-Curie",
+    		wiki: "https://en.wikipedia.org/wiki/Ir%C3%A8ne_Joliot-Curie",
+    		description: "French scientist"
+    	},
+    	{
+    		x: 3,
+    		y: 0,
+    		answer: "NAS",
+    		direction: "down",
+    		clue: "Lil ___ X (\"Rodeo\" rapper)",
+    		race: "urm",
+    		binaryRace: "poc",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Lil Nas X",
+    		wiki: "https://en.wikipedia.org/wiki/Lil_Nas_X",
+    		description: "American rapper, singer, and songwriter from Georgia"
+    	},
+    	{
+    		x: 4,
+    		y: 0,
+    		answer: "NYE",
+    		direction: "down",
+    		clue: "Bill of scientific information",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Bill Nye",
+    		wiki: "https://en.wikipedia.org/wiki/Bill_Nye",
+    		description: "American science educator, comedian, television host, actor, writer, scientist and former mechanical engineer"
+    	},
+    	{
+    		x: 2,
+    		y: 1,
+    		answer: "RAY",
+    		direction: "across",
+    		clue: "Ray who's the subject of the 2016 biopic \"The Founder\"",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Ray Kroc",
+    		wiki: "https://en.wikipedia.org/wiki/Ray_Kroc",
+    		description: "American businessman"
+    	},
+    	{
+    		x: 0,
+    		y: 2,
+    		answer: "REESE",
+    		direction: "across",
+    		clue: "She played June to Joaquin's Johnny",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Reese Witherspoon",
+    		wiki: "https://en.wikipedia.org/wiki/Reese_Witherspoon",
+    		description: "American actress and producer"
+    	},
+    	{
+    		x: 0,
+    		y: 2,
+    		answer: "RAP",
+    		direction: "down",
+    		clue: "Drake's forte",
+    		race: "urm",
+    		binaryRace: "poc",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Drake",
+    		wiki: "https://en.wikipedia.org/wiki/Drake_(musician)",
+    		description: "Canadian rapper, singer, songwriter, and actor"
+    	},
+    	{
+    		x: 1,
+    		y: 2,
+    		answer: "ENO",
+    		direction: "down",
+    		clue: "Musician who composed the Windows 95 start-up chime",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Brian Eno",
+    		wiki: "https://en.wikipedia.org/wiki/Brian_Eno",
+    		description: "English musician, composer, record producer and visual artist"
+    	},
+    	{
+    		x: 0,
+    		y: 3,
+    		answer: "ANN",
+    		direction: "across",
+    		clue: "\"Bel Canto\" author Patchett",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Ann Patchett",
+    		wiki: "https://en.wikipedia.org/wiki/Ann_Patchett",
+    		description: "American novelist and memoirist"
+    	},
+    	{
+    		x: 0,
+    		y: 4,
+    		answer: "POEMS",
+    		direction: "across",
+    		clue: "Frost lines",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Robert Frost",
+    		wiki: "https://en.wikipedia.org/wiki/Robert_Frost",
+    		description: "American poet"
+    	}
+    ];
+
+    var nyt1940s = [
+    	{
+    		x: 1,
+    		y: 0,
+    		answer: "KERR",
+    		direction: "across",
+    		clue: "Deborah ___.",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Deborah Kerr",
+    		wiki: "https://en.wikipedia.org/wiki/Deborah_Kerr",
+    		description: "British film and television actress"
+    	},
+    	{
+    		x: 2,
+    		y: 0,
+    		answer: "ELMER",
+    		direction: "down",
+    		clue: "Newsman Davis.",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Elmer Davis",
+    		wiki: "https://en.wikipedia.org/wiki/Elmer_Davis",
+    		description: "American politician"
+    	},
+    	{
+    		x: 3,
+    		y: 0,
+    		answer: "RIO",
+    		direction: "down",
+    		clue: "President Carlos Arroyo Del ___ of Ecuador.",
+    		race: "urm",
+    		binaryRace: "white",
+    		hispanic: "TRUE",
+    		gender: "man",
+    		name: "Carlos Alberto Arroyo del Rio",
+    		wiki: "https://en.wikipedia.org/wiki/Carlos_Alberto_Arroyo_del_R%C3%ADo",
+    		description: "President of Ecuador (1939) / (1940 - 1944)"
+    	},
+    	{
+    		x: 4,
+    		y: 0,
+    		answer: "RENE",
+    		direction: "down",
+    		clue: "\"Good King ___.\"",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "René of Anjou",
+    		wiki: "https://en.wikipedia.org/wiki/Ren%C3%A9_of_Anjou",
+    		description: "15th-century French prince, briefly King of Naples"
+    	},
+    	{
+    		x: 0,
+    		y: 1,
+    		answer: "TSAR",
+    		direction: "down",
+    		clue: "He died at Ekaterinburg, 1918.",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Nicholas II of Russia",
+    		wiki: "https://en.wikipedia.org/wiki/Nicholas_II_of_Russia",
+    		description: "Emperor of All Russia"
+    	},
+    	{
+    		x: 2,
+    		y: 1,
+    		answer: "LIE",
+    		direction: "across",
+    		clue: "Mr. Lie.",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Trygve Lie",
+    		wiki: "https://en.wikipedia.org/wiki/Trygve_Lie",
+    		description: "1st Secretary-General of the United Nations"
+    	},
+    	{
+    		x: 0,
+    		y: 2,
+    		answer: "SIMON",
+    		direction: "across",
+    		clue: "British Foreign Secretary, 1931–35.",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "John Simon",
+    		wiki: "https://en.wikipedia.org/wiki/John_Simon,_1st_Viscount_Simon",
+    		description: "British politician"
+    	},
+    	{
+    		x: 1,
+    		y: 2,
+    		answer: "IRA",
+    		direction: "down",
+    		clue: "___ Gershwin.",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Ira Gershwin",
+    		wiki: "https://en.wikipedia.org/wiki/Ira_Gershwin",
+    		description: "American lyricist (1896-1983)"
+    	},
+    	{
+    		x: 0,
+    		y: 3,
+    		answer: "ARE",
+    		direction: "across",
+    		clue: "Second note of Guido's scale.",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Guido of Arezzo",
+    		wiki: "https://en.wikipedia.org/wiki/Guido_of_Arezzo",
+    		description: "11th century Italian monk, inventor of musical notaticulo"
+    	},
+    	{
+    		x: 0,
+    		y: 4,
+    		answer: "RARE",
+    		direction: "across",
+    		clue: "\"Success is a ___ paint\"—Suckling.",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "John Suckling",
+    		wiki: "https://en.wikipedia.org/wiki/John_Suckling_(poet)",
+    		description: "17th-century English poet and playwright"
+    	}
+    ];
+
+    var nyt1950s = [
+    	{
+    		x: 2,
+    		y: 0,
+    		answer: "ORR",
+    		direction: "across",
+    		clue: "Lord Boyd ___.",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "John Boyd Orr",
+    		wiki: "https://en.wikipedia.org/wiki/John_Boyd_Orr",
+    		description: "Scottish nutritionist, Director-General of the United Nations Food and Agriculture Organization (1880-1971)"
+    	},
+    	{
+    		x: 2,
+    		y: 0,
+    		answer: "OWENS",
+    		direction: "down",
+    		clue: "U. S. track star.",
+    		race: "urm",
+    		binaryRace: "poc",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Jesse Owens",
+    		wiki: "https://en.wikipedia.org/wiki/Jesse_Owens",
+    		description: "American track and field athlete"
+    	},
+    	{
+    		x: 3,
+    		y: 0,
+    		answer: "RENI",
+    		direction: "down",
+    		clue: "Italian painter.",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Guido Reni",
+    		wiki: "https://en.wikipedia.org/wiki/Guido_Reni",
+    		description: "17th-century Bolognese painter"
+    	},
+    	{
+    		x: 4,
+    		y: 0,
+    		answer: "RYAN",
+    		direction: "down",
+    		clue: "Star of \"Men in War.\"",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Robert Ryan",
+    		wiki: "https://en.wikipedia.org/wiki/Robert_Ryan",
+    		description: "American actor"
+    	},
+    	{
+    		x: 0,
+    		y: 1,
+    		answer: "DEWEY",
+    		direction: "across",
+    		clue: "Noted librarian.",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Melvil Dewey",
+    		wiki: "https://en.wikipedia.org/wiki/Melvil_Dewey",
+    		description: "American librarian and educator"
+    	},
+    	{
+    		x: 0,
+    		y: 1,
+    		answer: "DELA",
+    		direction: "down",
+    		clue: "Mazo ___ Roche.",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Mazo de la Roche",
+    		wiki: "https://en.wikipedia.org/wiki/Mazo_de_la_Roche",
+    		description: "Canadian writer"
+    	},
+    	{
+    		x: 1,
+    		y: 1,
+    		answer: "ELEE",
+    		direction: "down",
+    		clue: "Robert ___.",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Robert E. Lee",
+    		wiki: "https://en.wikipedia.org/wiki/Robert_E._Lee",
+    		description: "Confederate States Army commander"
+    	},
+    	{
+    		x: 0,
+    		y: 2,
+    		answer: "ELENA",
+    		direction: "across",
+    		clue: "Former Queen of Italy.",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Elena of Montenegro",
+    		wiki: "https://en.wikipedia.org/wiki/Elena_of_Montenegro",
+    		description: "Queen consort of Italy"
+    	},
+    	{
+    		x: 0,
+    		y: 3,
+    		answer: "LENIN",
+    		direction: "across",
+    		clue: "Vladimir Ilich Ulianov.",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Vladimir Lenin",
+    		wiki: "https://en.wikipedia.org/wiki/Vladimir_Lenin",
+    		description: "Russian politician, communist theorist, and founder of the Soviet Union"
+    	},
+    	{
+    		x: 0,
+    		y: 4,
+    		answer: "AES",
+    		direction: "across",
+    		clue: "Political monogram.",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Adlai Stevenson II",
+    		wiki: "https://en.wikipedia.org/wiki/Adlai_Stevenson_II",
+    		description: "American politician"
+    	}
+    ];
+
+    var nyt1960s = [
+    	{
+    		x: 0,
+    		y: 0,
+    		answer: "READE",
+    		direction: "across",
+    		clue: "British novelist.",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Charles Reade",
+    		wiki: "https://en.wikipedia.org/wiki/Charles_Reade",
+    		description: "British writer"
+    	},
+    	{
+    		x: 2,
+    		y: 0,
+    		answer: "ALLEN",
+    		direction: "down",
+    		clue: "Famous TV pioneer.",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Allen B. DuMont",
+    		wiki: "https://en.wikipedia.org/wiki/Allen_B._DuMont",
+    		description: "American electronics engineer and inventor"
+    	},
+    	{
+    		x: 3,
+    		y: 0,
+    		answer: "DEL",
+    		direction: "down",
+    		clue: "Del Sarto of Florence.",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Andrea del Sarto",
+    		wiki: "https://en.wikipedia.org/wiki/Andrea_del_Sarto",
+    		description: "Italian painter (1486-1530)"
+    	},
+    	{
+    		x: 4,
+    		y: 0,
+    		answer: "EVA",
+    		direction: "down",
+    		clue: "Stowe character.",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Harriet Beecher Stowe",
+    		wiki: "https://en.wikipedia.org/wiki/Harriet_Beecher_Stowe",
+    		description: "19th-century American abolitionist and author"
+    	},
+    	{
+    		x: 2,
+    		y: 1,
+    		answer: "LEV",
+    		direction: "across",
+    		clue: "Real first name of 38 Down.",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Leon Trotsky",
+    		wiki: "https://en.wikipedia.org/wiki/Leon_Trotsky",
+    		description: "Marxist revolutionary from Ukraine"
+    	},
+    	{
+    		x: 0,
+    		y: 2,
+    		answer: "FALLA",
+    		direction: "across",
+    		clue: "Composer de Falla.",
+    		race: "urm",
+    		binaryRace: "white",
+    		hispanic: "TRUE",
+    		gender: "man",
+    		name: "Manuel de Falla",
+    		wiki: "https://en.wikipedia.org/wiki/Manuel_de_Falla",
+    		description: "Spanish composer (1876-1946)"
+    	},
+    	{
+    		x: 0,
+    		y: 2,
+    		answer: "FDR",
+    		direction: "down",
+    		clue: "The 6c stamp man.",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Franklin D. Roosevelt",
+    		wiki: "https://en.wikipedia.org/wiki/Franklin_D._Roosevelt",
+    		description: "32nd president of the United States"
+    	},
+    	{
+    		x: 1,
+    		y: 2,
+    		answer: "ADE",
+    		direction: "down",
+    		clue: "American humorist.",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "George Ade",
+    		wiki: "https://en.wikipedia.org/wiki/George_Ade",
+    		description: "American writer, newspaper columnist and playwright"
+    	},
+    	{
+    		x: 0,
+    		y: 3,
+    		answer: "DDE",
+    		direction: "across",
+    		clue: "Presidential initials.",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Dwight D. Eisenhower",
+    		wiki: "https://en.wikipedia.org/wiki/Dwight_D._Eisenhower",
+    		description: "American army general and 34th president of the United States (1890–1969)"
+    	},
+    	{
+    		x: 0,
+    		y: 4,
+    		answer: "RENES",
+    		direction: "across",
+    		clue: "Descartes and others.",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "René Descartes",
+    		wiki: "https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes",
+    		description: "17th-century French philosopher, mathematician, and scientist"
+    	}
+    ];
+
+    var nyt1970s = [
+    	{
+    		x: 2,
+    		y: 0,
+    		answer: "ABE",
+    		direction: "across",
+    		clue: "Man from Illinois",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Abraham Lincoln",
+    		wiki: "https://en.wikipedia.org/wiki/Abraham_Lincoln",
+    		description: "American politician and 16th president of the United States"
+    	},
+    	{
+    		x: 2,
+    		y: 0,
+    		answer: "ARLEN",
+    		direction: "down",
+    		clue: "\"Green Hat\" author",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Michael Arlen",
+    		wiki: "https://en.wikipedia.org/wiki/Michael_Arlen",
+    		description: "Armenian writer"
+    	},
+    	{
+    		x: 3,
+    		y: 0,
+    		answer: "BEA",
+    		direction: "down",
+    		clue: "Actress Arthur",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Bea Arthur",
+    		wiki: "https://en.wikipedia.org/wiki/Bea_Arthur",
+    		description: "American actress, singer, and comedian"
+    	},
+    	{
+    		x: 4,
+    		y: 0,
+    		answer: "EDNA",
+    		direction: "down",
+    		clue: "Millay",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Edna St. Vincent Millay",
+    		wiki: "https://en.wikipedia.org/wiki/Edna_St._Vincent_Millay",
+    		description: "American poet"
+    	},
+    	{
+    		x: 0,
+    		y: 1,
+    		answer: "FALK",
+    		direction: "down",
+    		clue: "Stage and film actor",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Peter Falk",
+    		wiki: "https://en.wikipedia.org/wiki/Peter_Falk",
+    		description: "American actor"
+    	},
+    	{
+    		x: 2,
+    		y: 1,
+    		answer: "RED",
+    		direction: "across",
+    		clue: "Mr. Buttons",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Red Buttons",
+    		wiki: "https://en.wikipedia.org/wiki/Red_Buttons",
+    		description: "American comedian and actor"
+    	},
+    	{
+    		x: 0,
+    		y: 2,
+    		answer: "ALLAN",
+    		direction: "across",
+    		clue: "Poe tale, with \"The\"",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Edgar Allan Poe",
+    		wiki: "https://en.wikipedia.org/wiki/Edgar_Allan_Poe",
+    		description: "19th-century American author, poet, editor and literary critic"
+    	},
+    	{
+    		x: 1,
+    		y: 2,
+    		answer: "LEO",
+    		direction: "down",
+    		clue: "Durocher",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Leo Durocher",
+    		wiki: "https://en.wikipedia.org/wiki/Leo_Durocher",
+    		description: "American baseball player and manager"
+    	},
+    	{
+    		x: 0,
+    		y: 3,
+    		answer: "LEE",
+    		direction: "across",
+    		clue: "Trevino",
+    		race: "urm",
+    		binaryRace: "white",
+    		hispanic: "TRUE",
+    		gender: "man",
+    		name: "Lee Trevino",
+    		wiki: "https://en.wikipedia.org/wiki/Lee_Trevino",
+    		description: "American golfer"
+    	},
+    	{
+    		x: 0,
+    		y: 4,
+    		answer: "KON",
+    		direction: "across",
+    		clue: "___-Tiki (Heyerdahl boat)",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Thor Heyerdahl",
+    		wiki: "https://en.wikipedia.org/wiki/Thor_Heyerdahl",
+    		description: "Norwegian anthropologist and adventurer (1914–2002)"
+    	}
+    ];
+
+    var nyt1980s = [
+    	{
+    		x: 1,
+    		y: 0,
+    		answer: "ROMA",
+    		direction: "across",
+    		clue: "Caesar's urbs",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Julius Caesar",
+    		wiki: "https://en.wikipedia.org/wiki/Julius_Caesar",
+    		description: "Roman general and dictator"
+    	},
+    	{
+    		x: 2,
+    		y: 0,
+    		answer: "OSLER",
+    		direction: "down",
+    		clue: "Canadian physician",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "William Osler",
+    		wiki: "https://en.wikipedia.org/wiki/William_Osler",
+    		description: "Canadian physician and co-founder of Johns Hopkins Hospital"
+    	},
+    	{
+    		x: 3,
+    		y: 0,
+    		answer: "MET",
+    		direction: "down",
+    		clue: "Showcase for a Pavarotti",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Luciano Pavarotti",
+    		wiki: "https://en.wikipedia.org/wiki/Luciano_Pavarotti",
+    		description: "Italian operatic tenor"
+    	},
+    	{
+    		x: 4,
+    		y: 0,
+    		answer: "ANA",
+    		direction: "down",
+    		clue: "Actress Alicia",
+    		race: "urm",
+    		binaryRace: "white",
+    		hispanic: "TRUE",
+    		gender: "woman",
+    		name: "Ana Alicia",
+    		wiki: "https://en.wikipedia.org/wiki/Ana_Alicia",
+    		description: "American actress"
+    	},
+    	{
+    		x: 2,
+    		y: 1,
+    		answer: "SEN",
+    		direction: "across",
+    		clue: "J.F.K.: 1953-61",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "John F. Kennedy",
+    		wiki: "https://en.wikipedia.org/wiki/John_F._Kennedy",
+    		description: "35th president of the United States"
+    	},
+    	{
+    		x: 0,
+    		y: 2,
+    		answer: "DELTA",
+    		direction: "across",
+    		clue: "Welty's \"___ Wedding\"",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Eudora Welty",
+    		wiki: "https://en.wikipedia.org/wiki/Eudora_Welty",
+    		description: "American short story writer, novelist and photographer"
+    	},
+    	{
+    		x: 0,
+    		y: 2,
+    		answer: "DON",
+    		direction: "down",
+    		clue: "Don Sutton is one",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Don Sutton",
+    		wiki: "https://en.wikipedia.org/wiki/Don_Sutton",
+    		description: "American baseball player"
+    	},
+    	{
+    		x: 1,
+    		y: 2,
+    		answer: "EDE",
+    		direction: "down",
+    		clue: "Basil ___, noted painter of birds",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Basil Ede",
+    		wiki: "https://en.wikipedia.org/wiki/Basil_Ede",
+    		description: "English artist (1931-2016)"
+    	},
+    	{
+    		x: 0,
+    		y: 3,
+    		answer: "ODE",
+    		direction: "across",
+    		clue: "Pindar product",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Pindar",
+    		wiki: "https://en.wikipedia.org/wiki/Pindar",
+    		description: "Ancient Greek lyric poet from Thebes"
+    	},
+    	{
+    		x: 0,
+    		y: 4,
+    		answer: "NERI",
+    		direction: "across",
+    		clue: "St. Philip ___",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Philip Neri",
+    		wiki: "https://en.wikipedia.org/wiki/Philip_Neri",
+    		description: "Italian Roman Catholic saint"
+    	}
+    ];
+
+    var nyt1990s = [
+    	{
+    		x: 1,
+    		y: 0,
+    		answer: "EGAN",
+    		direction: "across",
+    		clue: "Richard ___, actor from San Francisco",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Richard Egan",
+    		wiki: "https://en.wikipedia.org/wiki/Richard_Egan_(actor)",
+    		description: "American actor (1921-1987)"
+    	},
+    	{
+    		x: 2,
+    		y: 0,
+    		answer: "GILDA",
+    		direction: "down",
+    		clue: "Hayworth title role",
+    		race: "urm",
+    		binaryRace: "white",
+    		hispanic: "TRUE",
+    		gender: "woman",
+    		name: "Rita Hayworth",
+    		wiki: "https://en.wikipedia.org/wiki/Rita_Hayworth",
+    		description: "American actress, dancer and director (1918-1987)"
+    	},
+    	{
+    		x: 3,
+    		y: 0,
+    		answer: "ARI",
+    		direction: "down",
+    		clue: "Jackie's second spouse",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Aristotle Onassis",
+    		wiki: "https://en.wikipedia.org/wiki/Aristotle_Onassis",
+    		description: "Greek shipping magnate"
+    	},
+    	{
+    		x: 4,
+    		y: 0,
+    		answer: "NAN",
+    		direction: "down",
+    		clue: "Photographer Goldin",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Nan Goldin",
+    		wiki: "https://en.wikipedia.org/wiki/Nan_Goldin",
+    		description: "American photographer"
+    	},
+    	{
+    		x: 2,
+    		y: 1,
+    		answer: "IRA",
+    		direction: "across",
+    		clue: "Novelist Levin",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Ira Levin",
+    		wiki: "https://en.wikipedia.org/wiki/Ira_Levin",
+    		description: "Novelist, playwright"
+    	},
+    	{
+    		x: 0,
+    		y: 2,
+    		answer: "DOLIN",
+    		direction: "across",
+    		clue: "Dancer Dolin",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Anton Dolin",
+    		wiki: "https://en.wikipedia.org/wiki/Anton_Dolin",
+    		description: "ballet dancer and choreographer (1904-1983)"
+    	},
+    	{
+    		x: 0,
+    		y: 2,
+    		answer: "DEL",
+    		direction: "down",
+    		clue: "Sci-fi author Lester ___ Rey",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Lester del Rey",
+    		wiki: "https://en.wikipedia.org/wiki/Lester_del_Rey",
+    		description: "Novelist, short story writer, editor"
+    	},
+    	{
+    		x: 1,
+    		y: 2,
+    		answer: "ODE",
+    		direction: "down",
+    		clue: "Wordsworth work",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "William Wordsworth",
+    		wiki: "https://en.wikipedia.org/wiki/William_Wordsworth",
+    		description: "English Romantic poet"
+    	},
+    	{
+    		x: 0,
+    		y: 3,
+    		answer: "EDD",
+    		direction: "across",
+    		clue: "Actor Byrnes",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Edd Byrnes",
+    		wiki: "https://en.wikipedia.org/wiki/Edd_Byrnes",
+    		description: "American actor"
+    	},
+    	{
+    		x: 0,
+    		y: 4,
+    		answer: "LEAR",
+    		direction: "across",
+    		clue: "The man behind Bunker",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Norman Lear",
+    		wiki: "https://en.wikipedia.org/wiki/Norman_Lear",
+    		description: "American television writer and producer"
+    	}
+    ];
+
+    var nyt2000s = [
+    	{
+    		x: 1,
+    		y: 0,
+    		answer: "MORT",
+    		direction: "across",
+    		clue: "Cartoonist Walker",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Mort Walker",
+    		wiki: "https://en.wikipedia.org/wiki/Mort_Walker",
+    		description: "American comic strip cartoonist"
+    	},
+    	{
+    		x: 2,
+    		y: 0,
+    		answer: "OSHEA",
+    		direction: "down",
+    		clue: "Actor Milo",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Milo O'Shea",
+    		wiki: "https://en.wikipedia.org/wiki/Milo_O%27Shea",
+    		description: "Irish American actor (1926-2013)"
+    	},
+    	{
+    		x: 3,
+    		y: 0,
+    		answer: "REA",
+    		direction: "down",
+    		clue: "Peggy of \"The Dukes of Hazzard\"",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Peggy Rea",
+    		wiki: "https://en.wikipedia.org/wiki/Peggy_Rea",
+    		description: "actress (1921-2011)"
+    	},
+    	{
+    		x: 4,
+    		y: 0,
+    		answer: "TONI",
+    		direction: "down",
+    		clue: "Three-time skiing gold medalist ___ Sailer",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Toni Sailer",
+    		wiki: "https://en.wikipedia.org/wiki/Toni_Sailer",
+    		description: "Austrian alpine skier and actor"
+    	},
+    	{
+    		x: 0,
+    		y: 1,
+    		answer: "DEMI",
+    		direction: "down",
+    		clue: "Actress Moore",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Demi Moore",
+    		wiki: "https://en.wikipedia.org/wiki/Demi_Moore",
+    		description: "American actress"
+    	},
+    	{
+    		x: 2,
+    		y: 1,
+    		answer: "SEO",
+    		direction: "across",
+    		clue: "Former major-league pitcher ___ Seo",
+    		race: "urm",
+    		binaryRace: "poc",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Jae Weong Seo",
+    		wiki: "https://en.wikipedia.org/wiki/Jae_Weong_Seo",
+    		description: "South Korean baseball player"
+    	},
+    	{
+    		x: 0,
+    		y: 2,
+    		answer: "ETHAN",
+    		direction: "across",
+    		clue: "Hawke of Hollywood",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Ethan Hawke",
+    		wiki: "https://en.wikipedia.org/wiki/Ethan_Hawke",
+    		description: "American actor and writer"
+    	},
+    	{
+    		x: 1,
+    		y: 2,
+    		answer: "TOM",
+    		direction: "down",
+    		clue: "Hero of several Clancy novels",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Tom Clancy",
+    		wiki: "https://en.wikipedia.org/wiki/Tom_Clancy",
+    		description: "American author"
+    	},
+    	{
+    		x: 0,
+    		y: 3,
+    		answer: "MOE",
+    		direction: "across",
+    		clue: "Stooge name",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Moe Howard",
+    		wiki: "https://en.wikipedia.org/wiki/Moe_Howard",
+    		description: "American actor and comedian"
+    	},
+    	{
+    		x: 0,
+    		y: 4,
+    		answer: "IMAN",
+    		direction: "across",
+    		clue: "Mogadishu-born model",
+    		race: "urm",
+    		binaryRace: "poc",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Iman",
+    		wiki: "https://en.wikipedia.org/wiki/Iman_(model)",
+    		description: "Somali supermodel and entrepreneur"
+    	}
+    ];
+
+    var nyt2010s = [
+    	{
+    		x: 0,
+    		y: 0,
+    		answer: "SEGAR",
+    		direction: "across",
+    		clue: "Popeye creator E. C. ___",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "E. C. Segar",
+    		wiki: "https://en.wikipedia.org/wiki/E._C._Segar",
+    		description: "American cartoonist"
+    	},
+    	{
+    		x: 2,
+    		y: 0,
+    		answer: "GILDA",
+    		direction: "down",
+    		clue: "Baba ___ (Gilda Radner character)",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "woman",
+    		name: "Gilda Radner",
+    		wiki: "https://en.wikipedia.org/wiki/Gilda_Radner",
+    		description: "American comedian and actress"
+    	},
+    	{
+    		x: 3,
+    		y: 0,
+    		answer: "AVE",
+    		direction: "down",
+    		clue: "Caesar's greeting",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Julius Caesar",
+    		wiki: "https://en.wikipedia.org/wiki/Julius_Caesar",
+    		description: "Roman general and dictator"
+    	},
+    	{
+    		x: 4,
+    		y: 0,
+    		answer: "RON",
+    		direction: "down",
+    		clue: "Presidential son Reagan",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Ron Reagan",
+    		wiki: "https://en.wikipedia.org/wiki/Ron_Reagan",
+    		description: "talk radio host and political analyst"
+    	},
+    	{
+    		x: 2,
+    		y: 1,
+    		answer: "IVO",
+    		direction: "across",
+    		clue: "Pianist Pogorelich",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Ivo Pogorelić",
+    		wiki: "https://en.wikipedia.org/wiki/Ivo_Pogoreli%C4%87",
+    		description: "Croatian pianist"
+    	},
+    	{
+    		x: 0,
+    		y: 2,
+    		answer: "ARLEN",
+    		direction: "across",
+    		clue: "Specter of the Senate, once",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Arlen Specter",
+    		wiki: "https://en.wikipedia.org/wiki/Arlen_Specter",
+    		description: "American politician; former United States Senator from Pennsylvania (1930-2012)"
+    	},
+    	{
+    		x: 0,
+    		y: 2,
+    		answer: "ANA",
+    		direction: "down",
+    		clue: "Ortiz of \"Devious Maids\"",
+    		race: "urm",
+    		binaryRace: "white",
+    		hispanic: "TRUE",
+    		gender: "woman",
+    		name: "Ana Ortiz",
+    		wiki: "https://en.wikipedia.org/wiki/Ana_Ortiz",
+    		description: "actress"
+    	},
+    	{
+    		x: 1,
+    		y: 2,
+    		answer: "REN",
+    		direction: "down",
+    		clue: "Kylo ___, Adam Driver's role in \"Star Wars\"",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Adam Driver",
+    		wiki: "https://en.wikipedia.org/wiki/Adam_Driver",
+    		description: "American actor"
+    	},
+    	{
+    		x: 0,
+    		y: 3,
+    		answer: "NED",
+    		direction: "across",
+    		clue: "\"Our Town\" opera composer",
+    		race: "white",
+    		binaryRace: "white",
+    		hispanic: "FALSE",
+    		gender: "man",
+    		name: "Ned Rorem",
+    		wiki: "https://en.wikipedia.org/wiki/Ned_Rorem",
+    		description: "American composer (b1923)"
+    	},
+    	{
+    		x: 0,
+    		y: 4,
+    		answer: "ANAIS",
+    		direction: "across",
+    		clue: "Who wrote \"We do not see things as they are, we see them as we are\"",
+    		race: "urm",
+    		binaryRace: "white",
+    		hispanic: "TRUE",
+    		gender: "woman",
+    		name: "Anaïs Nin",
+    		wiki: "https://en.wikipedia.org/wiki/Ana%C3%AFs_Nin",
+    		description: "writer of novels, short stories."
+    	}
+    ];
+
+    /* src/components/App.svelte generated by Svelte v3.29.4 */
+    const file$d = "src/components/App.svelte";
+
+    function create_fragment$d(ctx) {
+    	let intro;
+    	let t0;
+    	let article;
+    	let play0;
+    	let t1;
+    	let play1;
+    	let current;
+    	intro = new Intro({ $$inline: true });
+
+    	play0 = new Play({
+    			props: {
+    				puzzles: /*puzzlesToday*/ ctx[0],
+    				title: "Publications in 2020"
+    			},
+    			$$inline: true
+    		});
+
+    	play1 = new Play({
+    			props: {
+    				puzzles: /*puzzlesNYT*/ ctx[1],
+    				title: "New York Times by decade"
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(intro.$$.fragment);
+    			t0 = space();
+    			article = element("article");
+    			create_component(play0.$$.fragment);
+    			t1 = space();
+    			create_component(play1.$$.fragment);
+    			add_location(article, file$d, 41, 0, 1555);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(intro, target, anchor);
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, article, anchor);
+    			mount_component(play0, article, null);
+    			append_dev(article, t1);
+    			mount_component(play1, article, null);
+    			current = true;
+    		},
+    		p: noop,
+    		i: function intro$1(local) {
+    			if (current) return;
+    			transition_in(intro.$$.fragment, local);
+    			transition_in(play0.$$.fragment, local);
+    			transition_in(play1.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(intro.$$.fragment, local);
+    			transition_out(play0.$$.fragment, local);
+    			transition_out(play1.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(intro, detaching);
+    			if (detaching) detach_dev(t0);
+    			if (detaching) detach_dev(article);
+    			destroy_component(play0);
+    			destroy_component(play1);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$d.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$d($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots("App", slots, []);
+
+    	const puzzlesToday = [
+    		{
+    			id: "usa2020",
+    			value: "USA Today",
+    			data: usa2020
+    		},
+    		{
+    			id: "up2020",
+    			value: "Universal",
+    			data: up2020
+    		},
+    		{
+    			id: "nyt2020",
+    			value: "New York Times",
+    			data: nyt2020
+    		},
+    		{
+    			id: "lat2020",
+    			value: "LA Times",
+    			data: lat2020
+    		},
+    		{
+    			id: "wsj2020",
+    			value: "Wall Street Journal",
+    			data: wsj2020
+    		}
+    	];
+
+    	const puzzlesNYT = [
+    		{
+    			id: "nyt1940s",
+    			value: "1940s",
+    			data: nyt1940s
+    		},
+    		{
+    			id: "nyt1950s",
+    			value: "1950s",
+    			data: nyt1950s
+    		},
+    		{
+    			id: "nyt1960s",
+    			value: "1960s",
+    			data: nyt1960s
+    		},
+    		{
+    			id: "nyt1970s",
+    			value: "1970s",
+    			data: nyt1970s
+    		},
+    		{
+    			id: "nyt1980s",
+    			value: "1980s",
+    			data: nyt1980s
+    		},
+    		{
+    			id: "nyt1990s",
+    			value: "1990s",
+    			data: nyt1990s
+    		},
+    		{
+    			id: "nyt2000s",
+    			value: "2000s",
+    			data: nyt2000s
+    		},
+    		{
+    			id: "nyt2010s",
+    			value: "2010s",
+    			data: nyt2010s
+    		}
+    	];
+
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<App> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$capture_state = () => ({
+    		Intro,
+    		Play,
+    		usa2020,
+    		up2020,
+    		nyt2020,
+    		lat2020,
+    		wsj2020,
+    		nyt1940s,
+    		nyt1950s,
+    		nyt1960s,
+    		nyt1970s,
+    		nyt1980s,
+    		nyt1990s,
+    		nyt2000s,
+    		nyt2010s,
+    		puzzlesToday,
+    		puzzlesNYT
+    	});
+
+    	return [puzzlesToday, puzzlesNYT];
+    }
+
+    class App extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$d, create_fragment$d, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "App",
+    			options,
+    			id: create_fragment$d.name
+    		});
+    	}
+    }
+
+    const app = new App({
+    	target: document.querySelector("main")
+    });
+
+    return app;
+
+}());
 //# sourceMappingURL=bundle.js.map
