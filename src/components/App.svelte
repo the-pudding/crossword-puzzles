@@ -17,8 +17,6 @@
   import nyt2000s from "../data/nyt2000s-1.json";
   import nyt2010s from "../data/nyt2010s-1.json";
 
-  let currentN = "nyt1940s";
-
   const puzzlesToday = [
     { id: "usa2020", value: "USA Today", data: usa2020 },
     { id: "up2020", value: "Universal", data: up2020 },
@@ -41,6 +39,10 @@
 
 <Intro />
 
-<Play puzzles="{puzzlesToday}" title="Publications in 2020" theme="classic" />
+<article>
+  <Play puzzles="{puzzlesToday}" title="Publications in 2020" />
+  <Play puzzles="{puzzlesNYT}" title="New York Times by decade" />
+</article>
 
-<Play puzzles="{puzzlesNYT}" title="New York Times by decade" theme="citrus" />
+<style>
+</style>

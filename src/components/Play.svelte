@@ -2,13 +2,21 @@
   import Crossword from "svelte-crossword";
   export let id;
   export let title;
-  export let theme;
+  export let theme = "classic";
   export let puzzles = [];
 
   let current = puzzles[0].id;
+
+  function addCustom(arr) {
+    return arr.map((d) => ({
+      ...d,
+      custom: `${d.race} ${d.gender}`,
+    }));
+  }
+
   $: puzzle = puzzles.find((d) => d.id === current);
   $: name = puzzle.value;
-  $: data = puzzle.data;
+  $: data = addCustom(puzzle.data);
 </script>
 
 <section id="{id}" class="{theme}">
@@ -26,18 +34,17 @@
     {name}
     puzzles, we found that...
     <br />
-    <button class="women"><span class="percent">10%</span> were women</button>
-    and
-    <br />
     <button class="urm"><span class="percent">30%</span>
-      were underrepresented minorities</button>.
+      were underrepresented minorities</button>
+    and
+    <button class="women"><span class="percent">10%</span> were women.</button>
   </p>
 
   <div class="xd">
     <Crossword data="{data}" theme="{theme}" />
     <p class="note">
-      <em>Note: findings are rounded to the nearest 10% for puzzle depiction
-        purposes.</em>
+      <em>Note: findings were rounded to the nearest 10% in order to map to the
+        10 clues.</em>
     </p>
   </div>
 </section>
@@ -57,7 +64,7 @@
   }
 
   h2 {
-    font-size: 1.5em;
+    font-size: 2em;
   }
 
   .xd {
@@ -68,8 +75,9 @@
 
   .insight {
     max-width: var(--column-width);
-    margin: 0 auto;
-    font-size: 1.25em;
+    margin: 1em auto;
+    font-size: 1em;
+    line-height: 1.8;
   }
 
   span {
@@ -77,9 +85,12 @@
   }
 
   button {
-    border: none;
-    font-size: 1em;
-    background: none;
-    padding: 0;
+    opacity: 0.5;
+  }
+
+  .note {
+    max-width: 800px;
+    font-family: var(--sans);
+    text-align: right;
   }
 </style>

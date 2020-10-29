@@ -803,11 +803,14 @@ var app = (function () {
     	let a1;
     	let t5;
     	let t6;
-    	let div1;
+    	let div2;
     	let p1;
     	let button;
     	let t8;
+    	let div1;
     	let p2;
+    	let mounted;
+    	let dispose;
 
     	const block = {
     		c: function create() {
@@ -825,34 +828,38 @@ var app = (function () {
     			a1.textContent = "our story";
     			t5 = text("\n    about inclusivity in crosswords. The ratio of the people referenced in the\n    clues or answers reflect the findings of our analysis about racial and\n    gender representation.");
     			t6 = space();
-    			div1 = element("div");
+    			div2 = element("div");
     			p1 = element("p");
     			button = element("button");
     			button.textContent = "How were these made?";
     			t8 = space();
+    			div1 = element("div");
     			p2 = element("p");
-    			p2.textContent = "Some of the clue wording was altered to fit outside of its original\n      context.";
+    			p2.textContent = "TODO explain brief method, link to article. Explain that some of the\n        clue wording was altered to fit outside of its original context.";
     			attr_dev(a0, "href", "https://pudding.cool");
-    			add_location(a0, file, 6, 4, 101);
-    			attr_dev(div0, "class", "wordmark svelte-9ov3rt");
-    			add_location(div0, file, 5, 2, 74);
-    			add_location(nav, file, 4, 0, 66);
-    			attr_dev(h1, "class", "svelte-9ov3rt");
-    			add_location(h1, file, 11, 2, 193);
+    			add_location(a0, file, 7, 4, 124);
+    			attr_dev(div0, "class", "wordmark svelte-13rlgju");
+    			add_location(div0, file, 6, 2, 97);
+    			add_location(nav, file, 5, 0, 89);
+    			attr_dev(h1, "class", "svelte-13rlgju");
+    			add_location(h1, file, 12, 2, 216);
     			attr_dev(a1, "href", "https://pudding.cool/20202/11/crossword");
-    			add_location(a1, file, 14, 4, 307);
-    			attr_dev(p0, "class", "svelte-9ov3rt");
-    			add_location(p0, file, 12, 2, 222);
-    			add_location(button, file, 20, 7, 583);
-    			attr_dev(p1, "class", "svelte-9ov3rt");
-    			add_location(p1, file, 20, 4, 580);
-    			attr_dev(p2, "class", "svelte-9ov3rt");
-    			add_location(p2, file, 21, 4, 629);
-    			attr_dev(div1, "id", "how");
-    			add_location(div1, file, 19, 2, 561);
+    			add_location(a1, file, 15, 4, 330);
+    			attr_dev(p0, "class", "svelte-13rlgju");
+    			add_location(p0, file, 13, 2, 245);
+    			add_location(button, file, 22, 6, 616);
+    			attr_dev(p1, "class", "svelte-13rlgju");
+    			add_location(p1, file, 21, 4, 606);
+    			attr_dev(p2, "class", "svelte-13rlgju");
+    			add_location(p2, file, 25, 6, 748);
+    			attr_dev(div1, "class", "method svelte-13rlgju");
+    			toggle_class(div1, "visible", /*visible*/ ctx[0]);
+    			add_location(div1, file, 24, 4, 707);
+    			attr_dev(div2, "class", "how svelte-13rlgju");
+    			add_location(div2, file, 20, 2, 584);
     			attr_dev(section, "id", "intro");
-    			attr_dev(section, "class", "svelte-9ov3rt");
-    			add_location(section, file, 10, 0, 170);
+    			attr_dev(section, "class", "svelte-13rlgju");
+    			add_location(section, file, 11, 0, 193);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -871,19 +878,31 @@ var app = (function () {
     			append_dev(p0, a1);
     			append_dev(p0, t5);
     			append_dev(section, t6);
-    			append_dev(section, div1);
-    			append_dev(div1, p1);
+    			append_dev(section, div2);
+    			append_dev(div2, p1);
     			append_dev(p1, button);
-    			append_dev(div1, t8);
+    			append_dev(div2, t8);
+    			append_dev(div2, div1);
     			append_dev(div1, p2);
+
+    			if (!mounted) {
+    				dispose = listen_dev(button, "click", /*click_handler*/ ctx[1], false, false, false);
+    				mounted = true;
+    			}
     		},
-    		p: noop,
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*visible*/ 1) {
+    				toggle_class(div1, "visible", /*visible*/ ctx[0]);
+    			}
+    		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(nav);
     			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(section);
+    			mounted = false;
+    			dispose();
     		}
     	};
 
@@ -901,14 +920,25 @@ var app = (function () {
     function instance($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Intro", slots, []);
+    	let visible = false;
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Intro> was created with unknown prop '${key}'`);
     	});
 
-    	$$self.$capture_state = () => ({ wordmark });
-    	return [];
+    	const click_handler = () => $$invalidate(0, visible = !visible);
+    	$$self.$capture_state = () => ({ wordmark, visible });
+
+    	$$self.$inject_state = $$props => {
+    		if ("visible" in $$props) $$invalidate(0, visible = $$props.visible);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [visible, click_handler];
     }
 
     class Intro extends SvelteComponentDev {
@@ -6205,7 +6235,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (18:6) {#each puzzles as { id, value }}
+    // (26:6) {#each puzzles as { id, value }}
     function create_each_block$6(ctx) {
     	let option;
     	let t_value = /*value*/ ctx[9] + "";
@@ -6218,7 +6248,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = option_value_value = /*id*/ ctx[3];
     			option.value = option.__value;
-    			add_location(option, file$c, 18, 8, 445);
+    			add_location(option, file$c, 26, 8, 591);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -6241,7 +6271,7 @@ var app = (function () {
     		block,
     		id: create_each_block$6.name,
     		type: "each",
-    		source: "(18:6) {#each puzzles as { id, value }}",
+    		source: "(26:6) {#each puzzles as { id, value }}",
     		ctx
     	});
 
@@ -6260,22 +6290,19 @@ var app = (function () {
     	let t3;
     	let t4;
     	let t5;
-    	let br0;
+    	let br;
     	let t6;
     	let button0;
     	let span0;
     	let t8;
     	let t9;
-    	let br1;
-    	let t10;
     	let button1;
     	let span1;
+    	let t11;
     	let t12;
-    	let t13;
-    	let t14;
     	let div1;
     	let crossword;
-    	let t15;
+    	let t13;
     	let p1;
     	let em;
     	let section_class_value;
@@ -6316,53 +6343,49 @@ var app = (function () {
     			t3 = text("In our sample of people in\n    ");
     			t4 = text(/*name*/ ctx[5]);
     			t5 = text("\n    puzzles, we found that...\n    ");
-    			br0 = element("br");
+    			br = element("br");
     			t6 = space();
     			button0 = element("button");
     			span0 = element("span");
-    			span0.textContent = "10%";
-    			t8 = text(" were women");
+    			span0.textContent = "30%";
+    			t8 = text("\n      were underrepresented minorities");
     			t9 = text("\n    and\n    ");
-    			br1 = element("br");
-    			t10 = space();
     			button1 = element("button");
     			span1 = element("span");
-    			span1.textContent = "30%";
-    			t12 = text("\n      were underrepresented minorities");
-    			t13 = text(".");
-    			t14 = space();
+    			span1.textContent = "10%";
+    			t11 = text(" were women.");
+    			t12 = space();
     			div1 = element("div");
     			create_component(crossword.$$.fragment);
-    			t15 = space();
+    			t13 = space();
     			p1 = element("p");
     			em = element("em");
-    			em.textContent = "Note: findings are rounded to the nearest 10% for puzzle depiction\n        purposes.";
-    			attr_dev(h2, "class", "svelte-1cevxdf");
-    			add_location(h2, file$c, 15, 4, 345);
+    			em.textContent = "Note: findings were rounded to the nearest 10% in order to map to the\n        10 clues.";
+    			attr_dev(h2, "class", "svelte-122pg2r");
+    			add_location(h2, file$c, 23, 4, 491);
     			if (/*current*/ ctx[4] === void 0) add_render_callback(() => /*select_change_handler*/ ctx[7].call(select));
-    			add_location(select, file$c, 16, 4, 366);
-    			attr_dev(div0, "class", "info svelte-1cevxdf");
-    			add_location(div0, file$c, 14, 2, 322);
-    			add_location(br0, file$c, 27, 4, 619);
-    			attr_dev(span0, "class", "percent svelte-1cevxdf");
-    			add_location(span0, file$c, 28, 26, 652);
-    			attr_dev(button0, "class", "women svelte-1cevxdf");
-    			add_location(button0, file$c, 28, 4, 630);
-    			add_location(br1, file$c, 30, 4, 717);
-    			attr_dev(span1, "class", "percent svelte-1cevxdf");
-    			add_location(span1, file$c, 31, 24, 748);
-    			attr_dev(button1, "class", "urm svelte-1cevxdf");
-    			add_location(button1, file$c, 31, 4, 728);
-    			attr_dev(p0, "class", "insight svelte-1cevxdf");
-    			add_location(p0, file$c, 23, 2, 523);
-    			add_location(em, file$c, 38, 6, 932);
-    			attr_dev(p1, "class", "note");
-    			add_location(p1, file$c, 37, 4, 909);
-    			attr_dev(div1, "class", "xd svelte-1cevxdf");
-    			add_location(div1, file$c, 35, 2, 840);
+    			add_location(select, file$c, 24, 4, 512);
+    			attr_dev(div0, "class", "info svelte-122pg2r");
+    			add_location(div0, file$c, 22, 2, 468);
+    			add_location(br, file$c, 35, 4, 765);
+    			attr_dev(span0, "class", "percent svelte-122pg2r");
+    			add_location(span0, file$c, 36, 24, 796);
+    			attr_dev(button0, "class", "urm svelte-122pg2r");
+    			add_location(button0, file$c, 36, 4, 776);
+    			attr_dev(span1, "class", "percent svelte-122pg2r");
+    			add_location(span1, file$c, 39, 26, 911);
+    			attr_dev(button1, "class", "women svelte-122pg2r");
+    			add_location(button1, file$c, 39, 4, 889);
+    			attr_dev(p0, "class", "insight svelte-122pg2r");
+    			add_location(p0, file$c, 31, 2, 669);
+    			add_location(em, file$c, 45, 6, 1067);
+    			attr_dev(p1, "class", "note svelte-122pg2r");
+    			add_location(p1, file$c, 44, 4, 1044);
+    			attr_dev(div1, "class", "xd svelte-122pg2r");
+    			add_location(div1, file$c, 42, 2, 975);
     			attr_dev(section, "id", /*id*/ ctx[3]);
-    			attr_dev(section, "class", section_class_value = "" + (null_to_empty(/*theme*/ ctx[1]) + " svelte-1cevxdf"));
-    			add_location(section, file$c, 13, 0, 284);
+    			attr_dev(section, "class", section_class_value = "" + (null_to_empty(/*theme*/ ctx[1]) + " svelte-122pg2r"));
+    			add_location(section, file$c, 21, 0, 430);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -6385,22 +6408,19 @@ var app = (function () {
     			append_dev(p0, t3);
     			append_dev(p0, t4);
     			append_dev(p0, t5);
-    			append_dev(p0, br0);
+    			append_dev(p0, br);
     			append_dev(p0, t6);
     			append_dev(p0, button0);
     			append_dev(button0, span0);
     			append_dev(button0, t8);
     			append_dev(p0, t9);
-    			append_dev(p0, br1);
-    			append_dev(p0, t10);
     			append_dev(p0, button1);
     			append_dev(button1, span1);
-    			append_dev(button1, t12);
-    			append_dev(p0, t13);
-    			append_dev(section, t14);
+    			append_dev(button1, t11);
+    			append_dev(section, t12);
     			append_dev(section, div1);
     			mount_component(crossword, div1, null);
-    			append_dev(div1, t15);
+    			append_dev(div1, t13);
     			append_dev(div1, p1);
     			append_dev(p1, em);
     			current = true;
@@ -6451,7 +6471,7 @@ var app = (function () {
     				attr_dev(section, "id", /*id*/ ctx[3]);
     			}
 
-    			if (!current || dirty & /*theme*/ 2 && section_class_value !== (section_class_value = "" + (null_to_empty(/*theme*/ ctx[1]) + " svelte-1cevxdf"))) {
+    			if (!current || dirty & /*theme*/ 2 && section_class_value !== (section_class_value = "" + (null_to_empty(/*theme*/ ctx[1]) + " svelte-122pg2r"))) {
     				attr_dev(section, "class", section_class_value);
     			}
     		},
@@ -6484,12 +6504,16 @@ var app = (function () {
     	return block;
     }
 
+    function addCustom(arr) {
+    	return arr.map(d => ({ ...d, custom: `${d.race} ${d.gender}` }));
+    }
+
     function instance$c($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Play", slots, []);
     	let { id } = $$props;
     	let { title } = $$props;
-    	let { theme } = $$props;
+    	let { theme = "classic" } = $$props;
     	let { puzzles = [] } = $$props;
     	let current = puzzles[0].id;
     	const writable_props = ["id", "title", "theme", "puzzles"];
@@ -6518,6 +6542,7 @@ var app = (function () {
     		theme,
     		puzzles,
     		current,
+    		addCustom,
     		puzzle,
     		name,
     		data
@@ -6552,7 +6577,7 @@ var app = (function () {
     		}
 
     		if ($$self.$$.dirty & /*puzzle*/ 256) {
-    			 $$invalidate(6, data = puzzle.data);
+    			 $$invalidate(6, data = addCustom(puzzle.data));
     		}
     	};
 
@@ -6580,10 +6605,6 @@ var app = (function () {
 
     		if (/*title*/ ctx[0] === undefined && !("title" in props)) {
     			console.warn("<Play> was created without expected prop 'title'");
-    		}
-
-    		if (/*theme*/ ctx[1] === undefined && !("theme" in props)) {
-    			console.warn("<Play> was created without expected prop 'theme'");
     		}
     	}
 
@@ -8452,10 +8473,12 @@ var app = (function () {
     ];
 
     /* src/components/App.svelte generated by Svelte v3.29.4 */
+    const file$d = "src/components/App.svelte";
 
     function create_fragment$d(ctx) {
     	let intro;
     	let t0;
+    	let article;
     	let play0;
     	let t1;
     	let play1;
@@ -8465,8 +8488,7 @@ var app = (function () {
     	play0 = new Play({
     			props: {
     				puzzles: /*puzzlesToday*/ ctx[0],
-    				title: "Publications in 2020",
-    				theme: "classic"
+    				title: "Publications in 2020"
     			},
     			$$inline: true
     		});
@@ -8474,8 +8496,7 @@ var app = (function () {
     	play1 = new Play({
     			props: {
     				puzzles: /*puzzlesNYT*/ ctx[1],
-    				title: "New York Times by decade",
-    				theme: "citrus"
+    				title: "New York Times by decade"
     			},
     			$$inline: true
     		});
@@ -8484,9 +8505,11 @@ var app = (function () {
     		c: function create() {
     			create_component(intro.$$.fragment);
     			t0 = space();
+    			article = element("article");
     			create_component(play0.$$.fragment);
     			t1 = space();
     			create_component(play1.$$.fragment);
+    			add_location(article, file$d, 41, 0, 1555);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -8494,9 +8517,10 @@ var app = (function () {
     		m: function mount(target, anchor) {
     			mount_component(intro, target, anchor);
     			insert_dev(target, t0, anchor);
-    			mount_component(play0, target, anchor);
-    			insert_dev(target, t1, anchor);
-    			mount_component(play1, target, anchor);
+    			insert_dev(target, article, anchor);
+    			mount_component(play0, article, null);
+    			append_dev(article, t1);
+    			mount_component(play1, article, null);
     			current = true;
     		},
     		p: noop,
@@ -8516,9 +8540,9 @@ var app = (function () {
     		d: function destroy(detaching) {
     			destroy_component(intro, detaching);
     			if (detaching) detach_dev(t0);
-    			destroy_component(play0, detaching);
-    			if (detaching) detach_dev(t1);
-    			destroy_component(play1, detaching);
+    			if (detaching) detach_dev(article);
+    			destroy_component(play0);
+    			destroy_component(play1);
     		}
     	};
 
@@ -8536,7 +8560,6 @@ var app = (function () {
     function instance$d($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("App", slots, []);
-    	let currentN = "nyt1940s";
 
     	const puzzlesToday = [
     		{
@@ -8631,18 +8654,9 @@ var app = (function () {
     		nyt1990s,
     		nyt2000s,
     		nyt2010s,
-    		currentN,
     		puzzlesToday,
     		puzzlesNYT
     	});
-
-    	$$self.$inject_state = $$props => {
-    		if ("currentN" in $$props) currentN = $$props.currentN;
-    	};
-
-    	if ($$props && "$$inject" in $$props) {
-    		$$self.$inject_state($$props.$$inject);
-    	}
 
     	return [puzzlesToday, puzzlesNYT];
     }

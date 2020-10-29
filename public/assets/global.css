@@ -122,8 +122,17 @@
 	font-display: swap;
 }
 
+
+:root {
+	--sans: 'National 2 Web';
+	--serif: 'Tiempos Text Web';
+	--serif-hed: 'Tiempos Headline Web';
+	--column-width: 600px;
+}
+
 body {
-	font-family: 'Tiempos Text Web';
+	font-family: var(--serif);
+	font-size: 18px;
 }
 
 main {
@@ -131,20 +140,31 @@ main {
 }
 
 .xd {
-	font-family: 'National 2 Web';
+	font-family: var(--sans);
 }
 
 h1, h2, h3, h4, h5 {
-	font-family: 'Tiempos Text Headline Web';
+	font-family: var(--serif-hed);
 	font-weight: 500;
+	margin-bottom: 0.5em;
 }
 
 p {
 	line-height: 1.6;
+	margin: 1em 0;
 }
 
-:root {
-	--sans: 'National 2 Web';
-	--serif: 'Tiempos Text Web';
-	--column-width: 600px;
+button {
+	border: none;
+	font-size: 1em;
+	font-family: var(--sans);
+	background: #efefef;
+	padding: 0.25em 0.5em;
+	cursor: pointer;
 }
+
+select {
+	font-family: var(--sans);
+	font-size: 1em;
+}
+

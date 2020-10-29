@@ -1,5 +1,6 @@
 <script>
   import wordmark from "../svg/wordmark.svg";
+  let visible = false;
 </script>
 
 <nav>
@@ -17,12 +18,16 @@
     clues or answers reflect the findings of our analysis about racial and
     gender representation.
   </p>
-  <div id="how">
-    <p><button>How were these made?</button></p>
+  <div class="how">
     <p>
-      Some of the clue wording was altered to fit outside of its original
-      context.
+      <button on:click="{() => (visible = !visible)}">How were these made?</button>
     </p>
+    <div class="method" class:visible>
+      <p>
+        TODO explain brief method, link to article. Explain that some of the
+        clue wording was altered to fit outside of its original context.
+      </p>
+    </div>
   </div>
 </section>
 
@@ -31,17 +36,33 @@
     max-width: 10em;
     margin: 1em auto;
   }
+
   section {
     max-width: var(--column-width);
     margin: 0 auto;
   }
+
   h1 {
-    font-size: 3em;
-    margin-bottom: 0.5em;
+    font-size: 2.5em;
     text-align: center;
   }
+
   section p:first-of-type {
-    font-size: 1.5em;
+    font-size: 1.25em;
     text-align: justify;
+  }
+
+  .how {
+    font-size: 0.7em;
+  }
+
+  .method {
+    display: none;
+    background-color: #efefef;
+    padding: 0.25em 1em;
+  }
+
+  .method.visible {
+    display: block;
   }
 </style>
