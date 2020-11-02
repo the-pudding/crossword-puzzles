@@ -12,12 +12,8 @@
   $: puzzle = puzzles.find((d) => d.id === current);
   $: name = puzzle.value;
   $: data = addCustom(puzzle.data);
-  $: percentURM = `${
-    (data.filter((d) => d.race === "urm").length / data.length) * 100
-  }%`;
-  $: percentWoman = `${
-    (data.filter((d) => d.gender === "woman").length / data.length) * 100
-  }%`;
+  $: percentURM = puzzle.urm;
+  $: percentWoman = puzzle.woman;
 
   function addCustom(arr) {
     return arr.map((d) => ({
@@ -68,8 +64,8 @@
       disableHighlight="{revealed}"
       bind:revealed />
     <p class="note">
-      <em>Note: findings were rounded to the nearest 10% in order to map to the
-        10 clues.</em>
+      <em>Note: finding percentages were rounded to the nearest 10% in order to
+        display 10 clues.</em>
     </p>
   </div>
 </section>
