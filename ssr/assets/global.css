@@ -129,9 +129,11 @@
 	--serif-hed: 'Tiempos Headline Web';
 	--column-width: 600px;
 	--urm: #C63DA3;
-	--urm-light: #e9b4dc;
+	--urm-light: #d879c0;
 	--woman: #4864FE;
-	--woman-light: #aebaff;
+	--woman-light: #7b8ffe;
+	--xd-highlight-color: #FFEA2A;
+	--xd-secondary-color: #fff6a8;
 }
 
 body {
@@ -165,6 +167,7 @@ button {
 	background: #efefef;
 	padding: 0.25em 0.5em;
 	cursor: pointer;
+	border-radius: 4px;
 }
 
 select {
@@ -182,7 +185,8 @@ select {
 
 
 .xd.revealed.urm button.clue.urm {
-	background-color: var(--urm-light);
+	border-left: 6px solid transparent;
+	border-color: var(--urm);
 }
 
 .xd.revealed.woman .cell.woman rect {
@@ -194,7 +198,8 @@ select {
 }
 
 .xd.revealed.woman button.clue.woman {
-	background-color: var(--woman-light);
+	border-left: 6px solid transparent;
+	border-color: var(--woman);
 }
 
 .xd button.clue.is-filled {
@@ -202,5 +207,14 @@ select {
 }
 
 .xd .clues li {
-	margin-bottom: 1px;
+	margin-bottom: 2px;
+}
+
+button svg {
+	width: 1em;
+	vertical-align: middle;
+}
+
+button svg path:last-of-type {
+	fill: currentColor;
 }
