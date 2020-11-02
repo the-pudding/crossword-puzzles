@@ -7,16 +7,16 @@
 
   let active;
   let revealed;
+  let current;
 
-  $: current = puzzles[0].id;
-  $: puzzle = puzzles.find((d) => d.id === current);
+  $: currentId = puzzles.find((d) => d.id === current)
+    ? current
+    : puzzles[0].id;
+  $: puzzle = puzzles.find((d) => d.id === currentId);
   $: name = puzzle.value;
   $: data = addCustom(puzzle.data);
   $: percentURM = puzzle.urm;
   $: percentWoman = puzzle.woman;
-  $: if (revealed) {
-    console.log(revealed);
-  }
 
   function addCustom(arr) {
     return arr.map((d) => ({
