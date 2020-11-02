@@ -5,7 +5,19 @@
   export let theme = "classic";
   export let puzzles = [];
 
-  let current = puzzles[0].id;
+  let active;
+  let revealed;
+
+  $: current = puzzles[0].id;
+  $: puzzle = puzzles.find((d) => d.id === current);
+  $: name = puzzle.value;
+  $: data = addCustom(puzzle.data);
+  $: percentURM = `${
+    (data.filter((d) => d.race === "urm").length / data.length) * 100
+  }%`;
+  $: percentWoman = `${
+    (data.filter((d) => d.gender === "woman").length / data.length) * 100
+  }%`;
 
   function addCustom(arr) {
     return arr.map((d) => ({
@@ -13,10 +25,6 @@
       custom: `${d.race} ${d.gender}`,
     }));
   }
-
-  $: puzzle = puzzles.find((d) => d.id === current);
-  $: name = puzzle.value;
-  $: data = addCustom(puzzle.data);
 </script>
 
 <section id="{id}" class="{theme}">
@@ -29,19 +37,36 @@
     </select>
   </div>
 
-  <p class="insight">
+  <p class="insight" class:revealed>
     In our sample of people in
     {name}
     puzzles, we found that...
     <br />
-    <button class="urm"><span class="percent">30%</span>
+    <button
+      class:active="{active === 'urm'}"
+      class="urm"
+      on:click="{() => (active = 'urm')}"><span
+        class="percent">{percentURM}</span>
       were underrepresented minorities</button>
     and
-    <button class="women"><span class="percent">10%</span> were women.</button>
+    <button
+      class:active="{active === 'woman'}"
+      class="woman"
+      on:click="{() => (active = 'woman')}"><span
+        class="percent">{percentWoman}</span>
+      were women.</button>
   </p>
 
-  <div class="xd">
-    <Crossword data="{data}" theme="{theme}" />
+  <div
+    class="xd"
+    class:revealed
+    class:urm="{active === 'urm'}"
+    class:woman="{active === 'woman'}">
+    <Crossword
+      data="{data}"
+      theme="{theme}"
+      disableHighlight="{revealed}"
+      bind:revealed />
     <p class="note">
       <em>Note: findings were rounded to the nearest 10% in order to map to the
         10 clues.</em>
@@ -51,6 +76,10 @@
 
 <style>
   section {
+    --xd-cell-text-font: var(--sans);
+    --xd-clue-text-font: var(--sans);
+    --xd-toolbar-text-font: var(--sans);
+
     max-width: 960px;
     margin: 3em auto;
   }
@@ -78,6 +107,13 @@
     margin: 1em auto;
     font-size: 1em;
     line-height: 1.8;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .insight.revealed {
+    opacity: 1;
+    pointer-events: auto;
   }
 
   span {
@@ -92,5 +128,17 @@
     max-width: 800px;
     font-family: var(--sans);
     text-align: right;
+  }
+
+  .active {
+    opacity: 1;
+  }
+
+  .active.urm {
+    background-color: var(--urm);
+  }
+
+  .active.woman {
+    background-color: var(--woman);
   }
 </style>

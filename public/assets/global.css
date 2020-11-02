@@ -128,6 +128,8 @@
 	--serif: 'Tiempos Text Web';
 	--serif-hed: 'Tiempos Headline Web';
 	--column-width: 600px;
+	--urm: #C63DA3;
+	--woman: #4864FE;
 }
 
 body {
@@ -168,3 +170,22 @@ select {
 	font-size: 1em;
 }
 
+.xd.revealed.urm .cell.urm rect {
+	fill: var(--urm);
+}
+
+.xd.revealed.urm button.clue.urm {
+	background-color: var(--urm);
+}
+
+.xd.revealed.woman .cell.woman rect {
+	fill: var(--woman);
+}
+
+.xd.revealed.woman button.clue.woman {
+	background-color: var(--woman);
+}
+
+.xd button.clue.is-filled {
+	opacity: 1;
+}
