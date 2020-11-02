@@ -129,7 +129,9 @@
 	--serif-hed: 'Tiempos Headline Web';
 	--column-width: 600px;
 	--urm: #C63DA3;
+	--urm-light: #e9b4dc;
 	--woman: #4864FE;
+	--woman-light: #aebaff;
 }
 
 body {
@@ -174,18 +176,31 @@ select {
 	fill: var(--urm);
 }
 
+.xd.revealed.urm .cell.urm.white rect {
+	fill: url(#pattern-urm);
+}
+
+
 .xd.revealed.urm button.clue.urm {
-	background-color: var(--urm);
+	background-color: var(--urm-light);
 }
 
 .xd.revealed.woman .cell.woman rect {
 	fill: var(--woman);
 }
 
+.xd.revealed.woman .cell.woman.man rect {
+	fill: url(#pattern-woman);
+}
+
 .xd.revealed.woman button.clue.woman {
-	background-color: var(--woman);
+	background-color: var(--woman-light);
 }
 
 .xd button.clue.is-filled {
 	opacity: 1;
+}
+
+.xd .clues li {
+	margin-bottom: 1px;
 }

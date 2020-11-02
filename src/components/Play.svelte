@@ -14,6 +14,9 @@
   $: data = addCustom(puzzle.data);
   $: percentURM = puzzle.urm;
   $: percentWoman = puzzle.woman;
+  $: if (revealed) {
+    console.log(revealed);
+  }
 
   function addCustom(arr) {
     return arr.map((d) => ({
