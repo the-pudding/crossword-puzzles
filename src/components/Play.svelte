@@ -64,7 +64,7 @@
     <Crossword
       data="{data}"
       theme="{theme}"
-      disableHighlight="{revealed}"
+      showCompleteMessage="{false}"
       bind:revealed />
     <p class="note">
       <em>Note: finding percentages were rounded to the nearest 10% in order to

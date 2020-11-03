@@ -15,7 +15,7 @@
   <div class="info">
     <h1>Crossword Puzzles</h1>
     <p>
-      Below you will find playable mini-puzzles generated from the data behind
+      Below you will find playable mini puzzles generated from the data behind
       <a href="https://pudding.cool/20202/11/crossword">our story</a>
       about inclusivity in crosswords. The ratio of the people referenced in the
       clues or answers reflect the findings of our analysis about racial and
