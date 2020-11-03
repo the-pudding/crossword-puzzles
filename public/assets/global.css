@@ -179,6 +179,10 @@ select {
 	font-size: 1em;
 }
 
+.xd.revealed .cell rect {
+	transition: none;
+}
+
 .xd.revealed.urm .cell.urm rect {
 	fill: var(--urm);
 }

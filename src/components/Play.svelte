@@ -37,21 +37,21 @@
   </div>
 
   <p class="insight" class:revealed>
-    In our sample of people in
+    The data analysis of people in
     {name}
-    puzzles, we found that...
+    puzzles show that
     <br />
     <button
       class:active="{active === 'urm'}"
       class="urm"
-      on:click="{() => (active = 'urm')}"><span
+      on:click="{() => (active = active === 'urm' ? null : 'urm')}"><span
         class="percent">{percentURM}</span>
       were underrepresented minorities</button>
     and
     <button
       class:active="{active === 'woman'}"
       class="woman"
-      on:click="{() => (active = 'woman')}"><span
+      on:click="{() => (active = active === 'woman' ? null : 'woman')}"><span
         class="percent">{percentWoman}</span>
       were women.</button>
   </p>
@@ -64,6 +64,7 @@
     <Crossword
       data="{data}"
       theme="{theme}"
+      disableHighlight="{true}"
       showCompleteMessage="{false}"
       bind:revealed />
     <p class="note">
