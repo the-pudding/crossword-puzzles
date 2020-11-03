@@ -170,9 +170,17 @@ button {
 	border-radius: 4px;
 }
 
+.svelte-crossword button.clue {
+	border-radius: 0;
+}
+
 select {
 	font-family: var(--sans);
 	font-size: 1em;
+}
+
+.xd.revealed .cell rect {
+	transition: none;
 }
 
 .xd.revealed.urm .cell.urm rect {

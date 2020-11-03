@@ -79,13 +79,8 @@
     --xd-cell-text-font: var(--sans);
     --xd-clue-text-font: var(--sans);
     --xd-toolbar-text-font: var(--sans);
-
     max-width: 960px;
     margin: 3em auto;
-  }
-
-  .citrus {
-    background-color: azure;
   }
 
   .info {
