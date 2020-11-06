@@ -13,7 +13,7 @@
 
 <section id="intro">
   <div class="info">
-    <h1>Crossword Puzzles</h1>
+    <h1>I Need a Title</h1>
     <p>
       Below you will find playable mini puzzles generated from the data behind
       <a href="https://pudding.cool/20202/11/crossword">our story</a>
@@ -67,13 +67,11 @@
   }
 
   h1 {
-    font-size: 2.5em;
-    text-align: center;
+    font-size: 1.75em;
   }
 
   .info p {
-    font-size: 1.25em;
-    text-align: justify;
+    font-size: 1em;
   }
 
   .how {
@@ -92,5 +90,17 @@
 
   .toggle {
     text-align: center;
+  }
+
+  @media only screen and (min-width: 640px) {
+    h1 {
+      font-size: 2.5em;
+      text-align: center;
+    }
+
+    .info p {
+      font-size: 1.25em;
+      text-align: justify;
+    }
   }
 </style>

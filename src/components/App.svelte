@@ -1,9 +1,27 @@
 <script>
+  import { onMount } from "svelte";
+  import Meta from "./Meta.svelte";
   import Intro from "./Intro.svelte";
   import Play from "./Play.svelte";
-  import { puzzlesNYT, puzzlesToday } from "./../utils/load-data.js";
+  import { puzzlesNYT, puzzlesToday } from "./../utils/loadData.js";
+  import loadImage from "./../utils/loadImage.js";
+
+  const gif = "https://pudding.cool/assets/img/custom.gif";
+  const interval = 1000 * 60;
+  let minutesOnPage;
+
+  onMount(() => {
+    minutesOnPage = 0;
+    setInterval(() => {
+      minutesOnPage += 1;
+    }, interval);
+  });
+
+  $: if (typeof minutesOnPage === "number")
+    loadImage(`${gif}?key=crossword&value=${minutesOnPage}`);
 </script>
 
+<Meta />
 <Intro />
 
 <article>

@@ -36,41 +36,43 @@
     </select>
   </div>
 
-  <p class="insight" class:revealed>
-    The data analysis of people in
-    {name}
-    puzzles show that
-    <br />
-    <button
-      class:active="{active === 'urm'}"
-      class="urm"
-      on:click="{() => (active = active === 'urm' ? null : 'urm')}"><span
-        class="percent">{percentURM}</span>
-      were underrepresented minorities</button>
-    and
-    <button
-      class:active="{active === 'woman'}"
-      class="woman"
-      on:click="{() => (active = active === 'woman' ? null : 'woman')}"><span
-        class="percent">{percentWoman}</span>
-      were women.</button>
-  </p>
-
-  <div
-    class="xd"
-    class:revealed
-    class:urm="{active === 'urm'}"
-    class:woman="{active === 'woman'}">
-    <Crossword
-      data="{data}"
-      theme="{theme}"
-      disableHighlight="{true}"
-      showCompleteMessage="{false}"
-      bind:revealed />
-    <p class="note">
-      <em>Note: finding percentages were rounded to the nearest 10% in order to
-        display 10 clues.</em>
+  <div class="content">
+    <p class="insight" class:revealed>
+      Our analysis of people in
+      {name}
+      puzzles revealed that
+      <br />
+      <button
+        class:active="{active === 'urm'}"
+        class="urm"
+        on:click="{() => (active = active === 'urm' ? null : 'urm')}"><span
+          class="percent">{percentURM}</span>
+        were underrepresented minorities</button>
+      and
+      <button
+        class:active="{active === 'woman'}"
+        class="woman"
+        on:click="{() => (active = active === 'woman' ? null : 'woman')}"><span
+          class="percent">{percentWoman}</span>
+        were women.</button>
     </p>
+
+    <div
+      class="xd"
+      class:revealed
+      class:urm="{active === 'urm'}"
+      class:woman="{active === 'woman'}">
+      <Crossword
+        data="{data}"
+        theme="{theme}"
+        disableHighlight="{true}"
+        showCompleteMessage="{false}"
+        bind:revealed />
+      <p class="note">
+        <em>Note: finding percentages were rounded to the nearest 10% in order
+          to display 10 clues.</em>
+      </p>
+    </div>
   </div>
 </section>
 
@@ -91,19 +93,29 @@
     font-size: 2em;
   }
 
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+
   .xd {
     max-width: 800px;
     margin: 0 auto;
     font-family: --sans;
+    width: 100%;
+    order: 0;
   }
 
   .insight {
+    width: 100%;
     max-width: var(--column-width);
     margin: 1em auto;
     font-size: 1em;
     line-height: 1.8;
     opacity: 0;
     pointer-events: none;
+    order: 1;
+    text-align: center;
   }
 
   .insight.revealed {
@@ -122,7 +134,7 @@
   .note {
     max-width: 800px;
     font-family: var(--sans);
-    text-align: right;
+    font-size: 0.85em;
   }
 
   .active {
@@ -135,5 +147,17 @@
 
   .active.woman {
     background-color: var(--woman);
+  }
+
+  @media only screen and (min-width: 640px) {
+    .note {
+      text-align: right;
+    }
+    .insight {
+      order: 0;
+    }
+    .xd {
+      order: 1;
+    }
   }
 </style>
