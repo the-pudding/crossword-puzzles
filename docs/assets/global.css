@@ -132,6 +132,7 @@
 	--urm-light: #d879c0;
 	--woman: #4864FE;
 	--woman-light: #7b8ffe;
+	--xd-font: var(--sans);
 	--xd-primary-highlight-color: #FFEA2A;
 	--xd-secondary-highlight-color: #fff6a8;
 }
