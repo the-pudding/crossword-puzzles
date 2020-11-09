@@ -43,18 +43,20 @@
       puzzles revealed that
       <br />
       <button
-        class:active="{active === 'urm'}"
-        class="urm"
-        on:click="{() => (active = active === 'urm' ? null : 'urm')}"><span
-          class="percent">{percentURM}</span>
-        were underrepresented minorities</button>
-      and
-      <button
+        title="{revealed ? '' : 'complete the puzzle to see finding'}"
         class:active="{active === 'woman'}"
         class="woman"
-        on:click="{() => (active = active === 'woman' ? null : 'woman')}"><span
-          class="percent">{percentWoman}</span>
-        were women.</button>
+        on:click="{() => (active = active === 'woman' ? null : 'woman')}"><span><span
+            class="value">{percentWoman}</span></span>
+        were women</button>
+      and
+      <button
+        title="{revealed ? '' : 'complete the puzzle to see finding'}"
+        class:active="{active === 'urm'}"
+        class="urm"
+        on:click="{() => (active = active === 'urm' ? null : 'urm')}"><span><span
+            class="value">{percentURM}</span></span>
+        were underrepresented minorities.</button>
     </p>
 
     <div
@@ -67,11 +69,8 @@
         theme="{theme}"
         disableHighlight="{true}"
         showCompleteMessage="{false}"
+        showKeyboard="{revealed === true ? false : null}"
         bind:revealed />
-      <p class="note">
-        <em>Note: finding percentages were rounded to the nearest 10% in order
-          to display 10 clues.</em>
-      </p>
     </div>
   </div>
 </section>
@@ -90,7 +89,7 @@
   }
 
   h2 {
-    font-size: 2em;
+    font-size: 1.5em;
   }
 
   .content {
@@ -110,54 +109,74 @@
     width: 100%;
     max-width: var(--column-width);
     margin: 1em auto;
-    font-size: 1em;
-    line-height: 1.8;
-    opacity: 0;
-    pointer-events: none;
+    font-size: 0.85em;
+    line-height: 2.2;
     order: 1;
-    text-align: center;
+    display: none;
   }
 
   .insight.revealed {
-    opacity: 1;
-    pointer-events: auto;
+    display: block;
+  }
+
+  button {
+    cursor: not-allowed;
   }
 
   span {
     font-weight: 700;
+    border-bottom: 2px solid currentColor;
   }
 
-  button {
+  .value {
+    opacity: 0;
+    border: none;
+  }
+
+  .revealed .value {
     opacity: 1;
   }
 
-  .note {
-    max-width: 800px;
-    font-family: var(--sans);
-    font-size: 0.85em;
+  .revealed span {
+    border: none;
+  }
+
+  .revealed button {
+    cursor: pointer;
   }
 
   .active {
     opacity: 1;
   }
 
-  .active.urm {
+  .revealed .active.urm {
     background-color: var(--urm);
   }
 
-  .active.woman {
+  .revealed .active.woman {
     background-color: var(--woman);
   }
 
+  br {
+    display: none;
+  }
+
   @media only screen and (min-width: 640px) {
-    .note {
-      text-align: right;
-    }
     .insight {
       order: 0;
+      font-size: 1em;
+      text-align: center;
+      display: block;
+      line-height: 1.8;
     }
     .xd {
       order: 1;
+    }
+    h2 {
+      font-size: 2em;
+    }
+    br {
+      display: block;
     }
   }
 </style>
