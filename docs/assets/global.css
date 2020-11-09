@@ -143,8 +143,14 @@ body {
 	color: #1a1a1a;
 }
 
+a, a:hover, a:visited, a:active {
+	text-decoration: none;
+	color: currentColor;
+	border-bottom: 2px solid currentColor;
+}
+
 main {
-	padding: 0 1rem;
+	padding: 0;
 }
 
 .xd {

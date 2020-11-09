@@ -3,6 +3,7 @@
   import Meta from "./Meta.svelte";
   import Intro from "./Intro.svelte";
   import Play from "./Play.svelte";
+  import Footer from "./Footer.svelte";
   import { puzzlesNYT, puzzlesToday } from "./../utils/loadData.js";
   import loadImage from "./../utils/loadImage.js";
 
@@ -29,6 +30,8 @@
   <Play puzzles="{puzzlesNYT}" title="New York Times by decade" />
 </article>
 
+<Footer />
+
 <svg>
   <defs>
     <pattern
@@ -54,3 +57,12 @@
     </pattern>
   </defs>
 </svg>
+
+<style>
+  article {
+    padding: 0 1rem;
+  }
+  svg {
+    display: none;
+  }
+</style>

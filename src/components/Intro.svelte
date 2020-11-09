@@ -61,6 +61,10 @@
     margin: 1em auto;
   }
 
+  .wordmark a {
+    border: none;
+  }
+
   section {
     max-width: var(--column-width);
     margin: 0 auto;

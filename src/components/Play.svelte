@@ -81,7 +81,8 @@
     --xd-clue-text-font: var(--sans);
     --xd-toolbar-text-font: var(--sans);
     max-width: 960px;
-    margin: 3em auto;
+    margin: 3rem auto;
+    margin-bottom: 6rem;
   }
 
   .info {
