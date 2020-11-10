@@ -63,6 +63,8 @@
     padding: 0 1rem;
   }
   svg {
-    display: none;
+    height: 0;
+    overflow: hidden;
+    position: absolute;
   }
 </style>

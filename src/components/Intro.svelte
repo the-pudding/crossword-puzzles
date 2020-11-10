@@ -13,12 +13,16 @@
 
 <section id="intro">
   <div class="info">
-    <h1>Crossword Puzzle of Other Crossword Puzzles</h1>
+    <h1>
+      Play These Puzzles to Reveal the Racial and Gender Breakdown of Crosswords
+    </h1>
     <p>
-      Below you will find playable mini puzzles generated from the data behind
+      Below you will find
+      <strong>playable mini puzzles</strong>
+      generated from the data behind
       <a href="https://pudding.cool/20202/11/crossword">our story</a>
-      about inclusivity in crosswords. The ratio of the people referenced in the
-      clues or answers reflect the findings of our analysis about racial and
+      about inclusivity in crosswords. The number of people referenced in either
+      the clues or answers reflect the findings of our analysis about racial and
       gender representation.
     </p>
   </div>
@@ -72,6 +76,7 @@
 
   h1 {
     font-size: 1.75em;
+    display: none;
   }
 
   .info p {
@@ -103,7 +108,7 @@
     }
 
     .info p {
-      font-size: 1.25em;
+      font-size: 1.5em;
       text-align: justify;
     }
     .toggle {
