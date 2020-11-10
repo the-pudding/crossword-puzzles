@@ -36,98 +36,10 @@
 	font-display: swap;
 }
 
-/*
-********************
-	National Narrow
-********************
-*/
-
-/*
-@font-face {
-	font-family: 'National 2 Narrow Web';
-	src: url('national/National2NarrowWeb-Extralight.woff2') format('woff2'),
-	url('national/National2NarrowWeb-Extralight.woff') format('woff');
-	font-weight: 200;
-	font-style: normal;
-	font-stretch: normal;
-	font-display: swap;
-}
-*/
-/* 
-@font-face {
-	font-family: 'National 2 Narrow Web';
-	src: url('national/National2NarrowWeb-Regular.woff2') format('woff2'),
-	url('national/National2NarrowWeb-Regular.woff') format('woff');
-	font-weight: 500;
-	font-style: normal;
-	font-stretch: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'National 2 Narrow Web';
-	src: url('national/National2NarrowWeb-Bold.woff2') format('woff2'),
-	url('national/National2NarrowWeb-Bold.woff') format('woff');
-	font-weight: 700;
-	font-style: normal;
-	font-stretch: normal;
-	font-display: swap;
-} */
-
-/*
-@font-face {
-	font-family: 'National 2 Narrow Web';
-	src: url('national/National2NarrowWeb-Black.woff2') format('woff2'),
-	url('national/National2NarrowWeb-Black.woff') format('woff');
-	font-weight: 900;
-	font-style: normal;
-	font-stretch: normal;
-	font-display: swap;
-}
-*/
-
-/*
-********************
-	Tiempos Text
-********************
-*/
-
-@font-face {
-	font-family: 'Tiempos Text Web';
-	src: url('tiempos/TiemposTextWeb-Regular.woff2') format('woff2'),
-	url('tiempos/TiemposTextWeb-Regular.woff') format('woff');
-	font-weight: 500;
-	font-style: normal;
-	font-stretch: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'Tiempos Text Web';
-	src: url('tiempos/TiemposTextWeb-Bold.woff2') format('woff2'),
-	url('tiempos/TiemposTextWeb-Bold.woff') format('woff');
-	font-weight: 700;
-	font-style: normal;
-	font-stretch: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'Tiempos Headline Web';
-	src: url('tiempos/TiemposHeadlineWeb-Regular.woff2') format('woff2'),
-	url('tiempos/TiemposHeadlineWeb-Regular.woff') format('woff');
-	font-weight: 500;
-	font-style: normal;
-	font-stretch: normal;
-	font-display: swap;
-}
-
 
 :root {
 	--sans: 'National 2 Web';
-	--serif: 'Tiempos Text Web';
-	--serif-hed: 'Tiempos Headline Web';
-	--column-width: 600px;
+	--column-width: 640px;
 	--urm: #C63DA3;
 	--urm-light: #d879c0;
 	--woman: #4864FE;
@@ -138,15 +50,17 @@
 }
 
 body {
-	font-family: var(--serif);
+	font-family: var(--sans);
 	font-size: 18px;
 	color: #1a1a1a;
 }
 
 a, a:hover, a:visited, a:active {
-	text-decoration: none;
 	color: currentColor;
-	border-bottom: 2px solid currentColor;
+}
+
+a:hover {
+	background-color: var(--xd-primary-highlight-color);
 }
 
 main {
@@ -158,7 +72,7 @@ main {
 }
 
 h1, h2, h3, h4, h5 {
-	font-family: var(--serif-hed);
+	font-family: var(--sans);
 	font-weight: 500;
 	margin-bottom: 0.5em;
 }
@@ -177,6 +91,10 @@ button {
 	cursor: pointer;
 	border-radius: 4px;
 	color: #1a1a1a;
+}
+
+strong {
+	font-weight: 700;
 }
 
 .svelte-crossword button.clue {
