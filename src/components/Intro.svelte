@@ -40,10 +40,11 @@
       <p>
         Made by
         <a href="https://pudding.cool/author/russell-goldenberg">Russell
-          Goldenberg</a>
+          Goldenberg</a>,
+        <a href="https://pudding.cool/author/michelle-mcghee">Michelle McGhee</a>,
         and
-        <a href="https://pudding.cool/author/michelle-mcghee">Michelle McGhee</a>.
-        Data for these puzzles come from Saul Pwanson's
+        <a href="https://pudding.cool/author/amelia-wattenberger">Amelia
+          Wattenberger</a>. Data for these puzzles come from Saul Pwanson's
         <a href="http://xd.saul.pw/data/">crossword puzzle database</a>. A
         detailed explanation of the process can be found in the
         <a href="https://pudding.cool/20202/11/crossword#method">story</a>.
