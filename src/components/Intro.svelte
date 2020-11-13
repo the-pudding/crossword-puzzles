@@ -23,7 +23,7 @@
       <a href="https://pudding.cool/20202/11/crossword">our story</a>
       about inclusivity in crosswords. The number of people referenced reflect
       the findings from our analysis about racial and gender representation
-      (e.g., a finding of 70% men means seven clues will include men). We
+      (e.g., a finding of 30% women means three clues will include women). We
       created these not only to share the results, but let you feel the
       difference in the puzzles.
     </p>
