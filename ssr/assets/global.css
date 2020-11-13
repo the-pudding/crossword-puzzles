@@ -45,7 +45,7 @@
 	--woman: #4864FE;
 	--woman-light: #7b8ffe;
 	--xd-font: var(--sans);
-	--xd-primary-highlight-color: #FFEA2A;
+	--xd-primary-highlight-color: #ffcc00;
 	--xd-secondary-highlight-color: #CFD9FF;
 }
 
@@ -60,7 +60,7 @@ a, a:hover, a:visited, a:active {
 }
 
 a:hover {
-	background-color: var(--xd-primary-highlight-color);
+	background-color: var(--xd-secondary-highlight-color);
 }
 
 main {
@@ -73,7 +73,7 @@ main {
 
 h1, h2, h3, h4, h5 {
 	font-family: var(--sans);
-	font-weight: 500;
+	font-weight: 600;
 	margin-bottom: 0.5em;
 }
 
