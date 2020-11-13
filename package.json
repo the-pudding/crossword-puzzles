@@ -5,7 +5,7 @@
     "node": "14.15.0"
   },
   "dependencies": {
-    "svelte-crossword": "0.3.1",
+    "svelte-crossword": "0.3.3",
     "tabler-icons": "^1.34.0"
   },
   "devDependencies": {
