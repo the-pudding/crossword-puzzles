@@ -86,7 +86,7 @@
   }
 
   .info {
-    text-align: center;
+    text-align: left;
   }
 
   h2 {
@@ -163,6 +163,9 @@
   }
 
   @media only screen and (min-width: 640px) {
+    .info {
+      text-align: center;
+    }
     .insight {
       order: 0;
       font-size: 1em;

@@ -26,8 +26,8 @@
 <Intro />
 
 <article>
-  <Play puzzles="{puzzlesToday}" title="Publications in 2020" />
-  <Play puzzles="{puzzlesNYT}" title="New York Times by decade" />
+  <Play puzzles="{puzzlesToday}" title="Major Publications in 2020" />
+  <Play puzzles="{puzzlesNYT}" title="New York Times by Decade" />
 </article>
 
 <Footer />

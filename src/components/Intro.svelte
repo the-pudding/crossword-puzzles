@@ -21,9 +21,11 @@
       <strong>playable mini puzzles</strong>
       generated from the data behind
       <a href="https://pudding.cool/20202/11/crossword">our story</a>
-      about inclusivity in crosswords. The number of people referenced in either
-      the clues or answers reflect the findings of our analysis about racial and
-      gender representation.
+      about inclusivity in crosswords. The number of people referenced reflect
+      the findings from our analysis about racial and gender representation
+      (e.g., a finding of 70% men means seven clues will include men). We
+      created these not only to share the results, but let you feel the
+      difference in the puzzles.
     </p>
   </div>
   <div class="how">
@@ -69,10 +71,14 @@
   .wordmark a {
     border: none;
   }
+  .wordmark a:hover {
+    background-color: transparent;
+  }
 
   section {
     max-width: var(--column-width);
     margin: 0 auto;
+    padding: 0 1rem;
   }
 
   h1 {
@@ -102,7 +108,11 @@
     text-align: left;
   }
 
-  @media only screen and (min-width: 640px) {
+  @media only screen and (min-width: 700px) {
+    section {
+      padding: 0;
+    }
+
     h1 {
       font-size: 2.5em;
       text-align: center;
