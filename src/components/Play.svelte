@@ -68,7 +68,7 @@
         data="{data}"
         theme="{theme}"
         disableHighlight="{true}"
-        showCompleteMessage="{false}"
+        showConfetti="{false}"
         showKeyboard="{revealed === true ? false : null}"
         bind:revealed />
     </div>
