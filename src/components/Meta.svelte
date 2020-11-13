@@ -25,7 +25,7 @@
 
   <meta
     property="og:image"
-    content="https://pudding.cool/2020/11/crossword-puzzles/assets/facebook.jpg" />
+    content="https://pudding.cool/2020/11/crossword-puzzles/assets/social-facebook.jpg" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="600" />
@@ -41,7 +41,7 @@
     content="Mini crosswords generated from a data analysis of puzzles from the New York Times, and others." />
   <meta
     name="twitter:image:src"
-    content="https://pudding.cool/2020/11/crossword-puzzles/assets/twitter.jpg" />
+    content="https://pudding.cool/2020/11/crossword-puzzles/assets/social-twitter.jpg" />
 
   <meta name="robots" content="max-image-preview:large" />
 
