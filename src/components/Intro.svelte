@@ -20,7 +20,7 @@
       Below you will find
       <strong>playable mini puzzles</strong>
       generated from the data behind
-      <a href="https://pudding.cool/20202/11/crossword">our story</a>
+      <a href="https://pudding.cool/2020/11/crossword">our story</a>
       about inclusivity in crosswords. The number of people referenced reflect
       the findings from our analysis about racial and gender representation
       (e.g., a finding of 30% women means three clues will include women). We
