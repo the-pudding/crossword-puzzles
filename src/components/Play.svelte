@@ -56,7 +56,7 @@
         class="urm"
         on:click="{() => (active = active === 'urm' ? null : 'urm')}"><span><span
             class="value">{percentURM}</span></span>
-        were minoritezed racial groups.</button>
+        were minoritized racial groups.</button>
     </p>
 
     <div
