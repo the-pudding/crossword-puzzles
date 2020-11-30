@@ -4,10 +4,6 @@
   "engines": {
     "node": "14.15.0"
   },
-  "dependencies": {
-    "svelte-crossword": "0.3.3",
-    "tabler-icons": "^1.34.0"
-  },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^16.0.0",
     "@rollup/plugin-dsv": "^2.0.1",
@@ -31,7 +27,9 @@
     "shelljs": "^0.8.4",
     "sirv-cli": "^1.0.8",
     "svelte": "^3.29.4",
-    "svelte-preprocess": "^4.5.2"
+    "svelte-crossword": "0.3.4",
+    "svelte-preprocess": "^4.5.2",
+    "tabler-icons": "^1.34.0"
   },
   "scripts": {
     "build": "rollup -c",
