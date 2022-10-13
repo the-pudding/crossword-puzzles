@@ -21,16 +21,16 @@
       <strong>playable mini puzzles</strong>
       generated from the data behind
       <a href="https://pudding.cool/2020/11/crossword">our story</a>
-      about inclusivity in crosswords. The number of people referenced reflect
-      the findings from our analysis about racial and gender representation
-      (e.g., a finding of 30% women means three clues will include women). We
-      created these not only to share the results, but let you feel the
-      difference in the puzzles.
+      about inclusivity in crosswords. The number of people referenced reflect the
+      findings from our analysis about racial and gender representation (e.g., a
+      finding of 30% women means three clues will include women). We created these
+      not only to share the results, but let you feel the difference in the puzzles.
     </p>
   </div>
   <div class="how">
     <p class="toggle">
-      <button on:click="{() => (visible = !visible)}">How were these made?
+      <button on:click="{() => (visible = !visible)}"
+        >How were these made?
         {#if visible}
           {@html down}
         {:else}
@@ -41,12 +41,12 @@
     <div class="method" class:visible>
       <p>
         Made by
-        <a href="https://pudding.cool/author/russell-goldenberg">Russell
-          Goldenberg</a>,
-        <a href="https://pudding.cool/author/michelle-mcghee">Michelle McGhee</a>,
-        and
-        <a href="https://pudding.cool/author/amelia-wattenberger">Amelia
-          Wattenberger</a>. Data for these puzzles come from Saul Pwanson's
+        <a href="https://pudding.cool/author/russell-samora">Russell Samora</a>,
+        <a href="https://pudding.cool/author/michelle-mcghee">Michelle McGhee</a
+        >, and
+        <a href="https://pudding.cool/author/amelia-wattenberger"
+          >Amelia Wattenberger</a
+        >. Data for these puzzles come from Saul Pwanson's
         <a href="http://xd.saul.pw/data/">crossword puzzle database</a>. A
         detailed explanation of the process can be found in the
         <a href="https://pudding.cool/20202/11/crossword#method">story</a>.
@@ -56,7 +56,9 @@
         <a href="https://svelte.dev/">Svelte</a>
         and
         <a
-          href="https://github.com/russellgoldenberg/svelte-crossword#svelte-crossword">svelte-crossword</a>.
+          href="https://github.com/russellgoldenberg/svelte-crossword#svelte-crossword"
+          >svelte-crossword</a
+        >.
       </p>
     </div>
   </div>
