@@ -42,7 +42,8 @@
       <p>
         Made by
         <a href="https://pudding.cool/author/russell-samora">Russell Samora</a>,
-        <a href="https://pudding.cool/author/michelle-mcghee">Michelle McGhee</a
+        <a href="https://pudding.cool/author/michelle-pera-mcghee"
+          >Michelle Pera-McGhee</a
         >, and
         <a href="https://pudding.cool/author/amelia-wattenberger"
           >Amelia Wattenberger</a
